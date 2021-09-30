@@ -10,7 +10,7 @@
 describe('Ngetes Login', function () {
 	it('Bisa Login Dengan Username dan Password Benar', async function () {
         cy.visit('/gate/login')
-		cy.fixture('userLogin').then(function (login) {
+		cy.fixture('dataLogin').then(function (login) {
 			cy.log('') // seperti console log
 			// this.login = login
             cy.get("#userid").type(login.username);
