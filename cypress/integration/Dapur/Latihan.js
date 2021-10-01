@@ -54,10 +54,28 @@ describe("Dashboard Tahapan Alur PMB", () => {
     cy.get("#sistem").select("Reguler A").should("have.value", "1");
   });
 
-  it.only("[Failed] Filter Dashboar untuk menampilkan tahapan", () => {
+  it("[Failed] Filter Dashboar untuk menampilkan tahapan", () => {
     cy.get("#periode").select("2020/2021 Genap");
     cy.get("#jalur").select("Mandiri S1");
     cy.get("#gelombang").select("Gelombang 3");
     cy.get("#sistem").select("Reguler A");
+  });
+});
+
+it("login staging", () => {
+  cy.visit("dev.siakadcloud.com");
+  cy.get("#userid").type("fikri");
+  cy.get("#password").type("j77/FQjF");
+  cy.get(".btn").click();
+});
+
+describe("Ngetes Login", function () {
+  it.only("Bisa Login Dengan Username dan Password Benar", async function () {
+    cy.visit("staging.siakadcloud.com");
+    cy.get("#userid").type("meida");
+    cy.get("#password").type("meida456");
+    cy.get(".btn").click();
+    cy.get(".siakad").click();
+    cy.get("#siakad > div > div.role_box").click();
   });
 });
