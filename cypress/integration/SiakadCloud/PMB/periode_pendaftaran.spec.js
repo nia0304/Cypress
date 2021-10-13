@@ -65,7 +65,7 @@ describe("Periode Pendaftaran", () => {
       "Penambahan data Periode Pendaftaran berhasil"
     );
   });
-  it.only("penambahan periode pendaftaran berbayar", () => {
+  it("penambahan periode pendaftaran berbayar", () => {
     cy.visit("/spmb/list_periode");
     cy.get("#wrap-button > .btn-success").click();
     cy.get("#namaperiodedaftar").type("Jalur Mandiri Gelombang 4 20/21 Genap");
@@ -103,6 +103,12 @@ describe("Periode Pendaftaran", () => {
     //validasi menu tarif
     cy.get("#sidebar-menu-list > :nth-child(3) > a").should("be.visible");
   });
+  it.only("Penambahan jenis program pada periode berbayar", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/).click();
+    cy.get("#accordion > div:nth-child(3) > div.box-header > h4 > a").click();
+    cy.contains("a", /^Gelombang 4$/).click();
+  });
   it("Penambahan periode pendaftaran tanpa isi kolom nama", () => {
     cy.visit("/spmb/list_periode");
     cy.get(".content-header > h1").should(
@@ -137,17 +143,4 @@ describe("Periode Pendaftaran", () => {
       .click();
     // cy.get("#namaperiodedaftar").should("have.length", 0);
   });
-  it("Penambahan periode tanpa isi tanggal mulai");
-  it("Penambahan periode tanpa isi tanggal akhir");
-  it("Penambahan periode tanpa isi tanggal akhir finalisasi");
-  it("Penambahan periode tanpa isi tanggal awal daftar ulang");
-  it("Penambahan periode tanpa isi tanggal akhir daftar ulang");
-  it("Penambahan periode tanpa isi Jumlah NIK Unik");
-  it("Ketika kolom nama diisi lebih dari 255 karakter");
-  it(
-    "Ketika mengisi kolom periode yang masih belum ditambahkan pada referensi data master"
-  );
-  it(
-    "Ketika mengisi kolom gelombang yang masih belum ditambahkan pada referensi data master"
-  );
 });
