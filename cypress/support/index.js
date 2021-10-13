@@ -19,9 +19,5 @@ import "./pmb";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-require("cypress-xpath");
-<<<<<<< HEAD
+// require("cypress-xpath");
 require("cypress-plugin-tab");
-=======
-require("cypress-plugin-tab");
->>>>>>> c7663f4764aaaa070c68d6a1604af7ad6071299d
