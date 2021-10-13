@@ -28,7 +28,7 @@ describe("Referensi Gelombang", () => {
       .should("contain", "Batal")
       .and("be.visible");
   });
-  it.only("Edit reff gelombang", () => {
+  it("Edit reff gelombang", () => {
     cy.visit("/spmb/ms_gelombang");
     cy.get(".content-header > h1").should("contain", "Gelombang");
     cy.get(".krs-float-title > div > .fs-14").should(

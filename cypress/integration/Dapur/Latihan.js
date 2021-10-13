@@ -1,17 +1,14 @@
 /// <reference types="cypress" />
-
+beforeEach("Login Siakad PMB", () => {
+  cy.login("fikri", "j77/FQjF");
+  cy.get(".spmb > .inner").click(); //pilih modul pmb
+  cy.get("#spmb > div > div:nth-child(2)").click(); //pilih role login
+  cy.get(".container > .nav > :nth-child(1) > a").click(); //trigger untuk akses url
+});
+//   afterEach("Logout Siakad", () => {
+//     cy.logout();
+//   });
 describe("Dashboard Tahapan Alur PMB", () => {
-  beforeEach("Login Siakad PMB", () => {
-    cy.login("fikri", "j77/FQjF");
-    cy.get(".spmb > .inner").click(); //pilih modul pmb
-    cy.get("#spmb > div > div:nth-child(3)").click(); //pilih role login
-    cy.get(".container > .nav > :nth-child(1) > a").click(); //trigger untuk akses url
-  });
-
-  //   afterEach("Logout Siakad", () => {
-  //     cy.logout();
-  //   });
-
   it("Login", () => {
     cy.login("fikri", "j77/FQjF");
     cy.get(".spmb > .inner").click(); //pilih modul pmb
@@ -60,6 +57,16 @@ describe("Dashboard Tahapan Alur PMB", () => {
     cy.get("#gelombang").select("Gelombang 3");
     cy.get("#sistem").select("Reguler A");
   });
+
+  it.only("select filter periode", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2021\/2022 Gasal$/).click();
+    cy.contains("a", /^2022 Gasal$/).click();
+    // cy.contains("2022 Gasal").click();
+    // cy.get(
+    //   "#collapseidperiode > .box-body > .slimScrollDiv > .tree > ul > :nth-child(2) > a"
+    // ).should("contain", "2022 Gasal");
+  });
 });
 
 it("login staging", () => {
@@ -70,7 +77,7 @@ it("login staging", () => {
 });
 
 describe("Ngetes Login", function () {
-  it.only("Bisa Login Dengan Username dan Password Benar", async function () {
+  it("Bisa Login Dengan Username dan Password Benar", async function () {
     cy.visit("staging.siakadcloud.com");
     cy.get("#userid").type("meida");
     cy.get("#password").type("meida456");
