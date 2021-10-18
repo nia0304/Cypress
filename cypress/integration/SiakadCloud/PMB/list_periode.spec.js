@@ -28,7 +28,7 @@ describe("Jenis Program Periode Pendaftaran", () => {
                 });
          })
           .then(() => 
-               expect(values).to.deep.eq([
+               expect(values).to.deep.equal([
                     "PMB REGULER FREE",
                     "2020/2021 Genap",
                     "Gelombang 4",
