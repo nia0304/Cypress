@@ -20,3 +20,9 @@ Cypress.Commands.add("filterdashboard", () => {
     "Progress Tahapan Alur SPMB:"
   );
 });
+
+// untuk masuk ke modul pmb
+Cypress.Commands.add('openmodulpmb', () => {
+	cy.get('.spmb').click() //pilih modul pmb
+	cy.get('#spmb > div > div.role_box').click() //pilih role login
+})
