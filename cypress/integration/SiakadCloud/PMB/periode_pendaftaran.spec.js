@@ -103,7 +103,7 @@ describe("Happy Flow Periode Pendaftaran", () => {
     //validasi menu tarif
     cy.get("#sidebar-menu-list > :nth-child(3) > a").should("be.visible");
   });
-  it.only("Penambahan jenis program pada periode berbayar", () => {
+  it("Penambahan jenis program pada periode berbayar", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -146,6 +146,42 @@ describe("Happy Flow Periode Pendaftaran", () => {
     cy.get(".alert").should(
       "contain",
       "Penambahan data Jenis Pilihan Prodi berhasil"
+    );
+  });
+  it.only("Penambahan tarif formulir", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(3) > a").click();
+    //tarif IPA
+    cy.get("#i_idjenispilihan").select("IPA");
+    cy.get("#i_nominaltarif").type("200000");
+    cy.get("#insert-row-ms > :nth-child(4) > .btn").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penambahan data Tarif Formulir berhasil"
+    );
+    //tarif IPS
+    cy.get("#i_idjenispilihan").select("IPS");
+    cy.get("#i_nominaltarif").type("200000");
+    cy.get("#insert-row-ms > :nth-child(4) > .btn").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penambahan data Tarif Formulir berhasil"
+    );
+    //tarif IPC
+    cy.get("#i_idjenispilihan").select("IPC");
+    cy.get("#i_nominaltarif").type("300000");
+    cy.get("#insert-row-ms > :nth-child(4) > .btn").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penambahan data Tarif Formulir berhasil"
     );
   });
 });
