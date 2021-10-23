@@ -57,3 +57,13 @@ Cypress.Commands.add("loginuser", () => {
   });
   cy.get(".btn").click();
 });
+
+//user yasinta
+Cypress.Commands.add("userlogin", () => {
+  cy.visit("/");
+  cy.fixture("user_yas").then((data) => {
+    cy.get("#userid").type(data.username);
+    cy.get("#password").type(data.password);
+  });
+  cy.get(".btn").click();
+});
