@@ -5,37 +5,26 @@ describe("Jenis Program Periode Pendaftaran", () => {
       cy.login();
       cy.modulpmb();
     });
-  
+    
     it.only("Filter halaman list periode pendaftaran", () => {
         cy.visit('/spmb/list_periode')
         cy.contains("a", /^2020\/2021 Genap$/).click();
+        cy.wait(5000);
         cy.get("#accordion > div:nth-child(2) > div.box-header > h4").click();
         cy.contains("a", /^Mandiri$/).click();
         cy.get("#accordion > div:nth-child(3) > div.box-header > h4").click();
         cy.contains("a", /^Gelombang 4$/).click();
+        cy.wait(5000);
         cy.get("#accordion > div:nth-child(4) > div.box-header > h4").click();
         cy.contains("a", /^Reguler A$/).click();
-        let values = [];
-        cy.get("#form_list > div > table")
-          .scrollIntoView()
-          .find("tbody > tr")
-          .each(($el, $index) => {
-              cy.wrap($el)
-                .invoke("text")
-                .then((text) => {
-                    cy.log(text);
-                    values.push(text.trim());
-                });
-         })
-          .then(() => 
-               expect(values).to.deep.equal([
-                    "PMB REGULER FREE",
-                    "2020/2021 Genap",
-                    "Gelombang 4",
-                    "Mandiri",
-                    "Reguler A",
-                ])
-            );
+        cy.get("#form_list > div > table").getTable().should(tableData => { 
+          cy.log(tableData)
+          cy.fixture('list_periode.json').then((dataFixture) => {
+            cy.get("#form_list > div > table").getTable().should(tableData => {
+              expect(tableData).to.deep.equal(dataFixture)
+            })
+          })
+        });
     });
 
     it("Search periode pendaftaran", () => {
