@@ -2,11 +2,11 @@
 
 describe("Jenis Program Periode Pendaftaran", () => {
     beforeEach("Login Siakad", () => {
-      cy.login();
+      cy.userlogin();
       cy.modulpmb();
     });
     
-    it.only("Filter halaman list periode pendaftaran", () => {
+    it("Filter halaman list periode pendaftaran", () => {
         cy.visit('/spmb/list_periode')
         cy.contains("a", /^2020\/2021 Genap$/).click();
         cy.wait(5000);
@@ -34,8 +34,14 @@ describe("Jenis Program Periode Pendaftaran", () => {
         cy.get(".input-group-btn > .btn-success > .fa").click();
     });
 
-    it("Berhasil Hapus Periode Pendaftaran", () => {
+    it.only("Berhasil Hapus Periode Pendaftaran", () => {
         cy.visit('/spmb/list_periode');
-
+        cy.get(".col-xs-8 > .input-group > .form-control")
+          .type("Testing Nomor");
+        cy.get(".input-group-btn > .btn-success > .fa").click()
+        cy.get(".text-right > .btn-danger > .fa").click();
+        cy.get("header").scrollIntoView();
+        cy.get(".modal-footer > .btn-primary").click();
+        cy.get('.alert').should("contain" , "Penghapusan data Periode Pendaftaran berhasil");
     })
   });
