@@ -2,8 +2,45 @@ describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
 		cy.loginuser()
 		cy.openmodulpmb()
-		// cy.filterdashboard()
+		cy.actionfilterdashboard()
 	})
+	it.only('Memastikan nama kolom tabel jenis syarat ada 9', () => {
+		cy.get('.container > .nav > :nth-child(6)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Referensi > Seleksi
+		cy.get(
+			'.container > .nav > :nth-child(6) > .dropdown-menu > :nth-child(3)'
+		).click()
+		// start membuka href sub menu Seleksi > Jenis Seleksi
+		// cy.get(
+		// 	'body > header > div > div > ul > li.dropdown.nohover.open > ul > li.dropdown-submenu.dropdown.show > ul > li:nth-child(1) > a'
+		// )
+		// 	.invoke('attr', 'href') // invoke : cypress get href attribute
+		// 	.then((href) => {
+		// 		cy.visit(href)
+		// 	})
+		cy.visit('/spmb/ms_jenisseleksi')
+		cy.get('.content-header > h1 > small ').should('contain', 'Daftar Jenis Seleksi')
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Jenis Seleksi'
+		)
+		cy.get('.table-responsive > .table  > thead > tr')
+			.should('contain', 'Kode')
+			.and('contain', 'Nama')
+			.and('contain', 'Kelulusan?')
+			.and('contain', 'Wajib Mengikuti?')
+			.and('contain', 'Menggunakan Ruangan?')
+			.and('contain', 'Bebas Tes?')
+			.and('contain', 'CBT?')
+			.and('contain', 'Upload Berkas Sesuai Jadwal?')
+			.and('contain', 'Aksi')
+		cy.get('.krs-float-buttons-center').click()
+		cy.get('.alert').should(
+			'contain',
+			'Penyimpanan data cek Proses Alur SPMB berhasil'
+		)
+	})
+
 	it('Check Halaman Seleksi', async function () {
 		// start memilih menu Referensi
 		cy.get('.container > .nav > :nth-child(6)').click()
@@ -130,7 +167,7 @@ describe('Ngetes Menu SPMB', function () {
 		cy.get('.alert').should('contain', 'Penghapusan data Jenis Seleksi berhasil')
 		cy.get('.alert > .close').click()
 	})
-    it.only('Detail Jenis Seleksi', async function () {
+    it('Detail Jenis Seleksi', async function () {
 		// start memilih menu Referensi
 		cy.get('.container > .nav > :nth-child(6)').click()
 		// start memilih sub menu Seleksi
