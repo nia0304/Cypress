@@ -2,8 +2,40 @@ describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
 		cy.loginuser()
 		cy.openmodulpmb()
-		// cy.filterdashboard()
+		cy.actionfilterdashboard()
+	})
 
+	it.only('Memastikan nama tabel jalur pendaftaran ada 5', () => {
+		cy.get('.container > .nav > :nth-child(6)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Referensi > Pendaftaran
+		cy.get(
+			'.container > .nav > :nth-child(6) > .dropdown-menu > :nth-child(1)'
+		).click()
+		// start membuka href sub menu Jalur Pendaftaran
+		// cy.get(
+		// 	'body > header > div > div > ul > li.dropdown.nohover.open > ul > li.dropdown-submenu.dropdown.show > ul > li:nth-child(2) > a'
+		// )
+		// 	.invoke('attr', 'href') // invoke : cypress get href attribute
+		// 	.then((href) => {
+		// 		cy.visit(href)
+		// 	})
+		cy.visit('/spmb/ms_jalurpendaftaran') // makek visit langsung
+		cy.get('.content-header > h1').should('contain', 'Jalur Pendaftaran')
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Jalur Pendaftaran'
+		)
+		cy.get('.table-responsive > .table  > thead > tr')
+			.should('contain', 'Kode')
+			.and('contain', 'Nama Jalur Penerimaan')
+			.and('contain', 'Jenis Pendaftaran')
+			.and('contain', 'Keterangan')
+			.and('contain', 'Aksi')
+		cy.get('.krs-float-buttons-center').click()
+		cy.get('.alert').should(
+			'contain',
+			'Penyimpanan data cek Proses Alur SPMB berhasil'
+		)
 	})
 	
 	it('Add Data Jalur Pendaftaran', async function () {

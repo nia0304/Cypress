@@ -2,9 +2,39 @@ describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
 		cy.loginuser()
 		cy.openmodulpmb()
-		// cy.filterdashboard()
+		cy.actionfilterdashboard()
 	})
-
+	it.only('Memastikan nama tabel jenis program ada 4', () => {
+		cy.get('.container > .nav > :nth-child(6)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Referensi > pendaftaran
+		cy.get(
+			'.container > .nav > :nth-child(6) > .dropdown-menu > :nth-child(1)'
+		).click()
+		// start membuka href sub menu Sistem Kuliah
+		// cy.get(
+		// 	'body > header > div > div > ul > li.dropdown.nohover.open > ul > li.dropdown-submenu.dropdown.show > ul > li:nth-child(4) > a'
+		// )
+		// 	.invoke('attr', 'href') // invoke : cypress get href attribute
+		// 	.then((href) => {
+		// 		cy.visit(href)
+		// 	})
+		cy.visit('/spmb/ms_jenisprogram') // makek visit langsung
+		cy.get('.content-header > h1').should('contain', 'Jenis Program')
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Jenis Program'
+		)
+		cy.get('.table-responsive > .table  > thead > tr')
+			.should('contain', 'Kode')
+			.and('contain', 'Nama Jenis Program')
+			.and('contain', 'IPC')
+			.and('contain', 'Aksi')
+		cy.get('.krs-float-buttons-center').click()
+		cy.get('.alert').should(
+			'contain',
+			'Penyimpanan data cek Proses Alur SPMB berhasil'
+		)
+	})
 	it('Edit Data Jenis Program', async function () {
 		// start memilih menu Referensi
 		cy.get('.container > .nav > :nth-child(6)').click()
