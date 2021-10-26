@@ -26,3 +26,19 @@ Cypress.Commands.add('openmodulpmb', () => {
 	cy.get('.spmb').click() //pilih modul pmb
 	cy.get('#spmb > div > div.role_box').click() //pilih role login
 })
+
+//untuk menentukan 4 filter dashboard pmb secara statis
+Cypress.Commands.add("actionfilterdashboard", () => {
+  cy.get("#periode")
+    .select("2020/2021 Genap")
+    .should("have.value", "20202")
+    .wait(0);
+  cy.get("#jalur").select("Mandiri").should("have.value", "1").wait(0);
+  cy.get("#gelombang").select("Gelombang 3").should("have.value", "3").wait(0);
+  cy.get("#sistem").select("Reguler A").should("have.value", "1");
+  //ketika bar sudah berprogres sesuaikan assertion yg diambil
+  cy.get(":nth-child(1) > .col-md-12 > .box > .krs-dashboard-box-title").should(
+    "contain",
+    "Tahapan Alur SPMB"
+  );
+});
