@@ -2,7 +2,37 @@ describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
 		cy.loginuser()
 		cy.openmodulpmb()
-		// cy.filterdashboard()
+		cy.actionfilterdashboard()
+	})
+	it.only('Memastikan nama tabel gelombang ada 3', () => {
+		cy.get('.container > .nav > :nth-child(6)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Gelombang
+		cy.get(
+			'.container > .nav > :nth-child(6) > .dropdown-menu > :nth-child(1)'
+		).click()
+		// start membuka href sub menu Gelombang
+		// cy.get(
+		// 	'body > header > div > div > ul > li.dropdown.nohover.open > ul > li.dropdown-submenu.dropdown.show > ul > li:nth-child(1) > a'
+		// )
+		// 	.invoke('attr', 'href') // invoke : cypress get href attribute
+		// 	.then((href) => {
+		// 		cy.visit(href)
+		// 	})
+		cy.visit('/spmb/ms_gelombang') // makek visit langsung
+		cy.get('.content-header > h1').should('contain', 'Gelombang')
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Gelombang'
+		)
+		cy.get('.table-responsive > .table  > thead > tr')
+			.should('contain', 'Kode')
+			.and('contain', 'Nama Gelombang')
+			.and('contain', 'Aksi')
+		cy.get('.krs-float-buttons-center').click()
+		cy.get('.alert').should(
+			'contain',
+			'Penyimpanan data cek Proses Alur SPMB berhasil'
+		)
 	})
 	it('Add Data Gelombang', async function () {
 		// start memilih menu Referensi
@@ -50,7 +80,7 @@ describe('Ngetes Menu SPMB', function () {
 		cy.get('.alert').should('contain', 'Pengubahan data gelombang berhasil')
 		cy.get('.alert > .close').click()
 	})
-	it.only('Delete Data Gelombang', async function () {
+	it('Delete Data Gelombang', async function () {
 		// start memilih menu Referensi
 		cy.get('.container > .nav > :nth-child(6)').click()
 		// start memilih sub menu Gelombang

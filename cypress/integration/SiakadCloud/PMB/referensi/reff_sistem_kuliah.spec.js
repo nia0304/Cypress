@@ -2,7 +2,38 @@ describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
 		cy.loginuser()
 		cy.openmodulpmb()
-		// cy.filterdashboard()
+		cy.actionfilterdashboard()
+	})
+	it.only('Memastikan nama tabel sistem kuliah ada 4', () => {
+		cy.get('.container > .nav > :nth-child(6)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Gelombang
+		cy.get(
+			'.container > .nav > :nth-child(6) > .dropdown-menu > :nth-child(1)'
+		).click()
+		// start membuka href sub menu Sistem Kuliah
+		// cy.get(
+		// 	'body > header > div > div > ul > li.dropdown.nohover.open > ul > li.dropdown-submenu.dropdown.show > ul > li:nth-child(3) > a'
+		// )
+		// 	.invoke('attr', 'href') // invoke : cypress get href attribute
+		// 	.then((href) => {
+		// 		cy.visit(href)
+		// 	})
+		cy.visit('/spmb/ms_sistemkuliah') // makek visit langsung
+		cy.get('.content-header > h1').should('contain', 'Sistem Kuliah')
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Sistem Kuliah'
+		)
+		cy.get('.table-responsive > .table  > thead > tr')
+			.should('contain', 'Kode')
+			.and('contain', 'Nama Sistem Kuliah')
+			.and('contain', 'Keterangan')
+			.and('contain', 'Aksi')
+		cy.get('.krs-float-buttons-center').click()
+		cy.get('.alert').should(
+			'contain',
+			'Penyimpanan data cek Proses Alur SPMB berhasil'
+		)
 	})
 	it('Add Data Sistem Kuliah', async function () {
 		// start memilih menu Referensi
@@ -53,7 +84,7 @@ describe('Ngetes Menu SPMB', function () {
 		cy.get('.alert').should('contain', 'Pengubahan data Sistem Kuliah berhasil')
 		cy.get('.alert > .close').click()
 	})
-	it.only('Delete Data Sistem Kuliah', async function () {
+	it('Delete Data Sistem Kuliah', async function () {
 		// start memilih menu Referensi
 		cy.get('.container > .nav > :nth-child(6)').click()
 		// start memilih sub menu Sistem Kuliah
