@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 
-describe("Jenis Program Periode Pendaftaran", () => {
+describe("List Periode Pendaftaran", () => {
     beforeEach("Login Siakad", () => {
       cy.userlogin();
       cy.modulpmb();
     });
     
-    it("Filter halaman list periode pendaftaran", () => {
+    it.only("Filter halaman list periode pendaftaran", () => {
         cy.visit('/spmb/list_periode')
         cy.contains("a", /^2020\/2021 Genap$/).click();
         cy.wait(5000);
@@ -18,11 +18,10 @@ describe("Jenis Program Periode Pendaftaran", () => {
         cy.get("#accordion > div:nth-child(4) > div.box-header > h4").click();
         cy.contains("a", /^Reguler A$/).click();
         cy.get("#form_list > div > table").getTable().should(tableData => { 
-          cy.log(tableData)
+//        hasil log data diletakkan di fixture          
+//        cy.log(tableData)
           cy.fixture('list_periode.json').then((dataFixture) => {
-            cy.get("#form_list > div > table").getTable().should(tableData => {
               expect(tableData).to.deep.equal(dataFixture)
-            })
           })
         });
     });
@@ -34,7 +33,7 @@ describe("Jenis Program Periode Pendaftaran", () => {
         cy.get(".input-group-btn > .btn-success > .fa").click();
     });
 
-    it.only("Berhasil Hapus Periode Pendaftaran", () => {
+    it("Berhasil Hapus Periode Pendaftaran", () => {
         cy.visit('/spmb/list_periode');
         cy.get(".col-xs-8 > .input-group > .form-control")
           .type("Testing Nomor");
