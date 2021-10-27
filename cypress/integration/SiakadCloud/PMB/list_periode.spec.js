@@ -24,14 +24,14 @@ describe("List Periode Pendaftaran", () => {
               expect(tableData).to.deep.equal(dataFixture)
           })
         });
-    });
+      });
+  });
 
-    it("Search periode pendaftaran", () => {
-        cy.visit('/spmb/list_periode')
-        cy.get(".col-xs-8 > .input-group > .form-control")
-          .type("PMB REGULER FREE");
-        cy.get(".input-group-btn > .btn-success > .fa").click();
-    });
+  it("Search periode pendaftaran", () => {
+    cy.visit("/spmb/list_periode");
+    cy.get(".col-xs-8 > .input-group > .form-control").type("PMB REGULER FREE");
+    cy.get(".input-group-btn > .btn-success > .fa").click();
+  });
 
     it("Berhasil Hapus Periode Pendaftaran", () => {
         cy.visit('/spmb/list_periode');
