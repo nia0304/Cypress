@@ -46,7 +46,7 @@ describe("Tarif Formulir Periode Pendaftaran", () => {
     );
   });
 
-  it.only("Edit tarif formulir", () => {
+  it("Edit tarif formulir", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -68,6 +68,30 @@ describe("Tarif Formulir Periode Pendaftaran", () => {
       "Pengubahan data Tarif Formulir berhasil"
     );
   });
-  it("Duplikasi data tarif formulir");
+  it.only("Duplikasi data tarif formulir", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(3) > a")
+      .should("be.visible")
+      .click();
+    //tarif IPA
+    cy.get("#i_idjenispilihan").select("IPA");
+    cy.get("#i_nominaltarif").type("200000");
+    cy.get("#insert-row-ms > :nth-child(4) > .btn").click();
+    cy.get(".alert").should(
+      "contain",
+      "Data dengan Periode Masuk, Gelombang, Jalur Pendaftaran, Sistem Kuliah, Jenis Program, dan Jenis Akun yang sama tidak boleh duplikat"
+    );
+    cy.get(".text-danger")
+      .should("contain", "Terdapat duplikasi data")
+      .and("be.visible");
+  });
   it("Hapus tarif formulir");
 });
