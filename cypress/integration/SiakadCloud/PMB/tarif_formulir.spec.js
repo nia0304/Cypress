@@ -68,7 +68,7 @@ describe("Tarif Formulir Periode Pendaftaran", () => {
       "Pengubahan data Tarif Formulir berhasil"
     );
   });
-  it.only("Duplikasi data tarif formulir", () => {
+  it("Duplikasi data tarif formulir", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -93,5 +93,30 @@ describe("Tarif Formulir Periode Pendaftaran", () => {
       .should("contain", "Terdapat duplikasi data")
       .and("be.visible");
   });
-  it("Hapus tarif formulir");
+  it("Hapus tarif formulir", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(3) > a")
+      .should("be.visible")
+      .click();
+    cy.get(":nth-child(4) > :nth-child(4) > .btn-danger").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content")
+      .should("contain", "Apakah anda yakin akan menghapus data ini?")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-default")
+      .should("contain", "Cancel")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-primary").should("be.visible").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penghapusan data Tarif Formulir berhasil"
+    );
+  });
 });
