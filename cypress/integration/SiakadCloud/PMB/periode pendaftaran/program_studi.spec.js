@@ -156,7 +156,7 @@ describe("Program Studi", () => {
     );
     cy.get(".btn-info").click();
   });
-  it("Edir Program Studi", () => {
+  it("Edit Program Studi", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -291,5 +291,25 @@ describe("Program Studi", () => {
     cy.get("#sidebar-menu-list > :nth-child(4) > a")
       .should("be.visible")
       .click();
+    cy.get(".col-md-7 > .btn-warning").click();
+    cy.get("#modal_copy > .modal-dialog > .modal-content").should(
+      "contain",
+      "Salin Data Pengaturan Daftar Program Studi"
+    );
+    cy.get(".modal-footer > .btn-primary").should("contain", " Batal");
+    cy.get("#periodetujuan").select(
+      "2020/2021 Genap - Gelombang 3 - Mandiri - Reguler A - Mandiri 20/21 Genap Gel 3"
+    );
+    cy.get(".modal-footer > .btn-success").should("contain", "Salin").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content")
+      .should("contain", "Apakah anda yakin akan menyalin data ini ?")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-default")
+      .should("contain", "Cancel")
+      .and("be.visible");
+    cy.get(
+      ".bootbox > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
+    ).click();
+    //notif berhasil tp data gak muncul
   });
 });
