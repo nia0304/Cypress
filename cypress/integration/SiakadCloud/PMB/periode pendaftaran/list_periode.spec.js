@@ -25,7 +25,7 @@ describe("List Periode Pendaftaran", () => {
           })
         });
       });
-  });
+  
 
   it("Search periode pendaftaran", () => {
     cy.visit("/spmb/list_periode");
@@ -43,4 +43,5 @@ describe("List Periode Pendaftaran", () => {
         cy.get(".modal-footer > .btn-primary").click();
         cy.get('.alert').should("contain" , "Penghapusan data Periode Pendaftaran berhasil");
     })
-  });
+});
+
