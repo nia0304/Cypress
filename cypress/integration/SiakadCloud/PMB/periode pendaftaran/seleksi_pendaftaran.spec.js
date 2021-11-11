@@ -90,7 +90,7 @@ describe("Seleksi Pendaftar", () => {
       "Pengubahan data Seleksi Pendaftaran berhasil"
     );
   });
-  it.only("Hapus seleksi pendaftar", () => {
+  it("Hapus seleksi pendaftar", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -130,5 +130,29 @@ describe("Seleksi Pendaftar", () => {
       "Penghapusan data Seleksi Pendaftaran berhasil"
     );
   });
-  it("Salin data seleksi pendaftar");
+  it.only("Salin data seleksi pendaftar", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(5) > a")
+      .should("be.visible")
+      .click();
+    cy.get("#unit").select("S1 - Sistem Informasi").wait(0);
+    cy.get(".col-md-7 > .btn-warning").click();
+    cy.get(".col-sm-4").should("contain", "Program Studi Tujuan");
+    cy.get("#unitcopy").select("S1 - Teknik Informatika");
+    cy.get(".modal-footer > .btn").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content").should(
+      "contain",
+      "Apakah anda yakin akan menyalin seleksi Pendaftaran Program Studi"
+    );
+    cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should("contain", "Salin data berhasil");
+  });
 });
