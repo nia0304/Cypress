@@ -43,7 +43,7 @@ describe("Seleksi Pendaftar", () => {
       "Penambahan data Seleksi Pendaftaran berhasil"
     );
   });
-  it.only("Penambahan seleksi berdasarkan prodi", () => {
+  it("Penambahan seleksi berdasarkan prodi", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -90,6 +90,45 @@ describe("Seleksi Pendaftar", () => {
       "Pengubahan data Seleksi Pendaftaran berhasil"
     );
   });
-  it("Hapus seleksi pendaftar");
+  it.only("Hapus seleksi pendaftar", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(5) > a")
+      .should("be.visible")
+      .click();
+    //hapus seleksi wawancara
+    cy.get(":nth-child(2) > :nth-child(7) > .btn-danger").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content")
+      .should("contain", "Apakah anda yakin akan menghapus data ini?")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-default")
+      .should("contain", "Cancel")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penghapusan data Seleksi Pendaftaran berhasil"
+    );
+    //hapus seleksi tes cbt
+    cy.get(".btn-danger").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content")
+      .should("contain", "Apakah anda yakin akan menghapus data ini?")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-default")
+      .should("contain", "Cancel")
+      .and("be.visible");
+    cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penghapusan data Seleksi Pendaftaran berhasil"
+    );
+  });
   it("Salin data seleksi pendaftar");
 });
