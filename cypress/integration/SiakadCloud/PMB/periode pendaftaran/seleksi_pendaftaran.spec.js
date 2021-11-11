@@ -43,7 +43,32 @@ describe("Seleksi Pendaftar", () => {
       "Penambahan data Seleksi Pendaftaran berhasil"
     );
   });
-  it.only("Penambahan seleksi berdasarkan prodi", () => {});
+  it.only("Penambahan seleksi berdasarkan prodi", () => {
+    cy.visit("/spmb/list_periode");
+    cy.contains("a", /^2020\/2021 Genap$/)
+      .click()
+      .wait(0);
+    cy.get("[data-testid=collapseidgelombang]").click();
+    cy.contains("a", /^Gelombang 4$/)
+      .click()
+      .wait(0);
+    cy.get(".text-right > .btn-info").click();
+    cy.get("#sidebar-menu-list > :nth-child(5) > a")
+      .should("be.visible")
+      .click();
+    cy.get("#unit").select("S1 - Sistem Informasi").wait(0);
+    //tambah seleksi tes toefl
+    cy.get("#i_idjenisseleksi").select("13 - TES TOEFL");
+    cy.get("#i_urutanseleksi").select("1");
+    cy.get("#i_prosentasenilai").type("50%");
+    cy.get("#i_tglmulai").type("11-11-2021").tab();
+    cy.get("#i_tglselesai").type("30-11-2021").tab();
+    cy.get("#insert-row-ms > :nth-child(7) > .btn").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penambahan data Seleksi Pendaftaran berhasil"
+    );
+  });
   it("Ubah seleksi pendaftaran", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
