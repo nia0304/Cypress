@@ -8,6 +8,7 @@ describe("List Jadwal Seleksi", () => {
 
     it("Tambah Jadwal Seleksi", () => {
         cy.visit('/spmb/list_jadwal');
+        //pilih filter
         cy.get("#periode").select("2020/2021 Genap");
         cy.wait(5000);
         cy.get("#jalur").select("Mandiri");
@@ -16,6 +17,7 @@ describe("List Jadwal Seleksi", () => {
         cy.wait(5000);
         cy.get("#sistem").select("Reguler A");
         cy.wait(5000);
+        //tambah jadwal seleksi
         cy.get("#wrap-button > .btn-success").click();
         cy.get("header").scrollIntoView();
         cy.get("#idjenispilihan").select("IPA").should("have.value", "IPA");
