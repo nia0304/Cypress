@@ -127,10 +127,10 @@ describe("List Jadwal Seleksi", () => {
       );
       cy.get("#form_list > div > table").getTable().should(tableData => { 
         //        hasil log data diletakkan di fixture          
-                cy.log(tableData)
-        //    cy.fixture('list_periode.json').then((dataFixture) => {
-        //              expect(tableData).to.deep.equal(dataFixture)
-        //    })
+        //cy.log(tableData);
+        cy.fixture('Jadwal Seleksi/list_jadwal.json').then((dataFixture) => {
+          expect(tableData).to.deep.equal(dataFixture)
+        });
       });
   });
 });
