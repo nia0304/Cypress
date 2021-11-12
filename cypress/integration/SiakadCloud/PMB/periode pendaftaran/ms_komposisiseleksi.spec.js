@@ -6,7 +6,7 @@ describe("Komposisi Seleksi", () => {
         cy.modulpmb();
     });
 
-    it("Tambah Komposisi Seleksi dengan prosentase 100%", () => {
+    it.only("Tambah Komposisi Seleksi dengan prosentase 100%", () => {
         cy.visit("/spmb/list_periode");
         cy.contains("a", /^2020\/2021 Genap$/).click().wait(0);
         cy.get("[data-testid=collapseidgelombang]").click();
@@ -32,7 +32,10 @@ describe("Komposisi Seleksi", () => {
         cy.get(".alert").should("contain","Penambahan data Komposisi Seleksi berhasil");
         //validasi data tabel
         cy.get("#form_list > div > table").getTable().should(tableData => {
-            cy.log(tableData)
+            //cy.log(tableData)
+            cy.fixture('list_komposisiseleksi.json').then((dataFixture) => {
+                expect(tableData).to.deep.equal(dataFixture)
+              });
         });
     });
 
@@ -96,7 +99,7 @@ describe("Komposisi Seleksi", () => {
         cy.get(".alert").should("contain","Penghapusan data Komposisi Seleksi berhasil");
     });
 
-    it.only("Salin data komposisi seleksi", () => {
+    it("Salin data komposisi seleksi", () => {
         cy.visit("/spmb/list_periode");
         cy.contains("a", /^2020\/2021 Genap$/).click().wait(0);
         cy.get("[data-testid=collapseidgelombang]").click();
