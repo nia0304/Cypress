@@ -58,7 +58,7 @@ describe("Dashboard Tahapan Alur PMB", () => {
     cy.get("#sistem").select("Reguler A");
   });
 
-  it.only("select filter periode", () => {
+  it("select filter periode", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2021\/2022 Gasal$/).click();
     cy.contains("a", /^2022 Gasal$/).click();

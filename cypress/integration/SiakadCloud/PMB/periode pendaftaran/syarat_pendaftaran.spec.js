@@ -109,5 +109,15 @@ describe("Syarat Pendaftaran", () => {
       .and("be.visible");
     cy.get(".modal-footer > .btn-default").should("contain", "Cancel");
     cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should("contain", "Salin Pengaturan berhasil");
+    //get table assertion
+    cy.get("#form_list > div > table")
+      .getTable()
+      .should((tableData) => {
+        // cy.log(tableData);
+        cy.fixture("syarat_pendaftaran.json").then((dataFixture) => {
+          expect(tableData).to.deep.equal(dataFixture);
+        });
+      });
   });
 });
