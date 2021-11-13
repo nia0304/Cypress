@@ -40,7 +40,7 @@ describe("Syarat Pendaftaran", () => {
     cy.get("#insert-row-ms > :nth-child(6) > .btn").click();
   });
 
-  it.only("Ubah syarat pendaftaran", () => {
+  it("Ubah syarat pendaftaran", () => {
     cy.visit("/spmb/list_periode");
     cy.filterlistperiodependaftaran();
     cy.get("#sidebar-menu-list > :nth-child(7) > a")
@@ -54,6 +54,30 @@ describe("Syarat Pendaftaran", () => {
     cy.get(".alert").should(
       "contain",
       "Pengubahan data Syarat Pendaftaran berhasil"
+    );
+  });
+  it.only("Hapus syarat pendaftaran", () => {
+    cy.visit("/spmb/list_periode");
+    cy.filterlistperiodependaftaran();
+    cy.get("#sidebar-menu-list > :nth-child(7) > a")
+      .should("be.visible")
+      .click();
+    cy.get(":nth-child(2) > :nth-child(6) > .btn-danger").click();
+    cy.get(".bootbox > .modal-dialog > .modal-content").should(
+      "contain",
+      "Apakah anda yakin akan menghapus data ini?"
+    );
+    cy.get(".modal-footer > .btn-default").should("contain", "Cancel");
+    cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penghapusan data Syarat Pendaftaran berhasil"
+    );
+    cy.get(":nth-child(2) > :nth-child(6) > .btn-danger").click();
+    cy.get(".modal-footer > .btn-primary").click();
+    cy.get(".alert").should(
+      "contain",
+      "Penghapusan data Syarat Pendaftaran berhasil"
     );
   });
 });
