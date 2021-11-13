@@ -1,3 +1,4 @@
+//untuk memilih modul pmb di awal
 Cypress.Commands.add("modulpmb", () => {
   cy.get(".spmb > .inner").click(); //pilih modul pmb
   cy.get("#spmb > div > div:nth-child(2)").click(); //pilih role login
@@ -22,10 +23,21 @@ Cypress.Commands.add("filterdashboard", () => {
 });
 
 // untuk masuk ke modul pmb
-Cypress.Commands.add('openmodulpmb', () => {
-	cy.get('.spmb').click() //pilih modul pmb
-	cy.get('#spmb > div > div.role_box').click() //pilih role login
-})
+Cypress.Commands.add("openmodulpmb", () => {
+  cy.get(".spmb").click(); //pilih modul pmb
+  cy.get("#spmb > div > div.role_box").click(); //pilih role login
+});
+
+Cypress.Commands.add("filterlistperiodependaftaran", () => {
+  cy.contains("a", /^2020\/2021 Genap$/)
+    .click()
+    .wait(0);
+  cy.get("[data-testid=collapseidgelombang]").click();
+  cy.contains("a", /^Gelombang 4$/)
+    .click()
+    .wait(0);
+  cy.get(".text-right > .btn-info").click();
+});
 
 //untuk menentukan 4 filter dashboard pmb secara statis
 Cypress.Commands.add("actionfilterdashboard", () => {
