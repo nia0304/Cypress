@@ -1,0 +1,41 @@
+[
+    {
+        "": "",
+        "JenisProgram": "IPA",
+        "Seleksi": "TES CBT",
+        "Ruang": "AULA PUSTAKA UNILAK LANTAI I IPA",
+        "Tanggal": "17 Jun 2020",
+        "Mulai": "07:00:00",
+        "Selesai": "16:00:00",
+        "Kuota": "100",
+        "Peserta": "10",
+        "No. Ujian": "456000006 - 456000021",
+        "Aksi": "\n                                                                                                                                                                                                                                                                                                    "
+    },
+    {
+        "": "",
+        "JenisProgram": "IPA",
+        "Seleksi": "TES CBT",
+        "Ruang": "Ruang 111",
+        "Tanggal": "1 Okt 2021",
+        "Mulai": "11:00:00",
+        "Selesai": "14:00:00",
+        "Kuota": "1",
+        "Peserta": "1",
+        "No. Ujian": "456000022 - 456000022",
+        "Aksi": "\n                                                                                                                                                                                                                                                                                                    "
+    },
+    {
+        "": "",
+        "JenisProgram": "IPA",
+        "Seleksi": "KELENGKAPAN",
+        "Ruang": "AULA PUSTAKA UNILAK LANTAI I IPA",
+        "Tanggal": "2 Okt 2021",
+        "Mulai": "11:00:00",
+        "Selesai": "14:00:00",
+        "Kuota": "100",
+        "Peserta": "0",
+        "No. Ujian": "",
+        "Aksi": "\n                                                                                                                                                                                                                                                                                                    "
+    }
+]

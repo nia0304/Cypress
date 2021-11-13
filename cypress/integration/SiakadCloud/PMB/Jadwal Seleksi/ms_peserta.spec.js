@@ -6,7 +6,7 @@ describe("Peserta Seleksi", () => {
       cy.modulpmb();
     });
 
-    it("Generate Peserta Seleksi", () => {
+    it.only("Generate Peserta Seleksi", () => {
         cy.visit('/spmb/list_jadwal');
         cy.get("#periode").select("2020/2021 Genap");
         cy.wait(5000);
@@ -25,13 +25,13 @@ describe("Peserta Seleksi", () => {
         cy.get("#form_list > div > table").getTable().should(tableData => { 
 //        hasil log data diletakkan di fixture          
 //        cy.log(tableData)
-           cy.fixture('list_peserta_seleksi.json').then((dataFixture) => {
+          cy.fixture('Jadwal Seleksi/list_peserta_seleksi.json').then((dataFixture) => {
                 expect(tableData).to.deep.equal(dataFixture)
-            });
+              });
         });
     });
 
-    it.only("Hapus Peserta Seleksi", () => {
+    it("Hapus Peserta Seleksi", () => {
       cy.visit('/spmb/list_jadwal');
       cy.get("#periode").select("2020/2021 Genap");
       cy.wait(5000);

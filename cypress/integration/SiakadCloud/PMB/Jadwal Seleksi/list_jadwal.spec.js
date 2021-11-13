@@ -8,6 +8,7 @@ describe("List Jadwal Seleksi", () => {
 
     it("Tambah Jadwal Seleksi", () => {
         cy.visit('/spmb/list_jadwal');
+        //pilih filter
         cy.get("#periode").select("2020/2021 Genap");
         cy.wait(5000);
         cy.get("#jalur").select("Mandiri");
@@ -16,6 +17,7 @@ describe("List Jadwal Seleksi", () => {
         cy.wait(5000);
         cy.get("#sistem").select("Reguler A");
         cy.wait(5000);
+        //tambah jadwal seleksi
         cy.get("#wrap-button > .btn-success").click();
         cy.get("header").scrollIntoView();
         cy.get("#idjenispilihan").select("IPA").should("have.value", "IPA");
@@ -125,10 +127,10 @@ describe("List Jadwal Seleksi", () => {
       );
       cy.get("#form_list > div > table").getTable().should(tableData => { 
         //        hasil log data diletakkan di fixture          
-                cy.log(tableData)
-        //    cy.fixture('list_periode.json').then((dataFixture) => {
-        //              expect(tableData).to.deep.equal(dataFixture)
-        //    })
+        //cy.log(tableData);
+        cy.fixture('Jadwal Seleksi/list_jadwal.json').then((dataFixture) => {
+          expect(tableData).to.deep.equal(dataFixture)
+        });
       });
   });
 });

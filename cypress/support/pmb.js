@@ -46,7 +46,7 @@ Cypress.Commands.add("actionfilterdashboard", () => {
     .should("have.value", "20202")
     .wait(0);
   cy.get("#jalur").select("Mandiri").should("have.value", "1").wait(0);
-  cy.get("#gelombang").select("Gelombang 3").should("have.value", "3").wait(0);
+  cy.get("#gelombang").select("Gelombang 1").should("have.value", "1").wait(0);
   cy.get("#sistem").select("Reguler A").should("have.value", "1");
   //ketika bar sudah berprogres sesuaikan assertion yg diambil
   cy.get(":nth-child(1) > .col-md-12 > .box > .krs-dashboard-box-title").should(
@@ -54,3 +54,37 @@ Cypress.Commands.add("actionfilterdashboard", () => {
     "Tahapan Alur SPMB"
   );
 });
+
+//Meida - untuk menentukan 4 filter dev.siakadcloud dashboard pmb secara statis
+Cypress.Commands.add("actionfilterdashboard", () => {
+  cy.get("#periode")
+    .select("2020/2021 Genap")
+    .should("have.value", "20202")
+    .wait(0);
+  cy.get("#jalur").select("Mandiri S1").should("have.value", "1").wait(0);
+  cy.get("#gelombang").select("Gelombang 1").should("have.value", "1").wait(0);
+  cy.get("#sistem").select("Reguler A").should("have.value", "1");
+  //ketika bar sudah berprogres sesuaikan assertion yg diambil
+  cy.get(":nth-child(1) > .col-md-12 > .box > .krs-dashboard-box-title").should(
+    "contain",
+    "Tahapan Alur SPMB"
+  );
+});
+
+// Meida - menambahkan function untuk filter periode pendaftaran
+Cypress.Commands.add("filterperiodependaftaran", () => {
+  cy.get('.container > .nav > :nth-child(3)').click()
+		cy.get(
+			'.container > .nav > :nth-child(3) > .dropdown-menu > :nth-child(1)'
+		).click()
+		cy.get('#accordion > div:nth-child(1) > div.box-header > h4 > a')
+		cy.contains('2020/2021 Genap').click()
+		cy.get('#accordion > div:nth-child(2) > div.box-header > h4 > a').click()
+		cy.contains('Mandiri S1').click()
+		cy.get('#accordion > div:nth-child(3) > div.box-header > h4 > a').click()
+		cy.contains('Gelombang 4').click()
+    cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Periode Pendaftaran'
+		)
+})
