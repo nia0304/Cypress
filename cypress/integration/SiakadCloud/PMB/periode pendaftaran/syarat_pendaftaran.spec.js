@@ -7,7 +7,7 @@ describe("Syarat Pendaftaran", () => {
     cy.filterdashboard();
   });
 
-  it("Penambahan syarat pendaftaran", () => {
+  it.only("Penambahan syarat pendaftaran", () => {
     cy.visit("/spmb/list_periode");
     cy.filterlistperiodependaftaran();
     cy.get("#sidebar-menu-list > :nth-child(7) > a")
@@ -82,7 +82,7 @@ describe("Syarat Pendaftaran", () => {
       "Penghapusan data Syarat Pendaftaran berhasil"
     );
   });
-  it.only("Salin syarat pendaftar", () => {
+  it("Salin syarat pendaftar", () => {
     cy.visit("/spmb/list_periode");
     cy.filterlistperiodependaftaran();
     cy.get("#sidebar-menu-list > :nth-child(7) > a")
@@ -115,9 +115,11 @@ describe("Syarat Pendaftaran", () => {
       .getTable()
       .should((tableData) => {
         // cy.log(tableData);
-        cy.fixture("syarat_pendaftaran.json").then((dataFixture) => {
-          expect(tableData).to.deep.equal(dataFixture);
-        });
+        cy.fixture("periode pendaftaran/syarat_pendaftaran.json").then(
+          (dataFixture) => {
+            expect(tableData).to.deep.equal(dataFixture);
+          }
+        );
       });
   });
 });

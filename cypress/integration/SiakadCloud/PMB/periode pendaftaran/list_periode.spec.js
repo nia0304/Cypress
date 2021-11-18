@@ -22,9 +22,11 @@ describe("List Periode Pendaftaran", () => {
       .should((tableData) => {
         //        hasil log data diletakkan di fixture
         //        cy.log(tableData)
-        cy.fixture("list_periode.json").then((dataFixture) => {
-          expect(tableData).to.deep.equal(dataFixture);
-        });
+        cy.fixture("periode pendaftaran/list_periode.json").then(
+          (dataFixture) => {
+            expect(tableData).to.deep.equal(dataFixture);
+          }
+        );
       });
   });
 
