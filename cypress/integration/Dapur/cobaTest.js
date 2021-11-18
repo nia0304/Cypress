@@ -2,9 +2,11 @@
 
 describe('Program Studi', () => {
 	beforeEach('Login Siakad', () => {
-		cy.loginuser()
+		// cy.loginuser()
+		cy.loginuserdev()
 		cy.openmodulpmb()
-		cy.actionfilterdashboard()
+		// cy.actionfilterdashboard()
+		cy.actionfilterdashboarddev()
 	})
 	it('Penambahan program studi', () => {
 		cy.visit('/spmb/list_periode')
@@ -67,7 +69,7 @@ describe('Program Studi', () => {
 			.click()
 		// get element check pilihan program studi baris Kedua = pilihan(2)
 	})
-	it.only('Penambahan Penguji di jadwal seleksi', () => {
+	it('Penambahan Penguji di jadwal seleksi', () => {
 		cy.visit('/spmb/list_jadwal')
 		cy.get(
 			'#form_list > div > table > tbody > tr:nth-child(1) > :nth-child(11) > .btn-info'
@@ -88,7 +90,7 @@ describe('Program Studi', () => {
 	})
 
 	// Menguji Periode Pendaftaran dengan iframe
-	it('Penambahan data periode pendaftaran', () => {
+	it('TES iframe saat Penambahan data periode pendaftaran', () => {
 		cy.get('.container > .nav > :nth-child(3)').click() // pilih memilih menu Referensi
 		// pilih memilih sub menu Seleksi
 		cy.get(
@@ -123,7 +125,7 @@ describe('Program Studi', () => {
 		)
 		cy.get('#idperiode').select('2020/2021 Genap')
 		cy.get('#idgelombang').select('Gelombang 4')
-		cy.get('#idjalurpendaftaran').select('Mandiri')
+		cy.get('#idjalurpendaftaran').select('Mandiri S1')
 		cy.get('#idsistemkuliah').select('Reguler A')
 		cy.get('#status').select('Aktif')
 		// data pelengkap
@@ -144,7 +146,25 @@ describe('Program Studi', () => {
 		cy.get('#jmlurutankodependaftar').select('1')
 		cy.get('#prefixnoujian').clear().type('10')
 		cy.get('#jmlurutannoujian').select('1')
-		cy.get('#urutan').clear().type('10')
+
+		// START Mencoba Iframe
+		cy.get('#item-keterangan > a').click()
+		const iframe = cy
+			.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then((current)=>{
+				let stripe = cy.wrap(current)
+				stripe.type('hello')})
+
+		const iframe1 = cy
+			.get(':nth-child(3) > div.col-md-12 > .wysihtml5-sandbox')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then(cy.wrap)
+
+		iframe1.clear().type('Tes Iframe')
+		// END Mencoba Iframe
 
 		// data pengaturan
 		// cy.get('#item-pengaturan').type('2015')
@@ -163,7 +183,6 @@ describe('Program Studi', () => {
 		// cy.get('#waktuumumkankelulusan').type('2400')
 
 		// data keterangan
-		// cy.get('#item-keterangan > a').click()
 		// cy.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
 		// 	.then(($element) => {
 		// 		const $body = $element.contents().find('body')
@@ -172,11 +191,27 @@ describe('Program Studi', () => {
 		//         stripe.find('body').eq(0).click().type('4242424242424242')
 		// 		// stripe.type('aku', { force: true })
 		// 	})
+
+		// const iframe2 = cy
+		// 	.get(':nth-child(5) > div.col-md-12 > .wysihtml5-sandbox')
+		// 	.its('0.contentDocument.body')
+		// 	.should('be.visible')
+		// 	.then(cy.wrap).type('bbba')
+
+		// iframe.clear().type('hello')
+
+		// const iframe = cy
+		// 	.get(':nth-child(3) > div.col-md-12 > .wysihtml5-sandbox').then($element) =>
+		// 	{
+		// 		const $body = 
+		// 	}
 		// selector iframe masih error
-		cy.get('.btn-success').click()
-		cy.get(
-			'.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
-		).click()
+		// cy.get('.btn-success').click()
+		// cy.get(
+		// 	'.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
+		// ).click()
+
+
 		// cy.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
 		// 	.its('0.contentDocument.body')
 		// 	.should('not.be.empty')
@@ -211,19 +246,64 @@ describe('Program Studi', () => {
 
 		// 		cy.wrap($body).find('input:eq(2)').type('123')
 		// 	})
-		// cy.get('#keterangan')
-		// 	.its('0.contentDocument.body`')
+		// cy.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
+		// 	.its('0.contentDocument.body')
 		// 	.should('be.visible')
 		// 	.then(cy.wrap)
 		// 	.type('aaaaaku')
 		// type('blassfghjjk bhjkkjh ffgggjhkjkjkjkjkjkjkjk')
 	})
 
-	// it.only('test Iframe', () => {
-	//     cy.visit('https://www.zkoss.org/zkdemo/composite/iframe/')
-	//     cy.xpath("//*[@class='z-iframe']").then(function($ele) {
-	//         var ifele = $ele.contents().find('search-box')
-	//         cy.wrap(ifele).click()
-	//     })
-	// })
+	// Mengetes Ini bisadengan 1 iframe saja
+	it('test Iframe', () => {
+		cy.visit('https://the-internet.herokuapp.com/iframe')
+		const iframe = cy
+			.get('#mce_0_ifr')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then(cy.wrap)
+
+		iframe.clear()
+		iframe.type('hello')
+	})
+
+	it.only('Penambahan Data Kuisoner', () => {
+		cy.visit('/spmb/list_periode')
+		cy.get('.content-header > h1').should(
+			'contain',
+			'Daftar Periode Pendaftaran'
+		)
+		// Start untuk menampilkan menu periode pendaftaran ngetes click filternya
+		// cy.get('.container > .nav > :nth-child(3)').click()
+		// cy.get(
+		// 	'.container > .nav > :nth-child(3) > .dropdown-menu > :nth-child(1)'
+		// ).click()
+		// cy.get('#accordion > div:nth-child(1) > div.box-header > h4 > a')
+		// cy.contains('2020/2021 Genap').click()
+		// cy.get('#accordion > div:nth-child(2) > div.box-header > h4 > a').click()
+		// cy.contains('Mandiri S1').click()
+		// cy.get('#accordion > div:nth-child(3) > div.box-header > h4 > a').click()
+		// cy.contains('Gelombang 4').click()
+
+		// cy.get('.krs-float-title > div > .fs-14').should(
+		// 	'contain',
+		// 	'Persiapan Data: Periode Pendaftaran'
+		// )
+		// cy.get('body > nav > div.container > form > button').click()
+		// cy.get('section.content > div.alert.alert-success').should(
+		// 	'contain',
+		// 	'Penyimpanan data cek Proses Alur SPMB berhasil'
+		// )
+					
+		cy.filterperiodependaftaran()
+
+
+		cy.get(':nth-child(1) > .text-right > .btn-info').click()
+		cy.visit('/spmb/ms_syaratdaftar/164')
+		cy.get('#i_idsyarat').select('Bukti Biaya Daftar')
+		cy.get('#insert-row-ms > td > .btn-success').click()
+		cy.get('#i_idsyarat').select('Bukti Terdaftar di Forlap DIKTI')
+		cy.get('.btn-success').first().click()
+		cy.get('.alert').should('contain', 'Penambahan data Syarat Pendaftaran berhasil')
+	})
 })
