@@ -56,7 +56,7 @@ Cypress.Commands.add("actionfilterdashboard", () => {
 });
 
 //Meida - untuk menentukan 4 filter dev.siakadcloud dashboard pmb secara statis
-Cypress.Commands.add("actionfilterdashboard", () => {
+Cypress.Commands.add("actionfilterdashboarddev", () => {
   cy.get("#periode")
     .select("2020/2021 Genap")
     .should("have.value", "20202")
