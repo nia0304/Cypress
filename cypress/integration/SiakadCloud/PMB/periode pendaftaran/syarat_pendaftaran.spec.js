@@ -7,7 +7,7 @@ describe("Syarat Pendaftaran", () => {
     cy.filterdashboard();
   });
 
-  it.only("Penambahan syarat pendaftaran", () => {
+  it("Penambahan syarat pendaftaran", () => {
     cy.visit("/spmb/list_periode");
     cy.filterlistperiodependaftaran();
     cy.get("#sidebar-menu-list > :nth-child(7) > a")
