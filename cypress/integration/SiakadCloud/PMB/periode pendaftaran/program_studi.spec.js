@@ -6,7 +6,7 @@ describe("Program Studi", () => {
     cy.modulpmb();
     cy.filterdashboard();
   });
-  it("Penambahan program studi", () => {
+  it.only("Penambahan program studi", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
@@ -278,7 +278,7 @@ describe("Program Studi", () => {
       "Penghapusan data Sebaran Prodi berhasil"
     );
   });
-  it.only("Salin data program studi", () => {
+  it("Salin data program studi", () => {
     cy.visit("/spmb/list_periode");
     cy.contains("a", /^2020\/2021 Genap$/)
       .click()
