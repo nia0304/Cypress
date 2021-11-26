@@ -49,7 +49,7 @@ describe('Registrasi Ulang', ()=> {
             })
         })
       })
-      it.only('Batal Generate NIM', ()=> {
+      it('Batal Generate NIM', ()=> {
         cy.visit("/spmb/set_registrasi");
         cy.get('#idpendaftar_label').type('khalil')
         cy.get('.tt-suggestions div').each(($el, index, $list) => {
