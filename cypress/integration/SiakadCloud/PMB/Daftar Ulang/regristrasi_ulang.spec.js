@@ -6,7 +6,7 @@ describe('Registrasi Ulang', ()=> {
         cy.modulpmb();
         cy.filterdashboard();
       });
-      it.only('Validasi berkas daftar ulang pendaftar', ()=> {
+      it('Validasi berkas daftar ulang pendaftar', ()=> {
         cy.visit("/spmb/set_registrasi");
         cy.get('#idpendaftar_label').type('khalil')
         cy.get('.tt-suggestions div').each(($el, index, $list) => {
