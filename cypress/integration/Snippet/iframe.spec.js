@@ -21,7 +21,8 @@ describe('Tes Iframe gofeeder', () => {
             .then(cy.wrap)
     }
     it('tes iframe', () => {
-        cy.visit('https://demo.gofeedercloud.com');
+        cy.visit('https://demo.gofeedercloud.com/index.php/login');
+        cy.waitFor("Login")
         cy.get(':nth-child(3) > input').type("VenomSymbiote")
         cy.get('#password-field').type("SemuaBeres2016")
         cy.get('.col-lg-8 > .btn-login').click()
