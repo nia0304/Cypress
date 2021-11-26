@@ -15,5 +15,20 @@ describe("List Nilai Seleksi", () => {
             }
         });
         cy.get(".input-group-btn > .btn").click();
+        cy.get("#form_list > div.box.box-success > div > table.table.table-bordered.table-striped.dataTable > tbody > tr:nth-child(1) > td:nth-child(4)")
+          .should("contain" , "123000012");
+        cy.get("#form_list > div.box.box-success > div > table.table.table-bordered.table-striped.dataTable > tbody > tr:nth-child(2) > td:nth-child(3)")
+          .should("contain" , "TEST123");
+        cy.get("tbody > :nth-child(3) > :nth-child(3)")
+          .should("contain" , "Pilihan 1 : AKUNTANSI")
+          .should("contain" , "Pilihan 2 : Manajemen ");
+        cy.get("tbody > :nth-child(5) > :nth-child(3)")
+          .should("contain" , "2020/2021 Genap - Mandiri - Gelombang 1 - Reguler A");
+        cy.get("#form_list > div.box.box-success > div > table:nth-child(2) > tbody > tr:nth-child(1) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2)")
+          .type("78.00");
+        cy.get("#form_list > div.box.box-success > div > table:nth-child(2) > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(2) > td:nth-child(2)")
+          .type("78");
+        cy.get("tbody > tr:nth-child(1) > td:nth-child(2) > label > div > ins").click();
+
     });
 });
