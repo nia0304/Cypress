@@ -6,7 +6,7 @@ describe('Registrasi Ulang', ()=> {
         cy.modulpmb();
         cy.filterdashboard();
       });
-      it('Validasi berkas daftar ulang pendaftar', ()=> {
+      it.only('Validasi berkas daftar ulang pendaftar', ()=> {
         cy.visit("/spmb/set_registrasi");
         cy.get('#idpendaftar_label').type('khalil')
         cy.get('.tt-suggestions div').each(($el, index, $list) => {
@@ -21,7 +21,7 @@ describe('Registrasi Ulang', ()=> {
                 expect(tableData).to.deep.equal(dataFixture)
             })
         })
-        // cy.get('#idpilihansyarat').select('SKHUN')
+        cy.get('select[name="idpilihansyarat[14]"]').select("SKUN");
         const filetranskrip = "File Upload/lorem-ipsum.pdf";
         cy.get(':nth-child(3) > :nth-child(3) > input').attachFile(filetranskrip)
         cy.get(':nth-child(3) > [align="center"] > .labelinput > .icheckbox_minimal > .iCheck-helper').click()
