@@ -6,7 +6,7 @@ describe("List Nilai Seleksi", () => {
       cy.modulpmb();
     });
 
-    it.only("Edit Nilai Seleksi" , () => {
+    it("Edit Nilai Seleksi" , () => {
         cy.visit("/spmb/list_nilaiseleksi");
         cy.get("#periode").select("2020/2021 Genap");
         cy.wait(5000);
@@ -31,7 +31,7 @@ describe("List Nilai Seleksi", () => {
         cy.get(".alert").should("contain","Pengubahan data Keterangan Seleksi Pendaftar berhasil");
     });
 
-    it("Import Nilai Seleksi" , () => {
+    it.only("Import Nilai Seleksi" , () => {
       cy.visit("/spmb/list_nilaiseleksi");
       cy.get("#periode").select("2020/2021 Genap");
       cy.wait(5000);
@@ -47,8 +47,15 @@ describe("List Nilai Seleksi", () => {
       cy.wait(5000);
       cy.get("#wrap-button > .btn").click();
       //klik download
-      //cy.get(":nth-child(9) > .col-md-12 > .btn").click();
+      cy.get(":nth-child(9) > .col-md-12 > .btn").should("be.visible").click();
+      cy.readFile("cypress/downloads/template_import_nilai_pendaftar.xlsx").should("exist");
       //upload template
-
+      const filepath = 'File Upload/template_import_nilai_pendaftar.xlsx'
+      cy.get("#modal_upload > div > div > div.modal-body > div:nth-child(1) > div.col-md-9 > span > input[type=file]")
+        .attachFile(filepath);
+      cy.get("#form_list > #modal_upload > .modal-dialog > .modal-content > .modal-footer > .btn-success").click();
+      cy.get(".modal-footer > .btn-primary").click();
+      cy.get("header").scrollIntoView();
+      cy.get(".alert").should("contain","Import nilai pendaftar : Berhasil = 22, Gagal = 0");
   });
 });
