@@ -8,8 +8,8 @@ describe('Program Studi', () => {
 		// cy.actionfilterdashboard()
 		cy.actionfilterdashboarddev()
 	})
-	it('Penambahan program studi', () => {
-		cy.visit('/spmb/list_periode')
+	it.only('Penambahan program studi', () => {
+		cy.visit('/spmb/set_syaratseleksi')
 		cy.contains('a', /^2020\/2021 Genap$/)
 			.click()
 			.wait(0)
@@ -300,10 +300,11 @@ describe('Program Studi', () => {
 
 		cy.get(':nth-child(1) > .text-right > .btn-info').click()
 		cy.visit('/spmb/ms_syaratdaftar/164')
-		cy.get('#i_idsyarat').select('Bukti Biaya Daftar')
+		cy.get('#i_idsyarat').select('Fotokopi Legalisir SKHUN')
 		cy.get('#insert-row-ms > td > .btn-success').click()
-		cy.get('#i_idsyarat').select('Bukti Terdaftar di Forlap DIKTI')
-		cy.get('.btn-success').first().click()
+		cy.get('.alert').should('contain', 'Penambahan data Syarat Pendaftaran berhasil')
+		cy.get('#i_idsyarat').select('Fotokopi  KTP')
+		cy.get('#insert-row-ms > td > .btn-success').click()
 		cy.get('.alert').should('contain', 'Penambahan data Syarat Pendaftaran berhasil')
 	})
 })
