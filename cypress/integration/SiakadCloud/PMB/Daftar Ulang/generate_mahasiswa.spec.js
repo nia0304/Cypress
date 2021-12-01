@@ -6,7 +6,7 @@ describe('Generate Mahasiswa', ()=> {
         cy.modulpmb();
         cy.filterdashboard();
       });
-      it('Generate & batal NIM per pendaftar', ()=> {
+      it('Generate per pendaftar', ()=> {
         cy.visit("/spmb/set_mahasiswa");
         cy.get('#gelombang').select('Gelombang 4').wait(0)
         //generate nim
@@ -55,7 +55,7 @@ describe('Generate Mahasiswa', ()=> {
       });
       cy.get('.alert').should('contain','Berhasil 1 dan Gagal 0 generate NIM Pendaftar')
       })
-      it.only('Batal generate NIM Semua', ()=> {
+      it('Batal generate NIM Semua', ()=> {
         cy.visit("/spmb/set_mahasiswa");
         cy.get('#gelombang').select('Gelombang 4').wait(0)
         cy.get('#wrap-button > .btn-warning').click()
@@ -65,5 +65,41 @@ describe('Generate Mahasiswa', ()=> {
         cy.get('.alert').should('contain','Berhasil 1 dan Gagal 0 membatalkan NIM Pendaftar')
       })
       
+      it('Genarate mahasiswa per pendaftar', ()=> {
+        cy.visit("/spmb/set_mahasiswa");
+        cy.get('#gelombang').select('Gelombang 4').wait(0)
+        cy.get(':nth-child(9) > .btn-success').click()
+        cy.get('.bootbox > .modal-dialog > .modal-content').should('contain', 'Apakah anda yakin akan melakukan generate Mahasiswa?')
+        cy.get('.modal-footer > .btn-default').should('contain', 'Cancel')
+        cy.get('.modal-footer > .btn-primary').click()
+        cy.get('.alert').should('contain', 'Berhasil Generate Mahasiswa')
+      })
+      it('Batal genarate mahasiswa per pendaftar', ()=> {
+        cy.visit("/spmb/set_mahasiswa");
+        cy.get('#gelombang').select('Gelombang 4').wait(0)
+        cy.get(':nth-child(9) > .btn').click()
+        cy.get('.bootbox > .modal-dialog > .modal-content').should('contain', 'Apakah anda yakin akan melakukan pembatalan Mahasiswa?')
+        cy.get('.modal-footer > .btn-default').should('contain', 'Cancel')
+        cy.get('.modal-footer > .btn-primary').click()
+        cy.get('.alert').should('contain', 'Berhasil Batalkan Mahasiswa')
+      })
+      it('Genarate mahasiswa semua', ()=> {
+        cy.visit("/spmb/set_mahasiswa");
+        cy.get('#gelombang').select('Gelombang 4').wait(0)
+        cy.get('#wrap-button > .btn-success').click()
+        cy.get('.bootbox > .modal-dialog > .modal-content').should('contain', 'Apakah anda yakin akan melakukan generate Mahasiswa?')
+        cy.get('.modal-footer > .btn-default').should('contain', 'Cancel')
+        cy.get('.modal-footer > .btn-primary').click()
+        cy.get('.alert').should('contain', 'Berhasil 1 dan Gagal 0 generate Mahasiswa')
+      })
+      it('Batal Genarate mahasiswa semua', ()=> {
+        cy.visit("/spmb/set_mahasiswa");
+        cy.get('#gelombang').select('Gelombang 4').wait(0)
+        cy.get('#wrap-button > .btn-danger').click()
+        cy.get('.bootbox > .modal-dialog > .modal-content').should('contain', 'Apakah anda yakin akan melakukan pembatalan Mahasiswa?')
+        cy.get('.modal-footer > .btn-default').should('contain', 'Cancel')
+        cy.get('.modal-footer > .btn-primary').click()
+        cy.get('.alert').should('contain', 'Berhasil 1 dan Gagal 0 menghapus Mahasiswa')
+      })
       
 })
