@@ -15,10 +15,10 @@ describe('download file', ()=> {
 			}
 		})
         cy.get('.input-group-btn > .btn').click()
-        cy.downloadFile('http://localhost/siacloud/spmb/../uploads//fileadministrasi/35415_14','Downloads','lorem-ipsum.pdf')
+        cy.downloadFile('http://localhost/siacloud/spmb/../uploads//fileadministrasi/35415_14','cypress/downloads','lorem-ipsum.pdf')
         
-        const fileName = 'Downloads/lorem-ipsum.pdf'
-        cy.log(fileName) 
+        const fileName = 'cypress/downloads/lorem-ipsum.pdf'
+        // cy.log(fileName) 
         cy.readFile(fileName)
     
     })
