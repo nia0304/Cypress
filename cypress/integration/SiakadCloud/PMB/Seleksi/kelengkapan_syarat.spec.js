@@ -1,4 +1,4 @@
-describe("List Nilai Seleksi", () => {
+describe("Test Kelengkapan Seleksi", () => {
     beforeEach('Login Siakad', () => {
 		cy.loginuserdev()
 		cy.openmodulpmb()
