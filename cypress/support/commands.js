@@ -52,7 +52,7 @@ Cypress.Commands.add("loginopsional", (username, password) => {
 });
 
 // user login (meida)
-Cypress.Commands.add("loginuser", () => {
+Cypress.Commands.add("loginuserstaging", () => {
   cy.visit("/");
   cy.fixture("dataLogin").then((data) => {
     cy.get("#userid").type(data.username);
@@ -64,7 +64,7 @@ Cypress.Commands.add("loginuser", () => {
 // user login (meida)
 Cypress.Commands.add("loginuserdev", () => {
   cy.visit("/");
-  cy.fixture("dev_login").then((data) => {
+  cy.fixture("dataLogin").then((data) => {
     cy.get("#userid").type(data.username);
     cy.get("#password").type(data.password_dev);
   });
