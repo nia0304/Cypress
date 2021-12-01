@@ -56,7 +56,7 @@ Cypress.Commands.add("loginuser", () => {
   cy.visit("/");
   cy.fixture("dataLogin").then((data) => {
     cy.get("#userid").type(data.username);
-    cy.get("#password").type(data.password);
+    cy.get("#password").type(data.password_staging);
   });
   cy.get(".btn").click();
 });
@@ -66,7 +66,7 @@ Cypress.Commands.add("loginuserdev", () => {
   cy.visit("/");
   cy.fixture("dev_login").then((data) => {
     cy.get("#userid").type(data.username);
-    cy.get("#password").type(data.password);
+    cy.get("#password").type(data.password_dev);
   });
   cy.get(".btn").click();
 });

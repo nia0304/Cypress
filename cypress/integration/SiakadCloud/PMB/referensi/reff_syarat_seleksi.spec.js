@@ -1,6 +1,6 @@
 describe('Ngetes Menu SPMB', function () {
 	beforeEach('Login Siakad', () => {
-		cy.loginuser()
+		cy.loginuserstaging()
 		cy.openmodulpmb()
 		cy.actionfilterdashboard()
 	})

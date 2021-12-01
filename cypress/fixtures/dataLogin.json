@@ -1,4 +1,5 @@
 {
     "username": "meida",
-    "password": "meida456"
+    "password_staging": "meida456",
+    "password_dev": "1234"
   }
