@@ -16,6 +16,7 @@ describe('Registrasi Ulang', () => {
         })
         cy.get('.col-md-6 > .input-group > .input-group-btn > .btn').click();
         cy.get('select[name="idpilihansyarat[27]"]').select("XL");
+        // cy.get('[id="idpilihansyarat[27]"]').select("XL");
         // cy.get('//*[@id="#idpilihansyarat\[27\]"]').select("XL");
     })
 })
