@@ -25,7 +25,7 @@ describe('download file', ()=> {
         cy.visit("/spmb/list_nilaiseleksi");
         cy.get('#wrap-button > .btn').click()
         
-        //download
+        //button download
         cy.window().document().then(function (doc) {
             doc.addEventListener('click', () => {
               setTimeout(function () { doc.location.reload() }, 5000)
