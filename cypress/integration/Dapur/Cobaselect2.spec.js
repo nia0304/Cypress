@@ -10,7 +10,7 @@ describe('Pendaftaran', ()=> {
         cy.wait(0);
         cy.get(':nth-child(3) > .cards-jalur > .card-footer > .row > :nth-child(2) > .btn').click()
         //cy.get('.jalur-sub-header').should('contain', data.namajalur)
-        //cy.get('.btn').click()
+        cy.get('.btn').click()
         //identitas anda
         cy.get('#namapendaftar').type(data.namapendaftar)
         cy.get('#jk_L').check()
