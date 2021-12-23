@@ -75,7 +75,7 @@ describe('Pendaftaran', ()=> {
         cy.get(':nth-child(2) > .btn').click()
 
         //peminatan
-        cy.get('#idjenispilihan').select(data.jenispilihan).should('have.value', 'IPA').wait(0)
+        cy.get('#idjenispilihan').select(data.jenispilihan).wait(0)
         //pilihan1
         cy.get('#select2-pilihan_1-container').click()
         cy.get('.select2-search__field').type(data.pilihan1)
@@ -100,8 +100,15 @@ describe('Pendaftaran', ()=> {
         cy.get(':nth-child(3) > label').click()
         cy.get('.row > :nth-child(1) > .btn').should('contain','Perbarui Data')
         cy.get('#confirm-button').should('contain','Konfirmasi Pendaftaran').click()
-        
-        
+
+        //generate formulir
+        cy.get(':nth-child(1) > .radio > .col-xs-12 > .cards-pilih-metode').click()
+        cy.get('#generate').click()
+        cy.get('.bootbox > .modal-dialog > .modal-content > .modal-body').should('contain', data.alertgenerate)
+        cy.get('.btn-primary').click()
+        cy.get('.main-header').should('contain', 'Selesaikan Pembayaran')
+        cy.get(':nth-child(1) > .btn').should('contain','Cetak Bukti Daftar').and('be.visible')
+        cy.get(':nth-child(2) > .btn').should('contain','Kirim Ulang Email').and('be.visible')
         
 
       })
