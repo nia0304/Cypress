@@ -22,6 +22,7 @@ describe('download file', ()=> {
         cy.readFile(fileName)
     })
     it.only('tes button download', ()=> {
+        // visit url
         cy.visit("/spmb/list_nilaiseleksi");
         cy.get('#wrap-button > .btn').click()
         
@@ -32,6 +33,7 @@ describe('download file', ()=> {
             })
             cy.get(':nth-child(9) > .col-md-12 > .btn').click()
         })
+
         const fileName = 'cypress/downloads/template_import_nilai_pendaftar.xlsx'
         // cy.log(fileName) 
         cy.readFile(fileName)
