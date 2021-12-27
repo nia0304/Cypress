@@ -8,7 +8,7 @@ describe('Program Studi', () => {
 		// cy.actionfilterdashboard()
 		cy.actionfilterdashboarddev()
 	})
-	it.only('Penambahan program studi', () => {
+	it('Penambahan program studi', () => {
 		cy.visit('/spmb/set_syaratseleksi')
 		cy.contains('a', /^2020\/2021 Genap$/)
 			.click()
@@ -149,13 +149,15 @@ describe('Program Studi', () => {
 
 		// START Mencoba Iframe
 		cy.get('#item-keterangan > a').click()
+
 		const iframe = cy
 			.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
 			.its('0.contentDocument.body')
 			.should('be.visible')
-			.then((current)=>{
+			.then((current) => {
 				let stripe = cy.wrap(current)
-				stripe.type('hello')})
+				stripe.type('hello')
+			})
 
 		const iframe1 = cy
 			.get(':nth-child(3) > div.col-md-12 > .wysihtml5-sandbox')
@@ -203,14 +205,13 @@ describe('Program Studi', () => {
 		// const iframe = cy
 		// 	.get(':nth-child(3) > div.col-md-12 > .wysihtml5-sandbox').then($element) =>
 		// 	{
-		// 		const $body = 
+		// 		const $body =
 		// 	}
 		// selector iframe masih error
 		// cy.get('.btn-success').click()
 		// cy.get(
 		// 	'.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
 		// ).click()
-
 
 		// cy.get(':nth-child(1) > div.col-md-12 > .wysihtml5-sandbox')
 		// 	.its('0.contentDocument.body')
@@ -267,7 +268,7 @@ describe('Program Studi', () => {
 		iframe.type('hello')
 	})
 
-	it.only('Penambahan Data Kuisoner', () => {
+	it('Penambahan Data Kuisoner', () => {
 		cy.visit('/spmb/list_periode')
 		cy.get('.content-header > h1').should(
 			'contain',
@@ -294,17 +295,192 @@ describe('Program Studi', () => {
 		// 	'contain',
 		// 	'Penyimpanan data cek Proses Alur SPMB berhasil'
 		// )
-					
-		cy.filterperiodependaftaran()
 
+		cy.filterperiodependaftaran()
 
 		cy.get(':nth-child(1) > .text-right > .btn-info').click()
 		cy.visit('/spmb/ms_syaratdaftar/164')
 		cy.get('#i_idsyarat').select('Fotokopi Legalisir SKHUN')
 		cy.get('#insert-row-ms > td > .btn-success').click()
-		cy.get('.alert').should('contain', 'Penambahan data Syarat Pendaftaran berhasil')
+		cy.get('.alert').should(
+			'contain',
+			'Penambahan data Syarat Pendaftaran berhasil'
+		)
 		cy.get('#i_idsyarat').select('Fotokopi  KTP')
 		cy.get('#insert-row-ms > td > .btn-success').click()
-		cy.get('.alert').should('contain', 'Penambahan data Syarat Pendaftaran berhasil')
+		cy.get('.alert').should(
+			'contain',
+			'Penambahan data Syarat Pendaftaran berhasil'
+		)
 	})
+
+	it.only('tes iframe', () => {
+		cy.get('.container > .nav > :nth-child(3)').click() // pilih memilih menu Referensi
+		// pilih memilih sub menu Seleksi
+		cy.get(
+			'.container > .nav > :nth-child(3) > .dropdown-menu > :nth-child(1)'
+		).click()
+		// start membuka href sub menu
+		cy.get(
+			'body > header > div > div > ul > li:nth-child(3) > ul > li:nth-child(1) > a'
+		)
+			.invoke('attr', 'href') // invoke : cypress get href attribute
+			.then((href) => {
+				cy.visit(href)
+			})
+		// cy.visit('/spmb/data_periode')
+		cy.get('.content-header > h1 > small').should(
+			'contain',
+			'Daftar Periode Pendaftaran'
+		)
+		// cy.get('#wrap-button > .btn-success').click()
+		cy.get('.krs-float-title > div > .fs-14').should(
+			'contain',
+			'Persiapan Data: Periode Pendaftaran'
+		)
+
+		cy.get('#wrap-button > .btn-success')
+			.invoke('attr', 'href') // invoke : cypress get href attribute
+			.then((href) => {
+				cy.visit(href)
+			})
+		cy.get('#namaperiodedaftar').type(
+			'Tes Mandiri Prestasi Gelombang 4 20/21 Genap'
+		)
+		cy.get('#idperiode').select('2020/2021 Genap')
+		cy.get('#idgelombang').select('Gelombang 4')
+		cy.get('#idjalurpendaftaran').select('Mandiri S1')
+		cy.get('#idsistemkuliah').select('Reguler A')
+		cy.get('#status').select('Aktif')
+
+		// START Mencoba Iframe
+		cy.get('#item-keterangan > a').click()
+
+		cy.get(':nth-child(5) > div.col-md-12 > .wysihtml5-sandbox')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then((current) => {
+				let stripe = cy.wrap(current)
+				stripe.type('hai :nth-child(5) > div.col-md-12 > .wysihtml5-sandboxn')
+			})
+		
+		cy.wait(3000)
+
+		const getIframeDocument = () => {
+			return (
+				cy
+					.get('#keteranganpeninjauanlokasi_ifr')
+					// Cypress yields jQuery element, which has the real
+					// DOM element under property "0".
+					// From the real DOM iframe element we can get
+					// the "document" element, it is stored in "contentDocument" property
+					// Cypress "its" command can access deep properties using dot notation
+					// https://on.cypress.io/its
+					.its('0.contentDocument')
+					.should('exist')
+			)
+		}
+
+		const getIframeBody = () => {
+			// get the document
+			return (
+				getIframeDocument()
+					// automatically retries until body is loaded
+					.its('body')
+					.should('not.be.undefined')
+					// wraps "body" DOM element to allow
+					// chaining more Cypress commands, like ".find(...)"
+					.then(cy.wrap)
+			)
+		}
+
+		cy.get('#keteranganpeninjauanlokasi_ifr')
+		getIframeBody().type('Random Text')
+
+		const iframe = cy
+			.get('#keterangantoleransi_ifr')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then((current) => {
+				let stripe = cy.wrap(current)
+				stripe.type('hello')
+			})
+
+		cy.get('#keterangankartuujian_ifr')
+			.its('0.contentDocument.body')
+			.should('be.visible')
+			.then((current) => {
+				let stripe = cy.wrap(current)
+				stripe.type('hai kartu ujian')
+			})
+
+			
+	})
+
+	it('download', ()=> {
+        cy.visit("/spmb/set_registrasi");
+        cy.get('#idpendaftar_label').type('khalil')
+        cy.get('.tt-suggestions div').each(($el, index, $list) => {
+			if ($el.text() === '2021041400010 - KHALIL GIBRAN') {
+			cy.wrap($el).click()
+			}
+		})
+        cy.get('.input-group-btn > .btn').click()
+        cy.downloadFile('http://localhost/siacloud/spmb/../uploads//fileadministrasi/35415_14','cypress/downloads','lorem-ipsum.pdf')
+        
+        const fileName = 'cypress/downloads/lorem-ipsum.pdf'
+        // cy.log(fileName) 
+        cy.readFile(fileName)
+    
+    })
+
+	it('download', ()=> {
+        cy.visit("/spmb/set_registrasi");
+        cy.get('#idpendaftar_label').type('khalil')
+        cy.get('.tt-suggestions div').each(($el, index, $list) => {
+			if ($el.text() === '2021041400010 - KHALIL GIBRAN') {
+			cy.wrap($el).click()
+			}
+		})
+        cy.get('.input-group-btn > .btn').click()
+        // cy.downloadFile('http://localhost/siacloud/spmb/../uploads//fileadministrasi/35415_14','cypress/downloads','lorem-ipsum.pdf')
+		
+
+		cy.window().document().then(function (doc) {
+			doc.addEventListener('click', () => {
+			  setTimeout(function () { doc.location.reload() }, 5000)
+			})
+			cy.get(':nth-child(1) > :nth-child(3) > [data-type="viewfile"]').click()
+		  })
+        
+        // const fileName = 'cypress/downloads/lorem-ipsum.pdf'
+        // cy.log(fileName) 
+        // cy.readFile(fileName)
+    
+    })
+
+	it("Edit Nilai Seleksi" , () => {
+        cy.visit("/spmb/list_nilaiseleksi");
+        cy.get("#periode").select("2020/2021 Genap");
+        cy.wait(5000);
+        cy.get("#gelombang").select("Gelombang 1");
+        cy.wait(5000);
+        cy.get("#jalur").select("Mandiri S1");
+        cy.wait(5000);
+        cy.get("#sistem").select("Reguler A");
+        cy.wait(5000);
+        cy.get("#pilihan").select("IPA");
+        cy.wait(5000);
+        cy.get("#seleksi").select("TES CBT");
+        cy.get(":nth-child(9) > :nth-child(10) > .btn > .fa").click();
+        cy.get("#u_nilaikomposisi0").type("78");
+        cy.get(":nth-child(9) > :nth-child(7)").click();
+        cy.get("#u_keteranganseleksi").type("Benar semua");
+        //upload file
+        const filepath = 'images/minion 3.jpg'
+        cy.get('#form_list > div.table-responsive > table > tbody > tr:nth-child(9) > td:nth-child(9) > input[type=file]')
+          .attachFile(filepath);
+        cy.get("#form_list > div.table-responsive > table > tbody > tr:nth-child(9) > td:nth-child(10) > button.btn.btn-success.btn-xs.btn-flat").click();
+        cy.get(".alert").should("contain","Pengubahan data Keterangan Seleksi Pendaftar berhasil");
+    })
 })
