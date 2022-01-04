@@ -20,7 +20,7 @@ describe('Pendaftaran', ()=> {
         //select2 kewarganegaraan
         cy.get('#select2-idnegara-container').click()
         cy.get('.select2-search__field').type(data.kewarganeragaan)
-        cy.sl2_negara()
+        cy.sel2_negara()
 
         cy.get('#nik').type(data.nik)
         cy.get('.col-md-offset-4 > .btn').should('be.visible')
@@ -30,29 +30,29 @@ describe('Pendaftaran', ()=> {
         //select2 provinsi
         cy.get('#select2-idpropinsi-container').click()
         cy.get('.select2-search__field').type(data.provinsi)
-        cy.sl2_provinsi()
+        cy.sel2_provinsi()
 
         //select2 kota
         cy.get('#select2-idkota-container').click()
         cy.get('.select2-search__field').type(data.kota)
-        cy.sl2_kota()
+        cy.sel2_kota()
 
         //select2 jenis sekolah
         cy.get('#select2-idjenisinstitusi-container').click()
         cy.get('.select2-search__field').type(data.sekolah)
-        cy.sl2_jenissekolah()
+        cy.sel2_jenissekolah()
 
         //select2 npsn
         cy.get(':nth-child(4) > .form-group > .select2-container > .selection > .select2-selection').click()
         cy.get('.select2-search__field').type(data.npsn).clear()
         cy.get('.select2-search__field').type(data.npsn)
-        cy.sl2_npsn()
+        cy.sel2_npsn()
 
         cy.get('#jurusan').type(data.jurusan)
         //select2 tahun lulus
         cy.get('#select2-thnlulus-container').click()
         cy.get('.select2-search__field').type(data.thnlulus)
-        cy.sl2_thnlulus()
+        cy.sel2_thnlulus()
 
         cy.get('.col-md-offset-4 > .btn').should('contain','Sebelumnya').and('be.visible')
         cy.get(':nth-child(2) > .btn').click()
@@ -62,12 +62,12 @@ describe('Pendaftaran', ()=> {
         //pilihan1
         cy.get('#select2-pilihan_1-container').click()
         cy.get('.select2-search__field').type(data.pilihan1)
-        cy.sl2_pilihan1()
+        cy.sel2_pilihan1()
 
         //pilihan2
         cy.get('#select2-pilihan_2-container').click()
         cy.get('.select2-search__field').type(data.pilihan2)
-        cy.sl2_pilihan2()
+        cy.sel2_pilihan2()
 
         cy.get('.col-md-offset-4 > .btn').should('contain', 'Sebelumnya').and('be.visible')
         cy.get(':nth-child(2) > .btn').should('contain','Daftar Sekarang').click()

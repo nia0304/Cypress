@@ -1,4 +1,4 @@
-Cypress.Commands.add('sl2_negara', ()=> {
+Cypress.Commands.add('sel2_negara', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-idnegara-results').each(($el, index, $list)=> {
             if ($el.text() === data.kewarganeragaan) {
@@ -8,7 +8,7 @@ Cypress.Commands.add('sl2_negara', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_provinsi', ()=> {
+Cypress.Commands.add('sel2_provinsi', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-idpropinsi-results').each(($el, index, $list)=> {
             if ($el.text() === data.provinsi) {
@@ -18,7 +18,7 @@ Cypress.Commands.add('sl2_provinsi', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_kota', ()=> {
+Cypress.Commands.add('sel2_kota', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-idkota-results').each(($el, index, $list)=> {
             if ($el.text() === data.kota) {
@@ -28,7 +28,7 @@ Cypress.Commands.add('sl2_kota', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_jenissekolah', ()=> {
+Cypress.Commands.add('sel2_jenissekolah', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-idjenisinstitusi-results').each(($el, index, $list)=> {
             if ($el.text() === data.sekolah) {
@@ -38,7 +38,7 @@ Cypress.Commands.add('sl2_jenissekolah', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_npsn', ()=> {
+Cypress.Commands.add('sel2_npsn', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-npsn-results').each(($el, index, $list)=> {
             if ($el.text() === data.npsn) {
@@ -48,7 +48,7 @@ Cypress.Commands.add('sl2_npsn', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_thnlulus', ()=> {
+Cypress.Commands.add('sel2_thnlulus', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-thnlulus-results').each(($el, index, $list)=> {
             if ($el.text() === data.thnlulus) {
@@ -58,7 +58,7 @@ Cypress.Commands.add('sl2_thnlulus', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_pilihan1', ()=> {
+Cypress.Commands.add('sel2_pilihan1', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-pilihan_1-results').each(($el, index, $list)=> {
             if ($el.text() === data.pilihan1) {
@@ -68,7 +68,7 @@ Cypress.Commands.add('sl2_pilihan1', ()=> {
     })
 })
 
-Cypress.Commands.add('sl2_pilihan2', ()=> {
+Cypress.Commands.add('sel2_pilihan2', ()=> {
     cy.fixture("PMB Front/pendaftaran").then((data)=> {
         cy.get('#select2-pilihan_2-results').each(($el, index, $list)=> {
             if ($el.text() === data.pilihan2) {
@@ -77,3 +77,4 @@ Cypress.Commands.add('sl2_pilihan2', ()=> {
         })
     })
 })
+
