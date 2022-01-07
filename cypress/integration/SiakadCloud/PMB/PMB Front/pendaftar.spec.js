@@ -75,6 +75,7 @@ describe('Pendaftaran', ()=> {
         cy.get(':nth-child(2) > .btn').click()
 
         //peminatan
+        //need lookout
         cy.get('#idjenispilihan').select(data.jenispilihan).wait(0)
         //pilihan1
         cy.get('#select2-pilihan_1-container').click()
