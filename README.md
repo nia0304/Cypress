@@ -1,1 +1,1 @@
-untuk menjalankan dev-config.json gunakan npx cypress open --config-file prod-config 
+untuk menjalankan dev-config.json gunakan npx cypress open --config-file dev-config 
