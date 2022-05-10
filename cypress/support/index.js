@@ -17,6 +17,7 @@
 import "./commands";
 import "./pmb";
 import "./pmb_front";
+import "./login_user";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
