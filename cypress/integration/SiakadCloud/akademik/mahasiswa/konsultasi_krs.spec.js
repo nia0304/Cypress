@@ -7,100 +7,122 @@ describe("Konsultasi KRS", () => {
   });
 
   it("Belum ada konsultasi", () => {
-    cy.get(".page-title").should("contain", "Konsultasi Pembimbing");
-    cy.get('[data-cy="empty-list-konsultasi"]').should(
-      "contain",
-      "Belum ada Obrolan Disini"
-    );
-    cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').should("be.visible");
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get(".page-title").should("contain", "Konsultasi Pembimbing");
+      cy.get('[data-cy="empty-list-konsultasi"]').should(
+        "contain",
+        data.empty_state1
+      );
+      cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').should(
+        "be.visible"
+      );
+    });
   });
 
   it("Filter periode konsultasi tidak ada", () => {
-    cy.get("#select2-select-periode-container").click();
-    cy.get(".select2-search__field").type("2040");
-    cy.get(".select2-results__option").should("contain", "No results found");
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get("#select2-select-periode-container").click();
+      cy.get(".select2-search__field").type(data.periode_salah);
+      cy.get(".select2-results__option").should(
+        "contain",
+        data.info_periodesalah
+      );
+    });
   });
 
   it("Pilih filter periode konsultasi", () => {
-    cy.get("#select2-select-periode-container").click();
-    cy.get(".select2-search__field").type("2020/2021 Genap");
-    cy.get("#select2-select-periode-results").each(($el, index, $list) => {
-      if ($el.text() === "2020/2021 Genap") {
-        cy.wrap($el).click();
-      }
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get("#select2-select-periode-container").click();
+      cy.get(".select2-search__field").type(data.periode);
+      cy.get("#select2-select-periode-results").each(($el, index, $list) => {
+        if ($el.text() === data.periode) {
+          cy.wrap($el).click();
+        }
+      });
     });
   });
 
   it("Mengosongkan isian modal tambah  konsultasi", () => {
-    cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
-    cy.get("#modal-add-konsultasi").should("be.visible");
-    cy.get('[data-cy="input-topik"]').type("Konsultasi Pengambilan KRS");
-    cy.get('[data-cy="input-keterangan"]').type(
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    );
-    cy.get('[data-cy="btn-kosongkan"] > .ripple').click();
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
+      cy.get("#modal-add-konsultasi").should("be.visible").wait(1000);
+      cy.get('[data-cy="input-topik"]').type(data.topik1);
+      cy.get('[data-cy="input-keterangan"]').type(data.keterangan);
+      cy.get('[data-cy="btn-kosongkan"] > .ripple').click();
+    });
+  });
+
+  it.only("Tambah konsultasi dengan topik kosong", () => {
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
+      cy.get(".card-title > h3")
+        .should("contain", "Konsultasi Baru")
+        .wait(1000);
+      cy.get('[data-cy="input-keterangan"]').type(data.keterangan);
+      cy.get('[data-cy="btn-mulai-konsultasi"] > .ripple').click();
+      cy.get(".top-alert > .container-xxl")
+        .should("contain", data.alert_topikkosong)
+        .and("be.visible");
+    });
   });
 
   it("Menambah konsultasi", () => {
-    cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
-    cy.get("#modal-add-konsultasi").should("be.visible").wait(3000);
-    cy.get('[data-cy="input-topik"]').type("Konsultasi Pengambilan KRS");
-    cy.get('[data-cy="input-keterangan"]').type(
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    );
-    cy.get('[data-cy="btn-mulai-konsultasi"] > .ripple').click();
-    cy.get(".top-alert > .container-xxl")
-      .should(
-        "contain",
-        "Penambahan data konsultasi pembimbing akademik berhasil"
-      )
-      .and("be.visible");
-    cy.get('[data-cy="info-nav-chat"]')
-      .should("contain", "Konsultasi Pengambilan KRS")
-      .and("be.visible");
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
+      cy.get(".card-title > h3")
+        .should("contain", "Konsultasi Baru")
+        .wait(1000);
+      cy.get('[data-cy="input-topik"]').type(data.topik1);
+      cy.get('[data-cy="input-keterangan"]').type(data.keterangan);
+      cy.get('[data-cy="btn-mulai-konsultasi"] > .ripple').click();
+      cy.get(".top-alert > .container-xxl")
+        .should("contain", data.alert_tambahkonsultasi)
+        .and("be.visible");
+      cy.get('[data-cy="info-nav-chat"]')
+        .should("contain", data.topik1)
+        .and("be.visible");
+    });
   });
 
   it("Kirim pesan bimbingan", () => {
-    cy.get(
-      '.content-chat > .field-chat > [data-cy="empty-content-konsultasi"] > .empty-state'
-    ).should("contain", "Mulai dengan mengetik pesan pertamamu!");
-    cy.get('[data-cy="list-chat-konsultasi"] > .justify-content-between')
-      .should("contain", "Jhon Mayer")
-      .click();
-    cy.get(".list-content-konsultasi")
-      .should("contain", "Konsultasi Pengambilan KRS")
-      .and("be.visible")
-      .click();
-    cy.get('[data-cy="input-chat"]').type("Selamat pagi pak");
-    cy.get('[data-cy="btn-submit-chat"]').click();
-    cy.get(".top-alert > .container-xxl").should(
-      "contain",
-      "Penambahan data pesan konsultasi pembimbing akademik berhasil"
-    );
-    cy.get(".right > .bubble-chat").should("contain", "Selamat pagi pak");
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get(
+        '.content-chat > .field-chat > [data-cy="empty-content-konsultasi"] > .empty-state'
+      ).should("contain", data.empty_statepesan);
+      cy.get('[data-cy="list-chat-konsultasi"] > .justify-content-between')
+        .should("contain", data.nama_dosen)
+        .click();
+      cy.get(".list-content-konsultasi")
+        .should("contain", data.topik1)
+        .and("be.visible")
+        .click();
+      cy.get('[data-cy="input-chat"]').type(data.pesan);
+      cy.get('[data-cy="btn-submit-chat"]').click();
+      cy.get(".top-alert > .container-xxl").should("contain", data.alert_chat);
+      cy.get(".right > .bubble-chat").should("contain", data.pesan);
+    });
   });
 
   it("Cari konsultasi", () => {
-    cy.get('[data-cy="input-search"]').type("KRS");
-    cy.get(".d-block > h3").should("contain", "KRS");
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="input-search"]').type(data.cari_topik);
+      cy.get(".d-block > h3").should("contain", data.cari_topik);
+    });
   });
 
-  it.only("Tambah konsultasi baru", () => {
-    cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click().wait(2000);
-    cy.get('[data-cy="input-topik"]').type("Konsultasi Cuti");
-    cy.get('[data-cy="input-keterangan"]').type(
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    );
-    cy.get('[data-cy="btn-mulai-konsultasi"] > .ripple').click();
-    cy.get(".top-alert > .container-xxl")
-      .should(
+  it("Tambah konsultasi baru", () => {
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click().wait(1000);
+      cy.get('[data-cy="input-topik"]').type(data.topik2);
+      cy.get('[data-cy="input-keterangan"]').type(data.keterangan);
+      cy.get('[data-cy="btn-mulai-konsultasi"] > .ripple').click();
+      cy.get(".top-alert > .container-xxl")
+        .should("contain", data.alert_tambahkonsultasi)
+        .and("be.visible");
+      cy.get(".content-top-nav > .justify-content-between").should(
         "contain",
-        "Penambahan data konsultasi pembimbing akademik berhasil"
-      )
-      .and("be.visible");
-    cy.get(".content-top-nav > .justify-content-between").should(
-      "contain",
-      "Konsultasi Cuti"
-    );
+        data.topik2
+      );
+    });
   });
 });

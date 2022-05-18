@@ -1,3 +1,17 @@
 {
-  "topik": "Konsultasi Pengambilan KRS"
+  "empty_state1": "Belum ada Obrolan Disini",
+  "empty_statepesan": "Mulai dengan mengetik pesan pertamamu!",
+  "periode": "2020/2021 Genap",
+  "periode_salah": "2040",
+  "info_periodesalah": "No results found",
+  "topik1": "Konsultasi Pengambilan KRS",
+  "topik2": "Konsultasi Cuti",
+  "keterangan": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  "alert_tambahkonsultasi": "Penambahan data konsultasi pembimbing akademik berhasil",
+  "chat1": "Selamat pagi pak",
+  "alert_chat": "Penambahan data pesan konsultasi pembimbing akademik berhasil",
+  "alert_topikkosong": "Topik tidak boleh kosong.",
+  "nama_dosen": "Jhon Mayer.",
+  "pesan": "Selamat pagi pak",
+  "cari_topik": "KRS"
 }
