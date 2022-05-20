@@ -2,7 +2,7 @@
 
 describe("Konsultasi KRS", () => {
   beforeEach("Login Mahasiswa", () => {
-    cy.usermhs();
+    cy.loginmhs();
     cy.visit("https://dev.siakadcloud.com/siakad/data_konsultasi_new");
   });
 

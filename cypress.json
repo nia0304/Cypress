@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://dev.siakadcloud.com/",
+  "baseUrl": "http://localhost/siacloud/gate/login",
   "viewportWidth": 1280,
   "viewportHeight": 800,
   "chromeWebSecurity": false
