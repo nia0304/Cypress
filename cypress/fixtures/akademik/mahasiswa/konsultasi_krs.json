@@ -9,9 +9,12 @@
   "keterangan": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   "alert_tambahkonsultasi": "Penambahan data konsultasi pembimbing akademik berhasil",
   "chat1": "Selamat pagi pak",
+  "chat_dsn": "Selamat malam dik",
   "alert_chat": "Penambahan data pesan konsultasi pembimbing akademik berhasil",
   "alert_topikkosong": "Topik tidak boleh kosong.",
   "nama_dosen": "Jhon Mayer.",
   "pesan": "Selamat pagi pak",
-  "cari_topik": "KRS"
+  "cari_topik": "KRS",
+  "exnama_mhs": "KAHLIL GIBRAN",
+  "nama_mhs": "20220204 - KAHLIL GIBRAN"
 }

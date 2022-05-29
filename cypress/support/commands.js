@@ -24,8 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import 'cypress-file-upload';
-require('cypress-downloadfile/lib/downloadFileCommand');
+import "cypress-file-upload";
+require("cypress-downloadfile/lib/downloadFileCommand");
 
 //get data login menggunakan fixture dan baseurl
 Cypress.Commands.add("login", () => {
