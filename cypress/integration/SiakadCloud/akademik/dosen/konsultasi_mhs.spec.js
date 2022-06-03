@@ -93,7 +93,7 @@ describe("Konsultasi Mahasiswa", () => {
     });
   });
 
-  it.only("Chat konsultasi bimbingan", () => {
+  it("Chat konsultasi bimbingan", () => {
     cy.periodekonsultasi();
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get(
@@ -115,6 +115,35 @@ describe("Konsultasi Mahasiswa", () => {
         .should(data.alert_chat)
         .and("be.visible");
       cy.get(".right > .bubble-chat").should("contain", data.chat_dsn);
+    });
+  });
+
+  it("Cari mahasiswa bimbingan", () => {
+    cy.periodekonsultasi();
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get('[data-cy="input-search"]').type(data.exnama_mhs);
+      cy.get(
+        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
+      )
+        .should("contain", data.exnama_mhs)
+        .and("be.visible");
+    });
+  });
+
+  it.only("Catatan Konsultasi", () => {
+    cy.periodekonsultasi();
+    cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
+      cy.get(
+        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
+      ).click();
+      cy.get(
+        '[data-cy="list-content-konsultasi-20220204"] > .list-content-konsultasi'
+      ).click();
+      cy.get('[data-cy="btn-catatan"]').click();
+      cy.get(
+        "#modal_catatan_konsultasi > .modal-dialog > .modal-content"
+      ).should("be.visible");
+      cy.get("#wrap-button").click(); //gagal disini
     });
   });
 });

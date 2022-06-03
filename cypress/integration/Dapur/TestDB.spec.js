@@ -41,3 +41,17 @@ describe("Tes Reset Database", () => {
     cy.get(".modal-footer > .btn-primary").click();
   });
 });
+
+describe("Tes reset db fikri", () => {
+  before("create db", () => {
+    cy.exec("createdb -U postgres -p 5433 -T backupdb testsiakad");
+  });
+  beforeEach("Login Dosen", () => {
+    cy.logindosen();
+    cy.modulakademik();
+    cy.visit("https://dev.siakadcloud.com/siakad/data_konsultasi_new");
+  });
+  after(() => {
+    cy.exec("dropdb -U postgres -p 5433 testsiakad");
+  });
+})
