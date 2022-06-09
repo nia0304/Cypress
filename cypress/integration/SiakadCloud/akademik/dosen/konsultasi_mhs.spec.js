@@ -7,7 +7,7 @@ describe("Konsultasi Mahasiswa", () => {
   beforeEach("Login Dosen", () => {
     cy.logindosen();
     cy.modulakademik();
-    cy.visit("https://dev.siakadcloud.com/siakad/data_konsultasi_new");
+    cy.visit("http://localhost/siacloud/siakad/data_konsultasi_new");
   });
   // after(() => {
   //   cy.exec("dropdb -U postgres -p 5433 testsiakad");
@@ -45,9 +45,9 @@ describe("Konsultasi Mahasiswa", () => {
       cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
       cy.get("#modal-add-konsultasi").should("be.visible");
       cy.get('[data-cy="data-periode"]').should("have.value", data.periode);
-      cy.get("#select2-select-nama-modal-container").click();
+      cy.get("#select2-select-nama-modal-container").click().wait(1000)
       cy.get(".select2-search__field").type(data.exnama_mhs);
-      cy.get("#select2-select-nama-modal-results").each(($el, index, $list) => {
+      cy.get("#select2-select-nama-modal-results").each(($el) => {
         if ($el.text() === data.nama_mhs) {
           cy.wrap($el).click();
         }
@@ -57,13 +57,14 @@ describe("Konsultasi Mahasiswa", () => {
       cy.get('[data-cy="btn-kosongkan"] > .ripple').click();
     });
   });
+
   it("Tambah konsultasi", () => {
     cy.periodekonsultasi();
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
       cy.get("#modal-add-konsultasi").should("be.visible");
       cy.get('[data-cy="data-periode"]').should("have.value", data.periode);
-      cy.get("#select2-select-nama-modal-container").click();
+      cy.get("#select2-select-nama-modal-container").click().wait(1000)
       cy.get(".select2-search__field").type(data.exnama_mhs);
       cy.get("#select2-select-nama-modal-results").each(($el, index, $list) => {
         if ($el.text() === data.nama_mhs) {
@@ -78,7 +79,7 @@ describe("Konsultasi Mahasiswa", () => {
         data.alert_tambahkonsultasi
       );
       cy.get(
-        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
+        ':nth-child(2) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
       )
         .should("contain", data.exnama_mhs)
         .and("be.visible");
@@ -97,11 +98,9 @@ describe("Konsultasi Mahasiswa", () => {
     cy.periodekonsultasi();
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get(
-        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
+        ':nth-child(2) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
       ).click();
-      cy.get(
-        '[data-cy="list-content-konsultasi-20220204"] > .list-content-konsultasi'
-      ).click();
+      cy.get('[data-list-topik="3993"]').click()
       cy.get(".justify-content-between > .d-block > h3").should(
         "contain",
         data.topik1
@@ -112,7 +111,7 @@ describe("Konsultasi Mahasiswa", () => {
       cy.get('[data-cy="input-chat"]').type(data.chat_dsn);
       cy.get('[data-cy="btn-submit-chat"]').click();
       cy.get(".top-alert > .container-xxl")
-        .should(data.alert_chat)
+        .should("contain",data.alert_chat)
         .and("be.visible");
       cy.get(".right > .bubble-chat").should("contain", data.chat_dsn);
     });
@@ -122,23 +121,19 @@ describe("Konsultasi Mahasiswa", () => {
     cy.periodekonsultasi();
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get('[data-cy="input-search"]').type(data.exnama_mhs);
-      cy.get(
-        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
-      )
+      cy.get('[data-cy="list-chat-konsultasi"]')
         .should("contain", data.exnama_mhs)
         .and("be.visible");
     });
   });
 
-  it.only("Catatan Konsultasi", () => {
+  it("Catatan Konsultasi", () => {
     cy.periodekonsultasi();
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get(
-        ':nth-child(3) > [data-cy="list-chat-konsultasi"] > .justify-content-between'
+        '[data-cy="list-chat-konsultasi"]'
       ).click();
-      cy.get(
-        '[data-cy="list-content-konsultasi-20220204"] > .list-content-konsultasi'
-      ).click();
+      cy.get('[data-list-topik="3993"]').click();
       cy.get('[data-cy="btn-catatan"]').click();
       cy.get(
         "#modal_catatan_konsultasi > .modal-dialog > .modal-content"

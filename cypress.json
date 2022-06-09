@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://dev.siakadcloud.com/",
+  "baseUrl": "http://localhost/siacloud",
   "viewportWidth": 1280,
   "viewportHeight": 800,
   "chromeWebSecurity": false

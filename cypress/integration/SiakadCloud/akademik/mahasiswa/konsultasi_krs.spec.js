@@ -3,7 +3,8 @@
 describe("Konsultasi KRS", () => {
   beforeEach("Login Mahasiswa", () => {
     cy.loginmhs();
-    cy.visit("https://dev.siakadcloud.com/siakad/data_konsultasi_new");
+    cy.visit("http://localhost/siacloud/siakad/data_konsultasi_new");
+    // http://localhost/siacloud/siakad/home
   });
 
   it("Belum ada konsultasi", () => {
@@ -52,7 +53,7 @@ describe("Konsultasi KRS", () => {
     });
   });
 
-  it.only("Tambah konsultasi dengan topik kosong", () => {
+  it("Tambah konsultasi dengan topik kosong", () => {
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get('[data-cy="#modal-btn-konsultasi"] > .ripple').click();
       cy.get(".card-title > h3")
@@ -84,7 +85,7 @@ describe("Konsultasi KRS", () => {
     });
   });
 
-  it("Kirim pesan bimbingan", () => {
+  it.only("Kirim pesan bimbingan", () => {
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get(
         '.content-chat > .field-chat > [data-cy="empty-content-konsultasi"] > .empty-state'
@@ -92,10 +93,7 @@ describe("Konsultasi KRS", () => {
       cy.get('[data-cy="list-chat-konsultasi"] > .justify-content-between')
         .should("contain", data.nama_dosen)
         .click();
-      cy.get(".list-content-konsultasi")
-        .should("contain", data.topik1)
-        .and("be.visible")
-        .click();
+      cy.get('[data-list-topik="3994"]').click()
       cy.get('[data-cy="input-chat"]').type(data.pesan);
       cy.get('[data-cy="btn-submit-chat"]').click();
       cy.get(".top-alert > .container-xxl").should("contain", data.alert_chat);
