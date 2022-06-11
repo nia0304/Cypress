@@ -12,7 +12,7 @@ describe("Konsultasi Mahasiswa", () => {
   // after(() => {
   //   cy.exec("dropdb -U postgres -p 5433 testsiakad");
   // });
-
+  
   it("Pilih filter periode konsultasi", () => {
     cy.fixture("akademik/mahasiswa/konsultasi_krs").then((data) => {
       cy.get("#select2-select-periode-container").click();

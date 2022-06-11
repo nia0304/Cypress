@@ -37,46 +37,16 @@ Cypress.Commands.add("login", () => {
   cy.get(".btn").click();
 });
 
-Cypress.Commands.add("logout", () => {
-  cy.get(".user > .dropdown-toggle").click().wait(0);
-  cy.get(
-    "body > header > nav > div > div > ul > li.dropdown.user.user-menu > ul > li.user-footer > div > a:nth-child(3)"
-  ).click();
-});
+// support/commands.js
+// const COMMAND_DELAY = 500;
+// for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
+//     Cypress.Commands.overwrite(command, (originalFn, ...args) => {
+//         const origVal = originalFn(...args);
 
-Cypress.Commands.add("loginopsional", (username, password) => {
-  cy.visit("dev.siakadcloud.com");
-  cy.get("#userid").type(username);
-  cy.get("#password").type(password);
-  cy.get(".btn").click();
-});
-
-// user login (meida)
-Cypress.Commands.add("loginuserstaging", () => {
-  cy.visit("/");
-  cy.fixture("dataLogin").then((data) => {
-    cy.get("#userid").type(data.username);
-    cy.get("#password").type(data.password_staging);
-  });
-  cy.get(".btn").click();
-});
-
-// user login (meida)
-Cypress.Commands.add("loginuserdev", () => {
-  cy.visit("/");
-  cy.fixture("dataLogin").then((data) => {
-    cy.get("#userid").type(data.username);
-    cy.get("#password").type(data.password_dev);
-  });
-  cy.get(".btn").click();
-});
-
-//user yasinta
-Cypress.Commands.add("userlogin", () => {
-  cy.visit("/");
-  cy.fixture("user_yas").then((data) => {
-    cy.get("#userid").type(data.username);
-    cy.get("#password").type(data.password);
-  });
-  cy.get(".btn").click();
-});
+//         return new Promise((resolve) => {
+//             setTimeout(() => {
+//                 resolve(origVal);
+//             }, COMMAND_DELAY);
+//         });
+//     });
+// } 
