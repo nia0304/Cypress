@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("Perbaikan Rekap Percakapan Bimbingan di Tugas Akhir", ()=> {
+describe("Penambahan informasi saat menggunakan fitur Login As", ()=> {
     beforeEach(() => {
         cy.loginsuperadmin()
         cy.moduladminaplikasi()
