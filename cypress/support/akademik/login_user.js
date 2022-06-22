@@ -25,14 +25,22 @@ Cypress.Commands.add("logindosen", () => {
   cy.get(".btn").click();
 });
 
-Cypress.Commands.add("modulakademik", () => {
-  cy.get(".siakad > .inner").click();
-  cy.get("#siakad > .content > .role_box").click();
-  cy.get(":nth-child(1) > .nav-link").click();
-});
-
+// Command Modul
 Cypress.Commands.add("moduladminaplikasi", () => {
   cy.get('.admin > .inner').click()
   cy.get('#admin > .content > .role_box').click();
   cy.get('.container > .nav > :nth-child(1) > a').click()
 });
+
+Cypress.Commands.add("modulakademik", () => {
+  cy.get(".siakad > .inner").click();
+  cy.get("#siakad > .content > .role_box").click();
+  cy.get('.container > .nav > :nth-child(1) > a').click();
+});
+
+Cypress.Commands.add("modulkeuangan", () => {
+  cy.get(".keuangan > .inner").click();
+  cy.get("#keuangan > .content > .role_box").click();
+  cy.get('.container > .nav > :nth-child(1) > a').click();
+});
+
