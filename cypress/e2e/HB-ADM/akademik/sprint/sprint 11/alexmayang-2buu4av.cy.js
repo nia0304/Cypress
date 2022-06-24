@@ -30,7 +30,7 @@ describe("Penyesuaian menu beasiswa pada modul akademik", () => {
         cy.contains("Potongan & Beasiswa").should('be.visible')
     });
 
-    it.only('Superadmin cek menu beasiswa non aktif dari modul admin aplikasi', () => {
+    it('Superadmin cek menu beasiswa non aktif dari modul admin aplikasi', () => {
         cy.moduladminaplikasi()
         cy.visit('http://localhost/siacloud/admin/set_menu');
         cy.get('[data-left="243"] > [style="padding-left:8px"] > [data-type="cexpand"] > .fa').click()
