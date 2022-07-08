@@ -1,0 +1,49 @@
+{
+    "_comment Honorarium":"Data untuk Honorarium",
+    "tglawal_honorarium": "07-07-2022",
+    "tglakhir_honorarium": "01-01-2022",
+    "alert_tglhonorarium": "Tanggal Awal tidak boleh lebih besar dari Tanggal Akhir",
+    "alert_kolomkosonghonorarium":"Mohon mengisi isian yang bergaris merah",
+    "label_unitkerja": "Unit Kerja",
+
+    "__comment Percakapan Bimbingan": "Data Untuk Rekap Percakapan Bimbingan",
+    "mhs_bimbinganTA": "Serly Oktavia",
+    "bimbinganke1":"1",
+    "bimbinganke2":"2",
+    "tgl_bimbingan1": "26-06-2022",
+    "tgl_bimbingan2": "27-06-2022",
+    "topik_bimbingan1": "Bab 1",
+    "topik_bimbingan2": "Bab 2",
+    "bahasan": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "valuetext1":"169",
+    "valuetext2":"170",
+    "viewtgl_bimbingan1":"Minggu, 26 Juni 2022",
+    "viewtgl_bimbingan2":"Senin, 27 Juni 2022",
+
+    "__comment Login As": "Data Untuk Informasi Login As",
+    "user_nonaktif": "KARIYA",
+    "hasil_usernonaktif1": "0003940600039737",
+    "hasil_usernonaktif2": " - KARIYA",
+    "alert_nonaktif": "Akun yang digunakan saat ini tidak aktif. Lihat Data Pengguna",
+    "user_nonrole":"kiara",
+    "hasil_nonrole1":"kiara",
+    "hasil_nonrole2":" - ",
+    "hasil_nonrole3":"Kiara",
+    "hasil_nonrole4":" Sevima",
+    "alert_nonrole":"Akun yang digunakan saat ini belum memiliki Role. Lihat Data Pengguna",
+    "user_expired":"avatar",
+    "hasil_userexp1":"avatar",
+    "hasil_userexp2":" - ",
+    "hasil_userexp3":"Avatar",
+    "alert_userexp":"Akun yang digunakan telah kadaluarsa sejak tanggal 31 Desember 2021. Lihat Data Pengguna",
+
+
+    "__comment Rekap laporan Pembayaran": "Data Untuk Rekap laporan Pembayaran",
+    "select_mhs":"Mahasiswa",
+    "select_pdt":"Pendaftar",
+    "tgl_awalpembayaran":"27-06-2022",
+    "tgl_akhirpembayaran":"20-06-2022",
+    "alert_tglpembayaran":"Tanggal Awal tidak boleh lebih besar dari Tanggal Akhir"
+
+    
+}
