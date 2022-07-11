@@ -39,7 +39,7 @@ describe('Penyesuaian rekap laporan pembayaran berdasarkan jenis penerima di Mod
         })
     });
 
-    it.only('Admin cetak laporan pembayaran berdasarkan penerima mahasiswa', () => {
+    it('Admin cetak laporan pembayaran berdasarkan penerima mahasiswa', () => {
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('#idperiode').select(data.periode)
             cy.get('#tanggal_awal').type(data.tglawal_cetakpembayaran)
@@ -53,7 +53,7 @@ describe('Penyesuaian rekap laporan pembayaran berdasarkan jenis penerima di Mod
         })
     });
 
-    it.only('Admin cetak laporan pembayaran berdasarkan penerima pendaftar ', () => {
+    it('Admin cetak laporan pembayaran berdasarkan penerima pendaftar ', () => {
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('#idperiode').select(data.periode)
             cy.get('#tanggal_awal').type(data.tglawal_cetakpembayaran)

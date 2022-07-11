@@ -1,6 +1,10 @@
 /// <reference types="cypress"/>
 
 describe('Perbaikan Rekap Percakapan Bimbingan di Tugas Akhir', ()=>{
+    before("create db", () => {
+        cy.exec("createdb -U postgres -p 5432 -T dbcypress cytes");
+    });
+
     beforeEach(() => {
         cy.loginsuperadmin()
         cy.modulakademik()
@@ -10,6 +14,10 @@ describe('Perbaikan Rekap Percakapan Bimbingan di Tugas Akhir', ()=>{
             cy.get('.input-group-btn > .btn-success').click()
             cy.get('[data-type="edit"]').click()
         })
+    });
+
+    after('drop db', () => {
+        cy.exec("dropdb -U postgres -p 5432 cytes");
     });
 
     it('Tambah Bimbingan', () => {
@@ -51,7 +59,7 @@ describe('Perbaikan Rekap Percakapan Bimbingan di Tugas Akhir', ()=>{
         })
     });
 
-    it.only('Dosen & Mahasiswa melihat histori percakapan bimbingan ke 2', () => {
+    it('Dosen & Mahasiswa melihat histori percakapan bimbingan ke 2', () => {
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('.list-unstyled > :nth-child(3) > a').click()
             Cypress.on('uncaught:exception', (err, runnable) => {
