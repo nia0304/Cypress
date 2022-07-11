@@ -51,7 +51,19 @@
     "tglakhir_cetakpembayaran":"01-07-2021",
     "semuapenerima":"Semua Penerima",
     "penerimamhs":"Mahasiswa",
-    "penerimapdft":"Pendaftar"
+    "penerimapdft":"Pendaftar",
+
+    "__comment Aktivitas & Prestasi": "Data Untuk Aktivitas & Prestasi",
+    "modal_valid":"Data yang dipilih akan diubah menjadi “Valid”. Apakah anda yakin ingin mengubah status data yang dipilih?",
+    "modal_tidakvalid":"Data yang dipilih akan diubah menjadi “Tidak Valid”. Apakah anda yakin ingin mengubah status data yang dipilih?",
+    "modal_tampilskpi":"Data yang dipilih akan ditampilkan pada SKPI Mahasiswa. Apakah anda yakin ingin menampilkan data pada SKPI Mahasiswa?",
+    "modal_tdkskpi":"Data yang dipilih tidak akan ditampilkan pada SKPI Mahasiswa. Apakah anda yakin ingin menghapus data pada SKPI Mahasiswa?",
+    "btn_batal":"Batalkan",
+    "btn_yakin":"Ya, Yakin",
+    "alert_setvalid":"Set Valid berhasil",
+    "alert_settdkvalid":"Set Tidak Valid berhasil",
+    "alert_tampilskpi":"Set Tampil di SKPI berhasil",
+    "alert_tdkskpi":"Set Tidak Tampil di SKPI berhasil"
 
     
 }
