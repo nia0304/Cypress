@@ -5,6 +5,8 @@
     "alert_tglhonorarium": "Tanggal Awal tidak boleh lebih besar dari Tanggal Akhir",
     "alert_kolomkosonghonorarium":"Mohon mengisi isian yang bergaris merah",
     "label_unitkerja": "Unit Kerja",
+    "tglawal_cetak":"11-07-2020",
+    "tglakhir_cetak":"11-07-2022",
 
     "__comment Percakapan Bimbingan": "Data Untuk Rekap Percakapan Bimbingan",
     "mhs_bimbinganTA": "Serly Oktavia",

@@ -4,7 +4,7 @@ describe('Penambahan filter & kolom "Unit Kerja" pada laporan Honorarium Dosen',
 
     beforeEach(() => {
         cy.loginsuperadmin()
-        cy.modulkeuangan()
+        cy.modulakademik()
         cy.visit('http://localhost/siacloud/siakad/repp_honordosen');
     });
         
@@ -34,10 +34,38 @@ describe('Penambahan filter & kolom "Unit Kerja" pada laporan Honorarium Dosen',
         })
     });
 
-    it.only('Cek filter unit kerja', () => {
+    it('Cek filter unit kerja', () => {
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('#block-idunit > .col-md-4').should('contain', data.label_unitkerja).and('be.visible')
             cy.get('#select2-idunit-container').should('be.visible')
         })
+    });
+
+    it('Admin cetak laporan honorarium sesuai unit universitas', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#tanggal_awal').clear().type(data.tglawal_cetak).tab()
+            cy.get('#tanggal_akhir').clear().type(data.tglakhir_cetak).tab()
+            cy.get('[onclick="goSubmitRep(this)"]').click()
+            cy.get('.title').should('contain', 'HONORARIUM DOSEN')
+            cy.get(':nth-child(2) > tbody > :nth-child(2) > [width="34%"]').should('contain', 'Universitas Lancang Kuning')
+        })
+        
+    });
+
+    it.only('Admin cetak laporan honorarium sesuai unit prodi', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#tanggal_awal').clear().type(data.tglawal_cetak).tab()
+            cy.get('#tanggal_akhir').clear().type(data.tglakhir_cetak).tab()
+            cy.get('#select2-idunit-container').type('Sistem Informasi');
+            cy.get("#select2-idunit-results").each(($el)=>{
+                if($el.text() === '        Sistem Informasi'){
+                    cy.wrap($el).click();
+                }
+            })
+            // cy.get('[onclick="goSubmitRep(this)"]').click()
+            // cy.get('.title').should('contain', 'HONORARIUM DOSEN')
+            // cy.get(':nth-child(2) > tbody > :nth-child(2) > [width="34%"]').should('contain', 'Sistem Informasi')
+        })
+        
     });
 })
