@@ -28,5 +28,41 @@ describe('Penyesuaian rekap laporan pembayaran berdasarkan jenis penerima di Mod
             cy.get('.alert-empty-data').should('contain', data.alert_tglpembayaran)
         })
     });
+
+    it('Admin cetak laporan pembayaran berdasarkan semua penerima (mahasiswa dan pendaftar) ', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#idperiode').select(data.periode)
+            cy.get('#tanggal_awal').type(data.tglawal_cetakpembayaran)
+            cy.get('#tanggal_akhir').type(data.tglakhir_cetakpembayaran).tab()
+            cy.get('[onclick="goSubmitRep(this)"]').click()
+            cy.get(':nth-child(3) > [width="34%"]').should('contain', data.semuapenerima)
+        })
+    });
+
+    it.only('Admin cetak laporan pembayaran berdasarkan penerima mahasiswa', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#idperiode').select(data.periode)
+            cy.get('#tanggal_awal').type(data.tglawal_cetakpembayaran)
+            cy.get('#tanggal_akhir').type(data.tglakhir_cetakpembayaran).tab()
+            cy.get('#penerima').select(data.penerimamhs)
+            Cypress.on('uncaught:exception', (err, runnable) => {
+                return false
+            })
+            cy.get('[onclick="goSubmitRep(this)"]').click()
+            cy.get(':nth-child(3) > [width="34%"]').should('contain', data.penerimamhs)
+        })
+    });
+
+    it.only('Admin cetak laporan pembayaran berdasarkan penerima pendaftar ', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#idperiode').select(data.periode)
+            cy.get('#tanggal_awal').type(data.tglawal_cetakpembayaran)
+            cy.get('#tanggal_akhir').type(data.tglakhir_cetakpembayaran).tab()
+            cy.get('#penerima').select(data.penerimapdft)
+            cy.unex()
+            cy.get('[onclick="goSubmitRep(this)"]').click()
+            cy.get(':nth-child(3) > [width="34%"]').should('contain', data.penerimapdft)
+        })
+    });
     
 })

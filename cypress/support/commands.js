@@ -37,6 +37,12 @@ Cypress.Commands.add("login", () => {
   cy.get(".btn").click();
 });
 
+Cypress.Commands.add('unex',  () => {
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    return false
+  })
+});
+
 // support/commands.js
 // const COMMAND_DELAY = 500;
 // for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {

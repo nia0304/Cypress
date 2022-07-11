@@ -45,7 +45,13 @@
     "select_pdt":"Pendaftar",
     "tgl_awalpembayaran":"27-06-2022",
     "tgl_akhirpembayaran":"20-06-2022",
-    "alert_tglpembayaran":"Tanggal Awal tidak boleh lebih besar dari Tanggal Akhir"
+    "alert_tglpembayaran":"Tanggal Awal tidak boleh lebih besar dari Tanggal Akhir",
+    "periode":"2020/2021 Genap",
+    "tglawal_cetakpembayaran":"01-05-2021",
+    "tglakhir_cetakpembayaran":"01-07-2021",
+    "semuapenerima":"Semua Penerima",
+    "penerimamhs":"Mahasiswa",
+    "penerimapdft":"Pendaftar"
 
     
 }
