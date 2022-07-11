@@ -63,7 +63,12 @@
     "alert_setvalid":"Set Valid berhasil",
     "alert_settdkvalid":"Set Tidak Valid berhasil",
     "alert_tampilskpi":"Set Tampil di SKPI berhasil",
-    "alert_tdkskpi":"Set Tidak Tampil di SKPI berhasil"
+    "alert_tdkskpi":"Set Tidak Tampil di SKPI berhasil",
+
+    "__comment RPS Kurikulum": "Data Untuk RPS Kurikulum",
+    "prodisi":"Sistem Informasi{enter}",
+    "thn_kur":"2017{enter}",
+    "ctk_rps":"RPS"
 
     
 }
