@@ -16,7 +16,7 @@
     "cypress-xpath": "^1.6.2"
   },
   "dependencies": {
-    "cypress": "^10.2.0",
+    "cypress": "^10.3.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-get-table": "^1.0.1"
   }
