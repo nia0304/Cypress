@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Daftar Yudisium";
+const namaMenu="Yudisium";
 
 describe(namaMenu, ()=>{
  
