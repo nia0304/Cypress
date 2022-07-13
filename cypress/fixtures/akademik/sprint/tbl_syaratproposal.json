@@ -1,0 +1,56 @@
+[
+    {
+        "No": "\n                                ",
+        "Tahap Ujian": "\n                                -- Pilih Tahap Ujian --\nPengajuan Proposal TA\nSidang Proposal TA-- Pilih Tahap Ujian --",
+        "Nama Syarat": "\n                                ",
+        "Keterangan": "\n                                ",
+        "Upload Berkas": "\n                                ",
+        "Aktif": "\n                                  ",
+        "Aksi": "\n                                                                                                                                                                                                                                    "
+    },
+    {
+        "No": "1",
+        "Tahap Ujian": "Pengajuan Proposal TA",
+        "Nama Syarat": "Abstrak Proposal",
+        "Keterangan": "Wajib mengupload berkas abstrak proposal",
+        "Upload Berkas": "",
+        "Aktif": "  ",
+        "Aksi": "\n                                                                                                                                                                                                                                                            "
+    },
+    {
+        "No": "2",
+        "Tahap Ujian": "Pengajuan Proposal TA",
+        "Nama Syarat": "Draft Berkas Proposal Bab 1-3",
+        "Keterangan": "Wajib mengupload berkas proposal dari Bab 1 - 3 yang sudah di setujui dosen pembimbing",
+        "Upload Berkas": "",
+        "Aktif": "  ",
+        "Aksi": "\n                                                                                                                                                                                                                                                            "
+    },
+    {
+        "No": "3",
+        "Tahap Ujian": "Sidang Proposal TA",
+        "Nama Syarat": "Abstrak Proposal final",
+        "Keterangan": "Upload berkas abstrak proposal final",
+        "Upload Berkas": "",
+        "Aktif": "  ",
+        "Aksi": "\n                                                                                                                                                                                                                                                            "
+    },
+    {
+        "No": "4",
+        "Tahap Ujian": "Sidang Proposal TA",
+        "Nama Syarat": "Berkas Proposal Bab 1 - 3 Final",
+        "Keterangan": "Wajib mengupload berkas proposal yang sudah disetujui oleh pembimbing (final)",
+        "Upload Berkas": "",
+        "Aktif": "  ",
+        "Aksi": "\n                                                                                                                                                                                                                                                            "
+    },
+    {
+        "No": "5",
+        "Tahap Ujian": "Sidang Proposal TA",
+        "Nama Syarat": "Berkas Tanda Tangan Pembimbing Pengajuan Sidang Proposal",
+        "Keterangan": "Wajib mengupload berkas tanda tangan pembimbing untuk pengajuan sidang",
+        "Upload Berkas": "",
+        "Aktif": "  ",
+        "Aksi": "\n                                                                                                                                                                                                                                                            "
+    }
+]
