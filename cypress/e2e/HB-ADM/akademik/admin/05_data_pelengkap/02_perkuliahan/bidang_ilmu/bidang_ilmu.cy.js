@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Yudisium";
+const namaMenu="Bidang Ilmu";
 
 describe(namaMenu, ()=>{
  
@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Daftar_Yudisium()
+      cy.Menu_Bidang_Ilmu()
   });
 
   it('Buka Halaman', () => {
