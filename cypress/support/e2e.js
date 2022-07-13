@@ -24,11 +24,6 @@ import "./akademik/admin/01_portal";
 import "./akademik/admin/02_perkuliahan";
 import "./akademik/admin/03_kemahasiswaan";
 import "./akademik/admin/04_kampus_merdeka";
-
-// import "./akademik/admin/05_data_pelengkap";
-// import "./akademik/admin/06_laporan";
-// import "./akademik/admin/07_setting";
-
 import "./akademik/admin/05_data_pelengkap";
 import "./akademik/admin/06_laporan";
 import "./akademik/admin/07_setting";
