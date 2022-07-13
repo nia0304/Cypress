@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Kelas Perkuliahan";
+const namaMenu="kelas perkuliahan";
 
 describe(namaMenu, ()=>{
  
