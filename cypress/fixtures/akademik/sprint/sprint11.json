@@ -94,7 +94,8 @@
     "ket_syarat3":"Wajib mengupload berkas proposal yang sudah disetujui oleh pembimbing (final)",
     "ket_syarat4":"Wajib mengupload berkas tanda tangan pembimbing untuk pengajuan sidang",
     "ket_syarat5":"Upload berkas abstrak proposal final",
-    "alert_tambahsyaratujian":"Penambahan data syarat sidang skripsi berhasil"
+    "alert_tambahsyaratujian":"Penambahan data syarat sidang skripsi berhasil",
+    "alert_syaratkosong":"Perhatian! Tahap Ujian saat ini masih kosong, silahkan tambahkan tahapan ujian dahulu melalui tombol di samping."
 
     
 }

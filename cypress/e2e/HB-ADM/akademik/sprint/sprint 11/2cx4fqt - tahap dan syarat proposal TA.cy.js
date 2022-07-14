@@ -156,5 +156,15 @@ describe('Penyesuaian informasi tahapan & syarat proposal & tugas akhir dimodul 
             }
         })
     });
+
+    it.only('Cek syarat ujian ketika tahap ujian belum di atur', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.visit('http://localhost/siacloud/siakad/ms_syaratajuta');
+            cy.get('#select2-jenis-container').click()
+            cy.get('.select2-search__field').type(data.fil_jenista)
+            cy.get('.alert-v1').should('contain', data.alert_syaratkosong)
+            cy.get('.alert-v1 > .btn').should('be.visible').click()
+        })
+    });
     
 })
