@@ -28,6 +28,18 @@ import "./akademik/admin/05_data_pelengkap";
 import "./akademik/admin/06_laporan";
 import "./akademik/admin/07_setting";
 
+// import untuk modul pmb
+import "./PMB/login_user";
+import "./PMB/admin/00_dashboard";
+import "./PMB/admin/01_pendaftar";
+import "./PMB/admin/02_ods";
+import "./PMB/admin/03_pengaturan";
+import "./PMB/admin/04_seleksi";
+import "./PMB/admin/05_kelulusan";
+import "./PMB/admin/06_referensi";
+import "./PMB/admin/07_laporan";
+import "./PMB/admin/08_loginas";
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 // require("cypress-xpath");
