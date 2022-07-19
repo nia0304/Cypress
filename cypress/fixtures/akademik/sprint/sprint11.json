@@ -95,7 +95,20 @@
     "ket_syarat4":"Wajib mengupload berkas tanda tangan pembimbing untuk pengajuan sidang",
     "ket_syarat5":"Upload berkas abstrak proposal final",
     "alert_tambahsyaratujian":"Penambahan data syarat sidang skripsi berhasil",
-    "alert_syaratkosong":"Perhatian! Tahap Ujian saat ini masih kosong, silahkan tambahkan tahapan ujian dahulu melalui tombol di samping."
+    "alert_syaratkosong":"Perhatian! Tahap Ujian saat ini masih kosong, silahkan tambahkan tahapan ujian dahulu melalui tombol di samping.",
+
+    "__comment kuesioner layanan" : "Data digunakan Kuesioner Layanan",
+    "alert_cutoff":"Halaman ini akan dinonaktifkan mulai periode 2022/2023 Ganjil",
+    "btn_kuesionerbaru":"Kuesioner Layanan Baru",
+    "periodecutoff":"2022/2023 Ganjil",
+    "periodetidakada":"No results found",
+    "new_kuesioner":"Kuesioner Layanan",
+    "title":"REKAP KUESIONER LAYANAN",
+    "skala": "Skala",
+    "Essay": "Uraian/Essay",
+    "periodelama":"2020/2021 Genap",
+    "pilihanganda": "Pilihan Ganda",
+    "uraian": "Uraian"
 
     
 }
