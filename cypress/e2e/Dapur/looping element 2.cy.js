@@ -1,8 +1,7 @@
 /// <reference types="cypress"/>
 
 describe('Automation Test Suite - Fixtures',  () => {
-    //looping through both the fixtues 
-    // accessing the test data from the fixture file
+    //looping data dari fixture
     before(()=> {
         cy.fixture("looping").then(function (testData) {
             this.testData = testData;
