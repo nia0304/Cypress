@@ -108,7 +108,21 @@
     "Essay": "Uraian/Essay",
     "periodelama":"2020/2021 Genap",
     "pilihanganda": "Pilihan Ganda",
-    "uraian": "Uraian"
+    "uraian": "Uraian",
+
+    "__comment pengisian kuesioner baru":"Data digunakan untuk pengisian kuesioner baru oleh Mahasiswa",
+    "alert_periodetutup":"Kuesiner pada Periode ini telah ditutup. Silahkan hubungi Administrator Kampus untuk mendapatkan bantuan.",
+    "alert_bataspengisian":"Pengisian Kuesioner pada periode 2022.1 Ganjil berakhir pada tanggal 31 Desember 2022.",
+    "kelas_edom":"Pengantar Sistem Dan Teknologi Informasi",
+    "belumdiisi": "Belum Diisi",
+    "layanan":"Layanan",
+    "exit_kuesioner":"Kamu belum menyelesaikan pengisian Kuesioner ini, apakah kamu yakin ingin keluar dari Halaman Kuesioner?",
+    "kirimjwb":"Jawaban akan dikirimkan, kamu tidak dapat mengubah jawabanmu lagi setelah ini. Apakah kamu ingin mengirimkan jawaban kuesionermu?",
+    "kategori_prasarana":"Sub Bagian Sarana Prasarana",
+    "kategori_perpustakaan":"Sub Penunjang Proses Pembelajaran Perpustakaan",
+    "alert_wajibisi":"Pertanyaan ini wajib diisi",
+    "alert_simpanlayanan":"Kuesioner Layanan Berhasil Diisi"
+
 
     
 }
