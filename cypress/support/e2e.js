@@ -13,6 +13,9 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+//import reporter
+import "cypress-mochawesome-reporter/register";
+
 // Import commands.js using ES2015 syntax:
 import "./commands";
 import "./pmb";
