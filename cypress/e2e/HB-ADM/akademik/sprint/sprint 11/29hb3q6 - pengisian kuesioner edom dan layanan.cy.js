@@ -106,7 +106,7 @@ describe('Redesain pengisian kuesioner edom dan layanan', ()=>{
         })
     });
 
-    it.only('Mahasiswa cek hasil pengisian kuesioner layanan', () => {
+    it('Mahasiswa cek hasil pengisian kuesioner layanan', () => {
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('[data-cy="search-bar"]').type(data.layanan)
             cy.get('[data-jeniskuesioner="layanan"]').should('contain', data.layanan)
@@ -114,6 +114,46 @@ describe('Redesain pengisian kuesioner edom dan layanan', ()=>{
             cy.get('[data-jeniskuesioner="layanan"]').click()
             cy.get('[data-cy="mode-pratinjau"]').should('exist')
             cy.get('.button-group > [data-cy="btn-out-pratinjau"]').should('contain', 'Keluar dari Pratinjau').click()
+        })
+    });
+
+    it('Mahasiswa mengisi kueisoner edom 1', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('[data-cy="search-bar"]').type(data.edom1)
+            cy.get('[data-kelas="273346"]').click()
+            cy.get('.table-highlight-onboarding > .column-table > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('.question-6 > .row > .col-md-7 > .option-kuesioner > :nth-child(4) > .radio-filter').click()
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get(':nth-child(5) > .radio-filter').click()
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get('.table-highlight-onboarding > .column-table > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('#jawaban_5').type(data.bahasan)
+            cy.get('.question-2 > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('#kritiksaran').type(data.bahasan)
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get('.modal-paragraf').should('contain', data.kirimedom)
+            cy.get('[data-cy="btn-popup-yakin"]').click()
+            cy.get('[data-cy="simpan-berhasil"]').should('exist')
+        })
+    });
+
+    it('Mahasiswa mengisi kueisoner edom 2', () => {
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('[data-cy="search-bar"]').type(data.edom2)
+            cy.get('[data-kelas="272955"]').click()
+            cy.get('.table-highlight-onboarding > .column-table > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('.question-6 > .row > .col-md-7 > .option-kuesioner > :nth-child(4) > .radio-filter').click()
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get(':nth-child(5) > .radio-filter').click()
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get('.table-highlight-onboarding > .column-table > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('#jawaban_5').type(data.bahasan)
+            cy.get('.question-2 > .row > .col-md-7 > .option-kuesioner > :nth-child(5) > .radio-filter').click()
+            cy.get('#kritiksaran').type(data.bahasan)
+            cy.get('.button-group > [data-cy="btn-next"]').click()
+            cy.get('.modal-paragraf').should('contain', data.kirimedom)
+            cy.get('[data-cy="btn-popup-yakin"]').click()
+            cy.get('[data-cy="simpan-berhasil"]').should('exist')
         })
     });
 })

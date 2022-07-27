@@ -121,7 +121,10 @@
     "kategori_prasarana":"Sub Bagian Sarana Prasarana",
     "kategori_perpustakaan":"Sub Penunjang Proses Pembelajaran Perpustakaan",
     "alert_wajibisi":"Pertanyaan ini wajib diisi",
-    "alert_simpanlayanan":"Kuesioner Layanan Berhasil Diisi"
+    "alert_simpanlayanan":"Kuesioner Layanan Berhasil Diisi",
+    "edom1":"pengantar sistem",
+    "edom2":"kalkulus",
+    "kirimedom":"Jawaban akan dikirimkan, kamu tidak dapat mengubah jawabanmu lagi setelah ini. Apakah kamu ingin mengirimkan jawaban kuesionermu?"
 
 
     
