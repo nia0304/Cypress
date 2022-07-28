@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run",
+    "cy:trial": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/00_beranda/*'",
+    "cy:cekAdmin": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/**/*'"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,7 @@
   "devDependencies": {
     "cypress-downloadfile": "^1.2.1",
     "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.2.0",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-xpath": "^1.6.2"
   },

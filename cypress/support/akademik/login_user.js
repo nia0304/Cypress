@@ -1,9 +1,18 @@
-Cypress.Commands.add('loginsuperadmin', () => {
-  cy.visit("/")
+Cypress.Commands.add("loginsuperadmin", () => {
+  cy.visit("/");
   cy.fixture("login/login_user").then((data) => {
     cy.get("#userid").type(data.usersuadm);
     cy.get("#password").type(data.passsuadm);
-  })
+  });
+  cy.get(".btn").click();
+});
+
+Cypress.Commands.add('loginadminpt', ()=> {
+  cy.visit("/");
+  cy.fixture("login/login_user").then((data) => {
+    cy.get("#userid").type(data.useradmin);
+    cy.get("#password").type(data.passadmin);
+  });
   cy.get(".btn").click();
 });
 
@@ -27,25 +36,30 @@ Cypress.Commands.add("logindosen", () => {
 
 // Command Modul
 Cypress.Commands.add("moduladminaplikasi", () => {
-  cy.get('.admin > .inner').click()
-  cy.get('#admin > .content > .role_box').click();
-  cy.get('.container > .nav > :nth-child(1) > a').click()
+  cy.get(".admin > .inner").click();
+  cy.get("#admin > .content > .role_box").click();
+  cy.get(".container > .nav > :nth-child(1) > a").click();
 });
 
 Cypress.Commands.add("modulakademik", () => {
   // cy.get(".siakad > .inner").click();
   // cy.get("#siakad > .content > .role_box").click();
-  // cy.get('.container > .nav > :nth-child(1) > a').click();
-  cy.get('#link-siakad').click();
-  // cy.visit('http://localhost/siakadcloud/gate/menu');
-  // cy.get('.siakad img').click();
-  cy.get('#siakad .role_box:nth-child(2)').click();
-  //cy.url().should('contains', 'http://localhost/siakadcloud/siakad/home');
+  // cy.contains("Super Administrator").click({ force: true });
+  cy.get(".siakad img").parent().parent().click();
+  cy.get("#siakad").contains("Super Administrator").click();
+  // cy.get("#siakad .role_box:nth-child(3) .rolename").click();
+  // cy.url().should("contains", "http://localhost/siacloud/siakad/home");
+  // cy.get(".navbar").click();
+  // cy.get(".container > .nav > :nth-child(1) > a").click();
+  // cy.get('#link-siakad').click();
+  // // cy.visit('http://localhost/siakadcloud/gate/menu');
+  // // cy.get('.siakad img').click();
+  // cy.get('#siakad .role_box:nth-child(2)').click();
+  // //cy.url().should('contains', 'http://localhost/siakadcloud/siakad/home');
 });
 
 Cypress.Commands.add("modulkeuangan", () => {
   cy.get(".keuangan > .inner").click();
   cy.get("#keuangan > .content > .role_box").click();
-  cy.get('.container > .nav > :nth-child(1) > a').click();
+  cy.get(".container > .nav > :nth-child(1) > a").click();
 });
-

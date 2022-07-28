@@ -95,7 +95,34 @@
     "ket_syarat4":"Wajib mengupload berkas tanda tangan pembimbing untuk pengajuan sidang",
     "ket_syarat5":"Upload berkas abstrak proposal final",
     "alert_tambahsyaratujian":"Penambahan data syarat sidang skripsi berhasil",
-    "alert_syaratkosong":"Perhatian! Tahap Ujian saat ini masih kosong, silahkan tambahkan tahapan ujian dahulu melalui tombol di samping."
+    "alert_syaratkosong":"Perhatian! Tahap Ujian saat ini masih kosong, silahkan tambahkan tahapan ujian dahulu melalui tombol di samping.",
 
-    
+    "__comment kuesioner layanan" : "Data digunakan Kuesioner Layanan",
+    "alert_cutoff":"Halaman ini akan dinonaktifkan mulai periode 2022/2023 Ganjil",
+    "btn_kuesionerbaru":"Kuesioner Layanan Baru",
+    "periodecutoff":"2022/2023 Ganjil",
+    "periodetidakada":"No results found",
+    "new_kuesioner":"Kuesioner Layanan",
+    "title":"REKAP KUESIONER LAYANAN",
+    "skala": "Skala",
+    "Essay": "Uraian/Essay",
+    "periodelama":"2020/2021 Genap",
+    "pilihanganda": "Pilihan Ganda",
+    "uraian": "Uraian",
+
+    "__comment pengisian kuesioner baru":"Data digunakan untuk pengisian kuesioner baru oleh Mahasiswa",
+    "alert_periodetutup":"Kuesiner pada Periode ini telah ditutup. Silahkan hubungi Administrator Kampus untuk mendapatkan bantuan.",
+    "alert_bataspengisian":"Pengisian Kuesioner pada periode 2022.1 Ganjil berakhir pada tanggal 31 Desember 2022.",
+    "kelas_edom":"Pengantar Sistem Dan Teknologi Informasi",
+    "belumdiisi": "Belum Diisi",
+    "layanan":"Layanan",
+    "exit_kuesioner":"Kamu belum menyelesaikan pengisian Kuesioner ini, apakah kamu yakin ingin keluar dari Halaman Kuesioner?",
+    "kirimjwb":"Jawaban akan dikirimkan, kamu tidak dapat mengubah jawabanmu lagi setelah ini. Apakah kamu ingin mengirimkan jawaban kuesionermu?",
+    "kategori_prasarana":"Sub Bagian Sarana Prasarana",
+    "kategori_perpustakaan":"Sub Penunjang Proses Pembelajaran Perpustakaan",
+    "alert_wajibisi":"Pertanyaan ini wajib diisi",
+    "alert_simpanlayanan":"Kuesioner Layanan Berhasil Diisi",
+    "edom1":"pengantar sistem",
+    "edom2":"kalkulus",
+    "kirimedom":"Jawaban akan dikirimkan, kamu tidak dapat mengubah jawabanmu lagi setelah ini. Apakah kamu ingin mengirimkan jawaban kuesionermu?"   
 }
