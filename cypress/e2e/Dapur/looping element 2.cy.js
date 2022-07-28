@@ -10,13 +10,14 @@ describe('Automation Test Suite - Fixtures',  () => {
     
     beforeEach(() => {
         cy.loginsuperadmin()
-        cy.modulakademik()
+        
     }); 
     it("login", function () {
+        cy.modulakademik()
         cy.visit('http://localhost/siacloud/siakad/ms_tahapajuta');
         cy.get('#select2-jenis-container').click()
         cy.get('.select2-search__field').type('tesis{enter}')
-        this.testData.forEach((value) => {
+        this.testData.apa.forEach((value) => {
             // cy.log(value)
             cy.get('#wrap-button > .btn').click()
             cy.get('#i_nourut').type(value.urut)
@@ -24,4 +25,18 @@ describe('Automation Test Suite - Fixtures',  () => {
             cy.get(':nth-child(4) > .btn-success').click()
         })
     })
+
+    it.only('Admin hapus tahap pengajuan proposal', () => {
+        cy.visit('http://localhost/siacloud/siakad/ms_tahapajuta');
+        cy.fixture('akademik/sprint/sprint11').then((data) => {
+            cy.get('#select2-jenis-container').click()
+            cy.get('.select2-search__field').type("tesis{enter}")
+            //lopping hapus tahap ujian
+            for(let n = 1; n <= 6; n++){
+                 cy.get(':nth-child(2) > :nth-child(4) > .btn-danger').click({multiple: true})
+                 cy.get('.modal-footer > .btn-primary').click()
+                 cy.wait(400)
+             }
+         })
+     });
 })
