@@ -13,7 +13,9 @@ Cypress.Commands.add("loginUserSuperAdmin", () => {
 // untuk masuk ke modul pmb
 Cypress.Commands.add("openModulPmb", () => {
     cy.get(".spmb").click(); //pilih modul pmb
-    cy.get("#spmb > div > div.role_box").click(); //pilih role login
+    cy.get('#spmb > div > div:nth-child(2)').click(); // pilih role sebagai super admin PT 
+    // cy.get('#spmb > div > div:nth-child(3)').click(); // pilih role sebagai super admin jurusan akutansi
+    // cy.get("#spmb > div > div.role_box").click(); //pilih role login
 });
 
 // untuk masuk ke menu ODS
