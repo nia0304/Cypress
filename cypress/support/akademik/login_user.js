@@ -7,6 +7,15 @@ Cypress.Commands.add("loginsuperadmin", () => {
   cy.get(".btn").click();
 });
 
+Cypress.Commands.add('loginadminpt', ()=> {
+  cy.visit("/");
+  cy.fixture("login/login_user").then((data) => {
+    cy.get("#userid").type(data.useradmin);
+    cy.get("#password").type(data.passadmin);
+  });
+  cy.get(".btn").click();
+});
+
 Cypress.Commands.add("loginmhs", () => {
   cy.visit("/");
   cy.fixture("login/login_user").then((data) => {
