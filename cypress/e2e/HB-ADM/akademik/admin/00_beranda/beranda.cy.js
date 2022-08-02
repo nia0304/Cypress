@@ -1,20 +1,18 @@
 /// <reference types="cypress"/>
 
-const judulHalaman="Beranda";
+const judulHalaman = "Beranda";
 
-describe(judulHalaman, ()=>{
- 
+describe(judulHalaman, () => {
   beforeEach(() => {
     //login
-      cy.loginsuperadmin()
+    cy.loginsuperadmin();
     //open Akademik module
-      cy.modulakademik()
+    cy.modulakademik();
     // go to target page
-      cy.Menu_Beranda()
+    cy.Menu_Beranda();
   });
 
-  it('Buka Halaman', () => {
-    cy.get('.content-header > h1').should('contain',judulHalaman)
+  it("Buka Halaman", () => {
+    cy.get(".content-header > h1").should("contain", judulHalaman);
   });
-
 });
