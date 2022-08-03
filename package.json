@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
     "cy:trial": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/00_beranda/*'",
-    "cy:cekAdmin": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/**/*'"
+    "cy:cekAdmin": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/**/*'",
+    "cy:cekAdministrasiAplikasi": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/administrasi/*'"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,19 @@
+{
+    "admin":{
+        "username":"fikri",
+        "password":"j77/FQjF"
+    },
+    "mahasiswa":{
+        "username":"20220204",
+        "password":"20220204"
+    },
+    "dosen":{
+        "username":"14045",
+        "password":"123"
+    },
+    "superadmin":{
+        "username":"meidasvm",
+        "password":"X31!2Rxd"
+    }
+  }
+  
