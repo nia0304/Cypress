@@ -13,10 +13,8 @@ describe("superadmin can login and open all page in administrasi aplikasi module
   });
 
   it("superadmin can open menu di modul administrasi aplikasi", () => {
-    describe("test", () => {
-      cy.visit("admin/ms_modul");
-      cy.get(".content-header > h1").should("contain.text", "Aplikasi");
-    });
+    cy.visit("admin/ms_modul");
+    cy.get(".content-header > h1").should("contain.text", "Aplikasi");
 
     cy.visit("admin/list_target");
     cy.get(".content-header > h1").should("contain.text", "File Halaman");
