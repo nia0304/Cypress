@@ -6,6 +6,7 @@ describe("superadmin can login and open all page in administrasi aplikasi module
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.get(".admin > .inner").click();
     cy.get("#admin > div:nth-child(1) > div:nth-child(3)").click();
+    cy.wait(2000);
   });
 
   it("superadmin can open dashboard administrasi aplikasi module", () => {
