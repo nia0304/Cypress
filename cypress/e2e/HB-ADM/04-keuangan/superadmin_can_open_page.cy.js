@@ -5,8 +5,12 @@ describe("superadmin can open keuangan page", () => {
     cy.loginsuperadmin();
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.get(".keuangan > .inner").click();
+    cy.intercept({
+      method: "GET",
+      url: "http://localhost/siacloud/gate/ajax/access/**",
+    }).as("adminAccess");
     cy.get("#keuangan > div:nth-child(1) > div:nth-child(2)").click();
-    cy.wait(2000);
+    cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 
   it("superadmin can open keuangan page", () => {
