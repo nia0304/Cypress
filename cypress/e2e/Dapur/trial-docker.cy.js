@@ -1,9 +1,9 @@
 describe("Tes Reset Database", () => {
   before(() => {
-    cy.exec(
-      "docker run --name qa-postgres-db -e POSTGRESS_PASSWORD=ppa -e PGDATA=postgres -p 5433:5432 -d qa-postgres-db"
-    );
-    cy.wait(30000);
+    // cy.exec(
+    //   "docker run --name qa-postgres-db -e POSTGRESS_PASSWORD=ppa -e PGDATA=postgres -p 5433:5432 -d qa-postgres-db"
+    // );
+    // cy.wait(30000);
     cy.loginsuperadmin();
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.get(".hr > .inner").click();
@@ -16,7 +16,8 @@ describe("Tes Reset Database", () => {
   });
 
   after(() => {
-    cy.exec("docker rm qa-postgres-db --force");
+    // cy.exec("docker stop qa-postgres-db");
+    // cy.exec("docker rm qa-postgres-db");
   });
 
   it("Tes Delete Jenis Cuti", () => {
