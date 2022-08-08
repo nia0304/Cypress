@@ -10,6 +10,34 @@ Cypress.Commands.add("loginUserSuperAdmin", () => {
     cy.get(".btn").click();
   });
 
+  Cypress.Commands.add("loginPendaftar", () => {
+    // cy.visit("https://dev-pmb-v2.siakadcloud.com");
+    // cy.visit("https://ods.siakadcloud.com");
+
+    cy.visit("/spmbfront/")
+    
+    cy.fixture("login/login_user").then((data) => {
+      cy.get('.login-button').click()
+      cy.get("#idpendaftar").type(data.id_pendaftar);
+      cy.get("#pin").type(data.pass_pendaftar);
+    });
+    cy.get(".btn-warning").click();
+  });
+
+  Cypress.Commands.add("loginPendaftar2", () => {
+    // cy.visit("https://dev-pmb-v2.siakadcloud.com");
+    // cy.visit("https://ods.siakadcloud.com");
+
+    cy.visit("/spmbfront/")
+    
+    cy.fixture("login/login_user").then((data) => {
+      cy.get('.login-button').click()
+      cy.get("#idpendaftar").type(data.id_pendaftar2);
+      cy.get("#pin").type(data.pass_pendaftar2);
+    });
+    cy.get(".btn-warning").click();
+  });
+
 // untuk masuk ke modul pmb
 Cypress.Commands.add("openModulPmb", () => {
     cy.get(".spmb").click(); //pilih modul pmb
