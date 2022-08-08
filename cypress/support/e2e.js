@@ -48,3 +48,8 @@ import "./PMB/admin/08_loginas";
 // require("cypress-xpath");
 require("cypress-plugin-tab");
 require("cypress-get-table");
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from failing the test
+    return false
+  })
