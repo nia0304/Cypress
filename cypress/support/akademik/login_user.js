@@ -42,20 +42,9 @@ Cypress.Commands.add("moduladminaplikasi", () => {
 });
 
 Cypress.Commands.add("modulakademik", () => {
-  // cy.get(".siakad > .inner").click();
-  // cy.get("#siakad > .content > .role_box").click();
-  // cy.contains("Super Administrator").click({ force: true });
-  cy.get(".siakad img").parent().parent().click();
-  cy.get("#siakad").contains("Super Administrator").click();
-  // cy.get("#siakad .role_box:nth-child(3) .rolename").click();
-  // cy.url().should("contains", "http://localhost/siacloud/siakad/home");
-  // cy.get(".navbar").click();
-  // cy.get(".container > .nav > :nth-child(1) > a").click();
-  // cy.get('#link-siakad').click();
-  // // cy.visit('http://localhost/siakadcloud/gate/menu');
-  // // cy.get('.siakad img').click();
-  // cy.get('#siakad .role_box:nth-child(2)').click();
-  // //cy.url().should('contains', 'http://localhost/siakadcloud/siakad/home');
+  cy.get(".siakad > .inner").click();
+  cy.get("#siakad > .content > .role_box").click();
+  cy.get('.container > .nav > :nth-child(1) > a').click()
 });
 
 Cypress.Commands.add("modulkeuangan", () => {
