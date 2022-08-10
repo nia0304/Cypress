@@ -1,13 +1,11 @@
 /// <reference types="cypress"/>
 
 describe('Penyesuaian laporan emis untuk mahasiswa pasca sarjana', () => {
-    before(()=>{
-        cy.fixture("akademik/sprint/sprint13").as('data')
-    })
     beforeEach(() => {
         cy.loginsuperadmin()
         cy.modulakademik()
         cy.visit('http://localhost/siacloud/siakad/repp_emismhs');
+        cy.fixture("akademik/sprint/sprint13").as('data')
         
     });
 
@@ -21,9 +19,28 @@ describe('Penyesuaian laporan emis untuk mahasiswa pasca sarjana', () => {
         })
     });
 
-    it.only('Admin cek isi filter prodi/unit sesuai dengan tingkat pendidikan diploma', function () {
+    it('Admin cek isi filter prodi/unit sesuai dengan tingkat pendidikan diploma', function () {
         cy.get('#tingkatpendidikan').select(this.data.diploma)
-        cy.get('#idunit').invoke('text').then((text => cy.log(text)))
+        cy.get('#idunit').select(this.data.d3)
+        cy.get('#idunit option:selected').invoke('text').then((text => {
+            cy.wrap(text).should('contain', text)
+        }))
+    });
+
+    it('Admin cek isi filter prodi/unit sesuai dengan tingkat pendidikan sarjana', function () {
+        cy.get('#tingkatpendidikan').select(this.data.sarjana)
+        cy.get('#idunit').select(this.data.s1)
+        cy.get('#idunit option:selected').invoke('text').then((text => {
+            cy.wrap(text).should('contain', text)
+        }))
+    });
+
+    it('Admin cek isi filter prodi/unit sesuai dengan tingkat pendidikan pascasarjana', function () {
+        cy.get('#tingkatpendidikan').select(this.data.pasca)
+        cy.get('#idunit').select(this.data.s2)
+        cy.get('#idunit option:selected').invoke('text').then((text => {
+            cy.wrap(text).should('contain', text)
+        }))
     });
     
 })
