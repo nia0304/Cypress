@@ -2,10 +2,11 @@ describe("Pengisian Biodata", () => {
 
     beforeEach("login pendaftar", () => {
         //login
-        cy.loginPendaftar()
+        cy.loginPendaftar2()
     });
 
-    it("Pengisian biodata pendaftar", () => {
+    it("Kelengkapan syarat pendaftar", () => {
+
         //get dan klik href berkas administrasi
         cy.get('.side-menu > ul > :nth-child(2) > a')
             .invoke('removeAttr', 'target')
@@ -16,9 +17,9 @@ describe("Pengisian Biodata", () => {
             cy.get('.col-md-6 > .summary-value').should('contain', data.namapendaftar)
 
 
-            // cy.get('#profil-foto').click()
+            cy.get('.desc-table > .btn').click()
             const filepath = 'Images/minion 3.jpg'
-            cy.get('#profil-foto').attachFile(filepath)
+            cy.get('#tabelBerkas > tbody > tr > td.text-center.berkas-list-item > div.desc-table > input[type=file]').attachFile(filepath)
 
             cy.get('div[id="fileList-filesyarat[14]"]').click({ force: true })
             const img1 = "Images/minion 3.jpg";
