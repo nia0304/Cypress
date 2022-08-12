@@ -47,7 +47,9 @@
     "pilihan_2": "S1 - Sistem Informasi",
     "pilihan_3": "S1 - Teknik Informatika",
     "notif_berhasil": "Biodata Pendaftar 212713013 - Defrian Sukardi berhasil diubah",
-    "notif_gagal": "Tahapan domisili, datawali, pendidikan anda masih belum selesai! Harap cek kembali. Klik disini untuk melanjutkan."
+    "notif_gagal": "Tahapan domisili, datawali, pendidikan anda masih belum selesai! Harap cek kembali. Klik disini untuk melanjutkan.",
 
+    "kode_pendaftar_mhs": "123123124",
+    "nama_pendaftar_mhs": "galuh"
 
 }
