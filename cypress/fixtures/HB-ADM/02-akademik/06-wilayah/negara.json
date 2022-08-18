@@ -10,7 +10,8 @@
     "emis03":"93",
     "kode04":"AA04",
     "negara04":"Testing04",
-
+    "kode05":"AA05",
+    "negara05":"Testing05",
     "kode06":"AAB",
     "negara06":"Testing Ubah",
     "emis06":"99",
@@ -20,5 +21,6 @@
     "alertsimpan":"Penambahan data negara berhasil",
     "alertubah":"Pengubahan data negara berhasil",
     "alerthapus":"Penghapusan data negara berhasil",
+    "alertkosong":"Mohon mengisi isian yang bergaris merah",
     "modalhapus":"Apakah anda yakin akan menghapus data ini?"
 }

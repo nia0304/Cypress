@@ -74,4 +74,23 @@ describe('Testing Data Pelengkap Negara', ()=>{
     }    
   });
 
+  //negatif test
+  it('Admin tambah negara ketika kode kosong', function () {
+    cy.get('#wrap-button > .btn').click()
+    cy.get('#i_namanegara').type(this.data.negara05)
+    cy.get('[data-original-title="Simpan"]').click()
+    cy.get('.modal-content').should('contain', this.data.alertkosong)
+  });
+  it('Admin tambah negara ketika nama negara kosong', function () {
+    cy.get('#wrap-button > .btn').click()
+    cy.get('#i_idnegara').type(this.data.kode05)
+    cy.get('[data-original-title="Simpan"]').click()
+    cy.get('.modal-content').should('contain', this.data.alertkosong)
+  });
+  it('Admin membatalkan tambah negara', function ()  {
+    cy.get('#wrap-button > .btn').click()
+    cy.get('#i_idnegara').type(this.data.kode05)
+    cy.get('#i_namanegara').type(this.data.negara05)
+    cy.get('[data-original-title="Batal"]').click()
+  });
 });
