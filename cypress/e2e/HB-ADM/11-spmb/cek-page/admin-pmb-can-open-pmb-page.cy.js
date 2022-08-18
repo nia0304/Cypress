@@ -2,7 +2,7 @@
 
 describe("admin pmb can login and open all page in module PMB", () => {
     beforeEach(() => {
-        cy.loginUserSuperAdmin();
+        cy.loginUserAdminPmb();
         cy.get(".main_title").should("contain", "Daftar Modul");
         cy.get(".spmb > .inner").click();
 
