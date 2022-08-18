@@ -1,0 +1,24 @@
+{
+    "kode01":"AA",
+    "negara01":"Testing",
+    "emis01":"91",
+    "kode02":"AA/",
+    "negara02":"Testing02",
+    "emis02":"92",
+    "kode03":"AA03",
+    "negara03":"Testing03",
+    "emis03":"93",
+    "kode04":"AA04",
+    "negara04":"Testing04",
+
+    "kode06":"AAB",
+    "negara06":"Testing Ubah",
+    "emis06":"99",
+
+
+
+    "alertsimpan":"Penambahan data negara berhasil",
+    "alertubah":"Pengubahan data negara berhasil",
+    "alerthapus":"Penghapusan data negara berhasil",
+    "modalhapus":"Apakah anda yakin akan menghapus data ini?"
+}
