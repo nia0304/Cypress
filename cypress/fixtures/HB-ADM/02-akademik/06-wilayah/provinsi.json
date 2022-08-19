@@ -1,0 +1,19 @@
+{
+    "kode01":"90",
+    "provinsi01":"Testing",
+    "kode02":"80",
+    "provinsi02":"Testing Ubah",
+
+    "kode03":"AA",
+    "provinsi03":"Testing huruf",
+    "kode04":"//?",
+    "provinsi04":"Testing karakter",
+    "kode05":"999990",
+    "provinsi05":"Testing < 5 digit kode",
+
+    "alertsimpan":"Penambahan data propinsi berhasil",
+    "alertubah":"Pengubahan data propinsi berhasil",
+    "alerthapus":"Penghapusan data propinsi berhasil",
+    "alertkosong":"Mohon mengisi isian yang bergaris merah",
+    "modalhapus":"Apakah anda yakin akan menghapus data ini?"
+}

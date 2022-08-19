@@ -10,6 +10,17 @@ Cypress.Commands.add("loginUserSuperAdmin", () => {
   cy.get(".btn").click();
 });
 
+Cypress.Commands.add("loginUserAdminPmb", () => {
+  // cy.visit("https://dev-pmb-v2.siakadcloud.com");
+  // cy.visit("https://ods.siakadcloud.com");
+  cy.visit("/")
+  cy.fixture("login/login_user").then((data) => {
+    cy.get("#userid").type(data.admin_pmb);
+    cy.get("#password").type(data.pass_admin_pmb);
+  });
+  cy.get(".btn").click();
+});
+
 Cypress.Commands.add("loginPendaftar", () => {
   // cy.visit("https://dev-pmb-v2.siakadcloud.com");
   // cy.visit("https://ods.siakadcloud.com");
