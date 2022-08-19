@@ -14,7 +14,7 @@ describe(judulHalaman, ()=>{
   });
 
   it('Buka Halaman', () => {
-    cy.get('.content-header > h1 > small').should('contain',judulHalaman)
+    cy.get('.content-header > h1').should('contain',judulHalaman)
   });
 
 });
