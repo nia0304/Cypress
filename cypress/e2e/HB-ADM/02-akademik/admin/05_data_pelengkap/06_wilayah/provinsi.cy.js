@@ -10,7 +10,7 @@ describe('Testing Data Pelengkap Negara', ()=>{
   });
 
   //positif test
-  it('Admin tambah data provinsi dengan kode angka', function () {
+  it.only('Admin tambah data provinsi dengan kode angka', function () {
     cy.get('#wrap-button > .btn').click()
     cy.get('#i_idkota').type(this.data.kode01)
     cy.get('#i_namakota').type(this.data.provinsi01)
