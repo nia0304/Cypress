@@ -1,0 +1,13 @@
+{
+    "provinsi": "Lain-lain",
+    "kode01": "90",
+    "kota01": "testing 01",
+    "kode02": "98",
+    "kota02": "testing Ubah",
+    "alertsimpan": "Penambahan data kota berhasil",
+    "alertubah": "Pengubahan data kota berhasil",
+    "alerthapus": "Penghapusan data kota berhasil",
+    "modalhapus":"Apakah anda yakin akan menghapus data ini?"
+
+
+}

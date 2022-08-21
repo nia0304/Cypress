@@ -46,10 +46,7 @@ describe("Super Administrator bisa melakukan management jenis cuti pada menu jen
     cy.get(".content-header > h1").should("contain.text", "Daftar Cuti");
     cy.get("td")
       .contains("Cuti Covid")
-      .next()
-      .next()
-      .next()
-      .next()
+      .last("td")
       .find("button.btn.btn-primary.btn-xs.btn-flat")
       .click();
     cy.get("#u_jeniscuti").clear().type("Cuti Covid Edited");
