@@ -8,7 +8,7 @@
     "cy:run": "cypress run",
     "cy:trial": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/akademik/admin/00_beranda/*'",
     "cy:cekAdmin": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/02-akademik/admin/**/*'",
-    "cy:cekOpenPage": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/01-administrasi/*,cypress/e2e/HB-ADM/04-keuangan/*,cypress/e2e/HB-ADM/05-sdm/*'"
+    "cy:cekOpenPage": "cypress run --browser chrome --spec 'cypress/e2e/HB-ADM/01-administrasi/cek-page/*,cypress/e2e/HB-ADM/04-keuangan/cek-page/*,cypress/e2e/HB-ADM/05-sdm/cek-page/*,cypress/e2e/HB-ADM/06-cbt/cek-page/*,cypress/e2e/HB-ADM/07-dashboard-pelaporan/cek-page/*'"
   },
   "keywords": [],
   "author": "",

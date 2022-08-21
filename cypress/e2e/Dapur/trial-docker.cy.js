@@ -36,7 +36,7 @@ describe("Super Administrator bisa melakukan management jenis cuti pada menu jen
       parseSpecialCharSequences: false,
     });
     cy.get("#i_keterangan").type("Keterangannya");
-    cy.get("#i_keterangan").parent().next().find(".fa-floppy-o").click();
+    cy.get(".fa-floppy-o").click();
     //pastikan alert keluar
     cy.get(".alert").contains("Penambahan data Jenis Cuti berhasil");
   });
@@ -59,7 +59,7 @@ describe("Super Administrator bisa melakukan management jenis cuti pada menu jen
       .contains("Pengubahan data Jenis Cuti berhasil ");
   });
 
-  it("Super Admin Bisa Delete Jenis Cuti Baru", () => {
+  it.skip("Super Admin Bisa Delete Jenis Cuti Baru", () => {
     cy.visit("hr/ms_cuti");
     cy.get(".content-header > h1").should("contain.text", "Daftar Cuti");
     cy.get("td")
