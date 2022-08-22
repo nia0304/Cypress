@@ -19,7 +19,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu portal di modul akademik aplikasi", () => {
         
-        //Portal
+        //portal
         cy.visit("siakad/list_mahasiswa");
         cy.get(".content-header > h1").should("contain.text", "Mahasiswa Daftar Mahasiswa");
         
@@ -54,7 +54,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu perkuliahan di modul akademik aplikasi", () => {
 
-        //Perkuliahan
+        //perkuliahan
         cy.visit("siakad/list_matakuliah");
         cy.get(".content-header > h1").should("contain.text", "Mata Kuliah Daftar Mata Kuliah / Blok / Departemen");
 
@@ -229,7 +229,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu kemahasiswaan di modul akademik aplikasi", () => {
 
-        //Kemahasiswaan
+        //kemahasiswaan
         cy.visit("siakad/ms_jenisaktivitasmhs");
         cy.get(".content-header > h1").should("contain.text", "Jenis Aktivitas");
 
@@ -301,7 +301,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu data pelengkap di modul akademik aplikasi", () => {
 
-        //Data Pelengkap
+        //data pelengkap
         cy.visit("siakad/data_universitas/detail");
         cy.get(".content-header > h1").should("contain.text", "Data Universitas Sevima");
 
@@ -450,7 +450,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu laporan manual - laporan perkuliahan di modul akademik aplikasi", () => {
 
-        //Laporan
+        //laporan
         cy.visit("siakad/list_laporan");
         cy.get(".content-header > h1").should("contain.text", "Laporan Daftar Laporan Manual");
 
@@ -751,7 +751,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     it("superadmin can open menu setting di modul akademik aplikasi", () => {
 
-        //Setting
+        //setting
         cy.visit("siakad/list_periode");
         cy.get(".content-header > h1").should("contain.text", "Periode Akademik Daftar Periode Akademik");
 
