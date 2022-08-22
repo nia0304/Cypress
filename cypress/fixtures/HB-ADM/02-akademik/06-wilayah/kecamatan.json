@@ -1,0 +1,27 @@
+{
+    "provinsi": "Lain-lain",
+    "kota": "Lain-lain",
+    "kode01": "10",
+    "kecamatan01": "testing 01",
+    "kode02": "1234567",
+    "kecamatan02": "testing 02",
+    "kode03": "101",
+    "kecamatan03": "testing Ubah",
+    "kode04": "1",
+    "kecamatan04": "testing duplikasi",
+    "kode05": "AA",
+    "kecamatan05": "testing kode huruf",
+    "kode06": "//",
+    "kecamatan06": "testing kode karakter",
+    "kode07": "99",
+    "kecamatan07": "testing kode kosong",
+    "kode08": "12345678",
+    "kecamatan08": "testing kode > 7 digit",
+
+    "alertsimpan": "Penambahan data kota berhasil",
+    "alertubah": "Pengubahan data kota berhasil",
+    "alerthapus": "Penghapusan data kota berhasil",
+    "alertduplikasi": "Penambahan data kota gagal, ada duplikasi data",
+    "alertkosong":"Mohon mengisi isian yang bergaris merah",
+    "modalhapus":"Apakah anda yakin akan menghapus data ini?"
+}
