@@ -26,7 +26,7 @@ describe('Automation Test Suite - Fixtures',  () => {
         })
     })
 
-    it.only('Admin hapus tahap pengajuan proposal', () => {
+    it('Admin hapus tahap pengajuan proposal', () => {
         cy.visit('http://localhost/siacloud/siakad/ms_tahapajuta');
         cy.fixture('akademik/sprint/sprint11').then((data) => {
             cy.get('#select2-jenis-container').click()
@@ -39,4 +39,17 @@ describe('Automation Test Suite - Fixtures',  () => {
              }
          })
      });
+
+     it.only('test get element from tabel', () => {
+      cy.modulakademik()
+      cy.visit('siakad/ms_kota');
+        cy.get('#propinsi').select('JAWA TIMUR').wait(0)
+        cy.get('table.table.table-bordered.table-striped.dataTable > tbody > tr > td:nth-child(1)').each(($el) => {
+          if ($el.text() === '3522 ') {
+            cy.get($el).parent().find('button.btn.btn-primary.btn-xs.btn-flat').click()
+            return false
+          }
+          cy.log($el.text())
+        })
+      });
 })

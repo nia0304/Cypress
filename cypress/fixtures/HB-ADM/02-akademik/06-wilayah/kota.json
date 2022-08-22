@@ -4,9 +4,14 @@
     "kota01": "testing 01",
     "kode02": "98",
     "kota02": "testing Ubah",
+    "kode03":"kode",
+    "kota03":"Testing 3",
+    "kode04":"//",
+    "kota04":"Testing 4",
     "alertsimpan": "Penambahan data kota berhasil",
     "alertubah": "Pengubahan data kota berhasil",
     "alerthapus": "Penghapusan data kota berhasil",
+    "alertkosong":"Mohon mengisi isian yang bergaris merah",
     "modalhapus":"Apakah anda yakin akan menghapus data ini?"
 
 

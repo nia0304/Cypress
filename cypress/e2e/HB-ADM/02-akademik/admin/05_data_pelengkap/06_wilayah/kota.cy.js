@@ -73,4 +73,55 @@ describe('Testing Data Pelengkap Negara', ()=>{
     cy.get('.modal-footer > .btn-primary').click()
   });
 
+  it('Admin membatalkan pengisian kota', function () {
+    cy.get('#propinsi').select(this.data.provinsi).wait(0)
+    cy.get('[id="wrap-button"]').find('button.btn.btn-success.btn-sm').click()
+    cy.get('#i_idkota').type(this.data.kode01)
+    cy.get('#i_namakota').type(this.data.kota01)
+      .parent()
+      .next()
+      .find('button.btn.btn-warning.btn-xs.btn-flat')
+      .click()
+  });
+
+  //negatif test
+  it('Admin menambahkan kota menggunakan kode huruf', function () {
+    cy.get('#propinsi').select(this.data.provinsi).wait(0)
+    cy.get('[id="wrap-button"]').find('button.btn.btn-success.btn-sm').click()
+    cy.get('#i_idkota').type(this.data.kode03)
+    cy.get('#i_namakota').type(this.data.kota03)
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
+    cy.get('.modal-content').should('contain', this.data.alertkosong)
+    cy.get('.modal-footer > .btn').click()
+  });
+
+  it('Admin menambahkan kota menggunakan kode karakter', function () {
+    cy.get('#propinsi').select(this.data.provinsi).wait(0)
+    cy.get('[id="wrap-button"]').find('button.btn.btn-success.btn-sm').click()
+    cy.get('#i_idkota').type(this.data.kode04)
+    cy.get('#i_namakota').type(this.data.kota04)
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
+    cy.get('.modal-content').should('contain', this.data.alertkosong)
+    cy.get('.modal-footer > .btn').click()
+  });
+
+  it('Admin menambahkan kota ketika nama kota kosong', function () {
+    cy.get('#propinsi').select(this.data.provinsi).wait(0)
+    cy.get('[id="wrap-button"]').find('button.btn.btn-success.btn-sm').click()
+    cy.get('#i_idkota').type(this.data.kode01)
+    cy.get('#i_namakota')
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
+    cy.get('.modal-content').should('contain', this.data.alertkosong)
+    cy.get('.modal-footer > .btn').click()
+  });
+
 });
