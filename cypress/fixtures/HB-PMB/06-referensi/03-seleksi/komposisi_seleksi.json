@@ -1,0 +1,12 @@
+{
+    "kode01": "BAHASA",
+    "komposisiSeleksi01": "testing Komposisi Seleksi",
+    "kode02": "12345",
+    "komposisiSeleksi02": "testing Komposisi Seleksi ubah",
+    "alertSimpan": "Penambahan data Komposisi Seleksi berhasil",
+    "alertUbah": "Pengubahan data Komposisi Seleksi berhasil",
+    "alertHapus": "Penghapusan data Komposisi Seleksi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Komposisi Seleksi gagal, ada duplikasi data"
+}

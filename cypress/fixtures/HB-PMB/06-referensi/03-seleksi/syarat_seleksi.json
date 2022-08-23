@@ -1,0 +1,14 @@
+{
+    "namaSyarat01": "Testing syarat seleksi",
+    "namaSyarat02": "Ubah syarat seleksi",
+    "poin01": "6",
+    "poin02": "5",
+    "alertSimpan": "Penambahan data Syarat berhasil",
+    "alertUbah": "Pengubahan data Syarat berhasil",
+    "alertHapus": "Penghapusan data Syarat berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Syarat gagal, ada duplikasi data",
+    "dataSyarat": "Bukti Biaya Daftar",
+    "alertGagalHapus": "Penghapusan data Syarat gagal, data masih dijadikan referensi"
+}

@@ -1,0 +1,14 @@
+{
+    "namaPilihan01": "nama pilihan",
+    "poin01": "8",
+    "poin02": "11",
+    "namaPilihan02": "nama pilihan ubah",
+    "poinHuruf": "abcde",
+    "syarat": "Fotokopi  KTP",
+    "alertSimpan": "Penambahan data Syarat berhasil",
+    "alertUbah": "Pengubahan data Syarat berhasil",
+    "alertHapus": "Penghapusan data Syarat berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Syarat gagal, ada duplikasi data"
+}
