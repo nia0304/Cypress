@@ -9,7 +9,7 @@ describe("superadmin can open keuangan page", () => {
       method: "GET",
       url: "http://localhost/siacloud/gate/ajax/access/**",
     }).as("adminAccess");
-    cy.get("#hr > div:nth-child(1) > div:nth-child(2)").click();
+    cy.get("#hr").contains("Super Administrator").should("be.visible").click();
     cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 
