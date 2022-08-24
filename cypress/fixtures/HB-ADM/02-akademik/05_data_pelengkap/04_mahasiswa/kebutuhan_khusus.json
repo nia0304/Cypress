@@ -1,0 +1,13 @@
+{
+    "i_kode":100,
+    "i_namaKK":"Testing Kebutuhan Khusus",
+    "i_alert":"Penambahan data kebutuhankhusus berhasil",
+    "i_alertDuplicate":"Penambahan data kebutuhankhusus gagal, ada duplikasi data",
+    "u_kode":99,
+    "u_namaKK":"Kebutuhan Khsusus Tester",
+    "u_alert":"Pengubahan data kebutuhankhusus berhasil",
+    "d_alert":"Penghapusan data kebutuhankhusus berhasil",
+    "popup_mandatory":"Mohon mengisi isian yang bergaris merah",
+    "pencarian_by":"Kode,Nama Kebutuhan Khusus",
+    "empty_data":"Data kosong"
+}

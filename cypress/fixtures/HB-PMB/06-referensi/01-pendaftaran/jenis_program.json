@@ -1,0 +1,13 @@
+{
+    "kode01": "BAHASA",
+    "jenisProgram01": "testing jenis program",
+    "kode02": "Teknik",
+    "jenisProgram02": "testing jenis program ubah",
+    "kodeAngka": "12345",
+    "alertSimpan": "Penambahan data Jenis Program berhasil",
+    "alertUbah": "Pengubahan data Jenis Program berhasil",
+    "alertHapus": "Penghapusan data Jenis Program berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Jenis Program gagal, ada duplikasi data"
+}

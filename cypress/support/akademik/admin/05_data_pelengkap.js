@@ -187,25 +187,25 @@ Cypress.Commands.add('Menu_Jas_Almamater', () => {
 });
 
 //04_mahasiswa-=====================================================================
-Cypress.Commands.add('Menu_Status_Mahasiswa', () => {
+Cypress.Commands.add('menu_status_mahasiswa', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
 });
 
-Cypress.Commands.add('Menu_Jenis_Tinggal', () => {
+Cypress.Commands.add('menu_jenis_tinggal', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
 });
 
-Cypress.Commands.add('Menu_Kebutuhan_Khusus', () => {
+Cypress.Commands.add('menu_kebutuhan_khusus', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
 });
 
-Cypress.Commands.add('Menu_Transportasi', () => {
+Cypress.Commands.add('menu_transportasi', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()

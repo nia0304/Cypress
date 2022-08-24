@@ -1,0 +1,13 @@
+{
+    "kode01": "10",
+    "gelombang01": "testing gelombang",
+    "kode02": "11",
+    "gelombang02": "testing gelombang ubah",
+    "kodeHuruf": "abcde",
+    "alertSimpan": "Penambahan data gelombang berhasil",
+    "alertUbah": "Pengubahan data gelombang berhasil",
+    "alertHapus": "Penghapusan data gelombang berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data gelombang gagal, ada duplikasi data"
+}
