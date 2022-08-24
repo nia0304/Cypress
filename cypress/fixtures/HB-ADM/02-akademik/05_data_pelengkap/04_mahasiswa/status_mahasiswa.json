@@ -1,0 +1,13 @@
+{
+    "i_kode":"00",
+    "i_namaStatusMhs":"Testing Status MHS",
+    "i_kodeEmis":"00",
+    "i_alert":"Penambahan data status mahasiswa berhasil",
+    "i_alertDuplicate":"Penambahan data status mahasiswa gagal, ada duplikasi data",
+    "u_kode":"01",
+    "u_namaStatusMhs":"Status MHS Tester",
+    "u_kodeEmis":"01",
+    "u_alert":"Pengubahan data status mahasiswa berhasil",
+    "d_alert":"Penghapusan data status mahasiswa berhasil",
+    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
+}
