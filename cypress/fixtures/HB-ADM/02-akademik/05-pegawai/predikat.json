@@ -1,0 +1,26 @@
+{
+    "periode": "2020/2021 Genap",
+    "kode01": "01",
+    "predikat01": "predikat 01",
+    "predikaten01": "predikat EN 01",
+    "nilaimin01":"10",
+    "nilaimax01":"20",
+    "kode02": "AA",
+    "predikat02": "predikat huruf",
+    "predikaten02": "predikat EN huruf",
+    "nilaimin02":"21",
+    "nilaimax02":"30",
+    "kode03": "//",
+    "predikat03": "predikat karakter",
+    "predikaten03": "predikat EN karakter",
+    "nilaimin03":"31",
+    "nilaimax03":"40",
+    "kode04": "A/1",
+    "predikat04": "predikat campuran",
+    "predikaten04": "predikat EN campuran",
+    "nilaimin04":"41",
+    "nilaimax04":"50",
+
+    "alertsimpan": "Penambahan data predikat dosen berhasil",
+    "alerthapus": "Penghapusan data predikat dosen berhasil"
+}
