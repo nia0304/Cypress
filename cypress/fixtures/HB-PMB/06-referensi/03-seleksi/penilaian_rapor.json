@@ -1,0 +1,18 @@
+{
+    "kode01": "01",
+    "kode02": "02",
+    "namaNilai01": "Tes Nilai",
+    "namaNilai02": "Ubah Nilai",
+    "mapel01": "Bahasa Arab",
+    "mapel02": "Biologi",
+    "penilaian01": "Akreditasi Sekolah",
+    "penilaian02": "Nilai Rata-rata",
+    "keterangan01": "keterangan 1",
+    "keterangan02": "keterangan ubah",
+    "alertSimpan": "Penambahan data Mata Pelajaran berhasil",
+    "alertUbah": "Pengubahan data Mata Pelajaran berhasil",
+    "alertHapus": "Penghapusan data Penilaian Rapor berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Penilaian Rapor gagal, ada duplikasi data"
+}

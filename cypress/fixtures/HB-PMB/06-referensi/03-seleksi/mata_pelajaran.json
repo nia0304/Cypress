@@ -1,0 +1,13 @@
+{
+    "mapel01": "Mata Pelajaran",
+    "mapel02": "Ubah Mata Pelajaran",
+    "lulus01": "100",
+    "lulus02": "89",
+    "lulusAngka": "abcde",
+    "alertSimpan": "Penambahan data Mata Pelajaran berhasil",
+    "alertUbah": "Pengubahan data Mata Pelajaran berhasil",
+    "alertHapus": "Penghapusan data Mata Pelajaran berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Mata Pelajaran gagal, ada duplikasi data"
+}
