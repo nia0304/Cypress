@@ -20,7 +20,13 @@
     "predikaten04": "predikat EN campuran",
     "nilaimin04":"41",
     "nilaimax04":"50",
+    "kode05": "99",
+    "predikat05": "predikat kosong",
+    "predikaten05": "predikat EN kosong",
+    "nilaimin05":"80",
+    "nilaimax05":"90",
 
     "alertsimpan": "Penambahan data predikat dosen berhasil",
-    "alerthapus": "Penghapusan data predikat dosen berhasil"
+    "alerthapus": "Penghapusan data predikat dosen berhasil",
+    "alertkosong":"Mohon mengisi isian yang bergaris merah"
 }
