@@ -7,7 +7,7 @@ describe('Super Administrator bisa melakukan management jenis tinggal pada menu 
       cy.get(".main_title").should("contain", "Daftar Modul");
       cy.get('.siakad > .inner').click();
       cy.get('#siakad > div > div:nth-child(2)').click();
-      cy.Menu_Jenis_Tinggal();
+      cy.menu_jenis_tinggal();
       cy.get('.content-header > h1').should('contain',"Jenis Tinggal");
       cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/04_mahasiswa/jenis_tinggal").as('data');
   });
