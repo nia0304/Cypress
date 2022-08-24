@@ -1,0 +1,11 @@
+{
+    "i_kode":100,
+    "i_namaJenisTinggal":"Testing Jenis Tinggal",
+    "i_alert":"Penambahan data jenistinggal berhasil",
+    "i_alertDuplicate":"Penambahan data jenistinggal gagal, ada duplikasi data",
+    "u_kode":10,
+    "u_namaJenisTinggal":"Rumah Tester",
+    "u_alert":"Pengubahan data jenistinggal berhasil",
+    "d_alert":"Penghapusan data jenistinggal berhasil",
+    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
+}

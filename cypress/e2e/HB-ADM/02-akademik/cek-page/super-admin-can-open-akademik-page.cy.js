@@ -9,8 +9,7 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       method: "GET",
       url: "http://localhost/siacloud/gate/ajax/access/**",
     }).as("adminAccess");
-    cy.get("#siakad > div:nth-child(1) > div:nth-child(3)").click();
-    // cy.get("#siakad > .content > .role_box").click();
+    cy.get("#siakad > div > div:nth-child(2)").click();
     cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 
@@ -18,8 +17,8 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
     cy.get(".content-header > h1").should("contain.text", "Beranda");
   });
 
-  it("superadmin can open menu di modul akademik aplikasi", () => {
-    //Portal
+  it("superadmin can open menu portal di modul akademik aplikasi", () => {
+    //portal
     cy.visit("siakad/list_mahasiswa");
     cy.get(".content-header > h1").should(
       "contain.text",
@@ -76,8 +75,10 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       "contain.text",
       "Broadcast Daftar Broadcast"
     );
+  });
 
-    //Perkuliahan
+  it("superadmin can open menu perkuliahan di modul akademik aplikasi", () => {
+    //perkuliahan
     cy.visit("siakad/list_matakuliah");
     cy.get(".content-header > h1").should(
       "contain.text",
@@ -252,7 +253,105 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       "Unsur Nilai Tugas Akhir"
     );
 
-    //Kemahasiswaan
+    cy.visit("siakad/set_cekyudisium");
+    cy.get(".content-header > h1").should("contain.text", "Tambah Peserta");
+
+    cy.visit("siakad/list_syaratyudisium");
+    cy.get(".content-header > h1").should("contain.text", "Syarat Yudisium");
+
+    cy.visit("siakad/list_yudisium");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Daftar Yudisium Daftar Mahasiswa Terdaftar Yudisium"
+    );
+
+    cy.visit("siakad/set_noyudisium");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Penomoran Dokumen Penomoran Dokumen Yudisium (SK/Ijasah/Transkrip)"
+    );
+
+    cy.visit("siakad/ms_periodewisuda");
+    cy.get(".content-header > h1").should("contain.text", "Periode Yudisium");
+
+    cy.visit("siakad/ms_syaratwisuda");
+    cy.get(".content-header > h1").should("contain.text", "Syarat Yudisium");
+
+    cy.visit("siakad/list_kkn");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Kegiatan Pendukung Daftar Kegiatan Pendukung"
+    );
+
+    cy.visit("siakad/ms_pertanyaanangket");
+    cy.get(".content-header > h1").should("contain.text", "Daftar Pertanyaan");
+
+    cy.visit("siakad/ms_jawabanangket");
+    cy.get(".content-header > h1").should("contain.text", "Daftar Jawaban");
+
+    cy.visit("siakad/ms_katedom");
+    cy.get(".content-header > h1").should("contain.text", "Kategori Edom");
+
+    cy.visit("siakad/list_wisuda");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Wisuda Daftar Wisuda"
+    );
+
+    cy.visit("siakad/list_pesertawisuda");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Peserta Wisuda Daftar Peserta Wisuda"
+    );
+
+    cy.visit("siakad/set_kelompokpnt");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Kelompok Kepaniteraan"
+    );
+
+    cy.visit("siakad/set_jadwalpnt");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Jadwal Kepaniteraan"
+    );
+
+    cy.visit("siakad/list_absenpnt");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Presensi Kepaniteraan"
+    );
+
+    cy.visit("siakad/list_nilaipnt");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Error Halaman tidak dapat diakses"
+    );
+
+    cy.visit("siakad/ms_perusahaan");
+    cy.get(".content-header > h1").should("contain.text", "Instansi");
+
+    cy.visit("siakad/list_cp");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Contact Person Daftar Contact Person Instansi"
+    );
+
+    cy.visit("siakad/ms_deptperusahaan");
+    cy.get(".content-header > h1").should("contain.text", "Departemen");
+
+    cy.visit("siakad/ms_pntnilaiujian");
+    cy.get(".content-header > h1").should("contain.text", "Komp. Penilaian");
+
+    cy.visit("siakad/ms_pntujian");
+    cy.get(".content-header > h1").should("contain.text", "Ujian Klinik");
+
+    cy.visit("siakad/ms_pntnilai");
+    cy.get(".content-header > h1").should("contain.text", "Unsur Nilai");
+  });
+
+  it("superadmin can open menu kemahasiswaan di modul akademik aplikasi", () => {
+    //kemahasiswaan
     cy.visit("siakad/ms_jenisaktivitasmhs");
     cy.get(".content-header > h1").should("contain.text", "Jenis Aktivitas");
 
@@ -304,6 +403,12 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       "Pelanggaran Mahasiswa"
     );
 
+    cy.visit("siakad/set_validasipelanggaran");
+    cy.get(".content-header > h1").should(
+      "contain.text",
+      "Validasi Pelanggaran Mahasiswa"
+    );
+
     cy.visit("siakad/list_settingskpiprodi");
     cy.get(".content-header > h1").should("contain.text", "Setting SKPI");
 
@@ -349,8 +454,10 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     cy.visit("siakad/repp_nilaikelaskm");
     cy.get(".content-header > h1").should("contain.text", "Nilai per Kelas");
+  });
 
-    //Data Pelengkap
+  it("superadmin can open menu data pelengkap di modul akademik aplikasi", () => {
+    //data pelengkap
     cy.visit("siakad/data_universitas/detail");
     cy.get(".content-header > h1").should(
       "contain.text",
@@ -539,8 +646,10 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       "contain.text",
       "Template Surat Keterangan Aktif"
     );
+  });
 
-    //Laporan
+  it("superadmin can open menu laporan manual - laporan perkuliahan di modul akademik aplikasi", () => {
+    //laporan
     cy.visit("siakad/list_laporan");
     cy.get(".content-header > h1").should(
       "contain.text",
@@ -771,7 +880,9 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       "contain.text",
       "Distribusi RPS Mata Kuliah"
     );
+  });
 
+  it("superadmin can open menu laporan administrasi - laporan emis di modul akademik aplikasi", () => {
     cy.visit("siakad/repp_rekapangket");
     cy.get(".content-header > h1").should("contain.text", "Rekap Kuesioner");
 
@@ -993,8 +1104,10 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
 
     cy.visit("siakad/repp_emisjurnaldosen");
     cy.get(".content-header > h1").should("contain.text", "Emis Jurnal Dosen");
+  });
 
-    //Setting
+  it("superadmin can open menu setting di modul akademik aplikasi", () => {
+    //setting
     cy.visit("siakad/list_periode");
     cy.get(".content-header > h1").should(
       "contain.text",

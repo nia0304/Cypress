@@ -1,0 +1,17 @@
+{
+    "kode01": "17",
+    "jalurPendaftaran01": "testing jalur pendaftaran",
+    "kode02": "18",
+    "jalurPendaftaran02": "testing jalur pendaftaran ubah",
+    "jenisPendaftaran01": "Peserta Didik Baru",
+    "jenisPendaftaran02": "Pindahan",
+    "keterangan01": "keterangan 1",
+    "keterangan02": "keterangan ubah",
+    "kodeHuruf": "abcde",
+    "alertSimpan": "Penambahan data jalurpendaftaran berhasil",
+    "alertUbah": "Pengubahan data jalurpendaftaran berhasil",
+    "alertHapus": "Penghapusan data jalurpendaftaran berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data jalurpendaftaran gagal, ada duplikasi data"
+}

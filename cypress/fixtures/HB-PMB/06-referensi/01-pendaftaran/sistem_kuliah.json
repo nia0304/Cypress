@@ -1,0 +1,15 @@
+{
+    "kode01": "4",
+    "sistemKuliah01": "testing sistem kuliah",
+    "kode02": "5",
+    "sistemKuliah02": "testing sistem kuliah ubah",
+    "kodeHuruf": "abcde",
+    "keterangan01": "keterangan tes",
+    "keterangan02": "keterangan ubah",
+    "alertSimpan": "Penambahan data Sistem Kuliah berhasil",
+    "alertUbah": "Pengubahan data Sistem Kuliah berhasil",
+    "alertHapus": "Penghapusan data Sistem Kuliah berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Sistem Kuliah gagal, ada duplikasi data"
+}
