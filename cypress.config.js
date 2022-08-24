@@ -12,8 +12,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on("before:run", () => {
         // cy.exec(
-        //   "docker run --name qa-postgres-db -e POSTGRESS_PASSWORD=ppa -e PGDATA=postgres -p 5433:5432 -d qa-postgres-db"
+        //   "docker run --name qa-test -e POSTGRESS_PASSWORD=123 -e PGDATA=postgres -p 5433:5432 -d qa-postgres-db"
         // );
+        // cy.wait(25000);
       });
       on("after:run", () => {
         // cy.exec("docker stop qa-postgres-db");
