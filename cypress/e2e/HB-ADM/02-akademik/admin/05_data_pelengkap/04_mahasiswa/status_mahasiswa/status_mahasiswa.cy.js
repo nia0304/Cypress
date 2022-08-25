@@ -5,8 +5,7 @@ describe("Super Administrator bisa melakukan management status mahasiswa pada me
   beforeEach(() => {
     cy.loginsuperadmin();
     cy.get(".main_title").should("contain", "Daftar Modul");
-    cy.get('.siakad > .inner').click();
-    cy.get('#siakad > div > div:nth-child(2)').click();
+    cy.modulakademik();
     cy.menu_status_mahasiswa();
     cy.get('.content-header > h1').should('contain',"Status Mahasiswa");
     cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/04_mahasiswa/status_mahasiswa").as('data');
