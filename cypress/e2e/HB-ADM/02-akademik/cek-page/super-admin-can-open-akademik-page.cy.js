@@ -9,7 +9,10 @@ describe("superadmin can login and open all page in akademik aplikasi module", (
       method: "GET",
       url: "http://localhost/siacloud/gate/ajax/access/**",
     }).as("adminAccess");
-    cy.get("#siakad > div > div:nth-child(2)").click();
+    cy.get("#siakad")
+      .contains("Super Administrator")
+      .should("be.visible")
+      .click();
     cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 

@@ -9,7 +9,10 @@ describe("superadmin can open support page", () => {
       method: "GET",
       url: "http://localhost/siacloud/gate/ajax/access/**",
     }).as("adminAccess");
-    cy.get("#helpdesk > div:nth-child(1) > div:nth-child(2)").click();
+    cy.get("#helpdesk")
+      .contains("Super Administrator")
+      .should("be.visible")
+      .click();
     cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 

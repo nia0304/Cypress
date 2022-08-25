@@ -9,7 +9,7 @@ describe("super admin can open tracer page", () => {
       method: "GET",
       url: "http://localhost/siacloud/gate/ajax/access/**",
     }).as("adminAccess");
-    cy.get("#alumni > div:nth-child(1) > div:nth-child(2)").click();
+    cy.contains("#alumni", "Super Administrator").should("be.visible").click();
     cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
   });
 
