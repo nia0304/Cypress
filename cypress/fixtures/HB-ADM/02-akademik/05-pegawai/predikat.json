@@ -26,7 +26,83 @@
     "nilaimin05":"80",
     "nilaimax05":"90",
 
+    "kode06": "1234567",
+    "predikat06": "predikat 5 digit lebih",
+    "predikaten06": "predikat EN 5 digit lebih",
+    "nilaimin06": "1",
+    "nilaimax06": "5",
+
+    "kode07":"7",
+    "predikat07": "predikat nilai min lebih besar dari nilai max",
+    "predikaten07": "predikat EN nilai min lebih besar dari nilai max",
+    "nilaimin07": "7",
+    "nilaimax07": "6",
+
+    "kode08":"8",
+    "predikat08": "predikat nilai min huruf",
+    "predikaten08": "predikat EN nilai min huruf",
+    "nilaimin08": "AA",
+    "nilaimax08": "8",
+
+    "kode09":"9",
+    "predikat09": "predikat nilai min karakter",
+    "predikaten09": "predikat EN nilai min karakter",
+    "nilaimin09": "//",
+    "nilaimax09": "8",
+
+    "kode10":"10",
+    "predikat10": "predikat nilai max huruf",
+    "predikaten10": "predikat EN nilai max huruf",
+    "nilaimin10": "8",
+    "nilaimax10": "AA",
+
+    "kode11":"11",
+    "predikat11": "predikat nilai max karakter",
+    "predikaten11": "predikat EN nilai max karakter",
+    "nilaimin11": "8",
+    "nilaimax11": "//",
+
+    "kode12":"12",
+    "predikat12": "predikat nilai min minus",
+    "predikaten12": "predikat EN nilai min minus",
+    "nilaimin12": "-8",
+    "nilaimax12": "9",
+
+    "kode13":"13",
+    "predikat13": "predikat nilai min minus",
+    "predikaten13": "predikat EN nilai min minus",
+    "nilaimin13": "10",
+    "nilaimax13": "-11",
+
+    "kode14":"14",
+    "predikat14": "predikat nilai min lebih dari 10 digit",
+    "predikaten14": "predikat EN nilai min lebih dari 10 digit",
+    "nilaimin14": "12345678910",
+    "nilaimax14": "12",
+
+    "kode15":"15",
+    "predikat15": "predikat nilai max lebih dari 10 digit",
+    "predikaten15": "predikat EN nilai max lebih dari 10 digit",
+    "nilaimin15": "13",
+    "nilaimax15": "12345678910",
+
+    "kode16":"16",
+    "predikat16": "predikat nilai min dan max diantara data yang sudah ada",
+    "predikaten16": "predikat EN nilai min dan max diantara data yang sudah ada",
+    "nilaimin16": "3",
+    "nilaimax16": "8",
+
+
+
+
+
+    
+
+    
+    
+
     "alertsimpan": "Penambahan data predikat dosen berhasil",
     "alerthapus": "Penghapusan data predikat dosen berhasil",
-    "alertkosong":"Mohon mengisi isian yang bergaris merah"
+    "alertkosong":"Mohon mengisi isian yang bergaris merah",
+    "alertduplikat":"Penambahan data predikat dosen gagal, ada duplikasi data"
 }

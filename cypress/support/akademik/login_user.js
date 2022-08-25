@@ -43,7 +43,7 @@ Cypress.Commands.add("moduladminaplikasi", () => {
 
 Cypress.Commands.add("modulakademik", () => {
   cy.get(".siakad > .inner").click();
-  cy.get("#siakad > .content > .role_box").click();
+  cy.get("#siakad").contains("Super Admin").should('be.visible').click();
   cy.get('.container > .nav > :nth-child(1) > a').click()
 });
 
