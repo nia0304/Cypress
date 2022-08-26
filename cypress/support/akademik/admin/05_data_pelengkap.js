@@ -156,7 +156,7 @@ Cypress.Commands.add('Menu_Jenis_Kegiatan_Pendukung', () => {
   cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
 });
 //03_biodata-=======================================================================
-Cypress.Commands.add('Menu_Agama', () => {
+Cypress.Commands.add('menu_agama', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
@@ -180,7 +180,7 @@ Cypress.Commands.add('Menu_Suku', () => {
   cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
 });
 
-Cypress.Commands.add('Menu_Jas_Almamater', () => {
+Cypress.Commands.add('menu_jas_almamater', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
