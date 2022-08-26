@@ -5,7 +5,7 @@ module.exports = defineConfig({
   viewportHeight: 800,
   chromeWebSecurity: false,
   video: false,
-  numTestsKeptInMemory:0,
+  numTestsKeptInMemory:50,
   reporter: "cypress-mochawesome-reporter",
   e2e: {
    
