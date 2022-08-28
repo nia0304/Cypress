@@ -10,7 +10,11 @@ describe("admin pmb can login and open all page in module PMB", () => {
             method: "GET",
             url: "http://localhost/siacloud/gate/ajax/access/**",
         }).as("adminAccess");
-        cy.get("#spmb > div:nth-child(1) > div:nth-child(2)").click();
+        // cy.get("#spmb > div:nth-child(1) > div:nth-child(2)").click();
+        cy.get("#spmb")
+            .contains("Admin PMB")
+            .should("be.visible")
+            .click();
         cy.wait("@adminAccess").its("response.statusCode").should("equal", 200);
     });
 
@@ -174,7 +178,7 @@ describe("admin pmb can login and open all page in module PMB", () => {
 
         cy.visit("spmb/ms_refwebsite");
         cy.get(".content-header > h1").should("contain.text", "Referensi Website");
-        
+
         cy.visit("spmb/ms_settingapk");
         cy.get(".content-header > h1 > small").should("contain.text", "Setting Pengaturan SIM");
 
@@ -190,7 +194,7 @@ describe("admin pmb can login and open all page in module PMB", () => {
 
         cy.visit("spmb/repp_tahappendaftar");
         cy.get(".content-header > h1").should("contain.text", "Laporan Tahap Pendaftar");
-        
+
         cy.visit("spmb/repp_cetakformulir");
         cy.get(".content-header > h1").should("contain.text", "Laporan Bukti Pendaftaran");
 
@@ -215,7 +219,7 @@ describe("admin pmb can login and open all page in module PMB", () => {
 
         cy.visit("spmb/repp_jadwalseleksi");
         cy.get(".content-header > h1").should("contain.text", "Laporan Jadwal Seleksi");
-        
+
         cy.visit("spmb/repp_kartuujian");
         cy.get(".content-header > h1").should("contain.text", "Kartu Ujian");
 
@@ -250,14 +254,14 @@ describe("admin pmb can login and open all page in module PMB", () => {
 
         cy.visit("spmb/repp_persentasekuesioner");
         cy.get(".content-header > h1").should("contain.text", "Rekap Persentase Kuesioner");
-        
+
         cy.visit("spmb/repp_rekapalmamater");
         cy.get(".content-header > h1").should("contain.text", "Rekap Ukuran Jas Almamater");
 
         //Laporan > Laporan manual
         cy.visit("spmb/list_laporan");
         cy.get(".content-header > h1 > small").should("contain.text", "Daftar Laporan Manual");
-        
+
         cy.visit("spmb/repp_laporan");
         cy.get(".content-header > h1").should("contain.text", "Laporan Manual");
 
