@@ -1,0 +1,13 @@
+{
+    "i_kode":"ZZ",
+    "i_namaPekerjaan":"Testing Pekerjaan",
+    "i_alert":"Penambahan data pekerjaan berhasil",
+    "i_alertDuplicate":"Penambahan data pekerjaan gagal, ada duplikasi data",
+    "u_kode":99,
+    "u_namaPekerjaan":"Pekerjaan Tester",
+    "u_alert":"Pengubahan data pekerjaan berhasil",
+    "d_alert":"Penghapusan data pekerjaan berhasil",
+    "popup_mandatory":"Mohon mengisi isian yang bergaris merah",
+    "pencarian_by":"Kode, Nama Pekerjaan, Kode Emis, Kode Emis( Pekerjaan Mahasiswa ),  Kode Emis( Pekerjaan Lulusan )",
+    "empty_data":"Data kosong"
+}
