@@ -313,7 +313,7 @@ describe('Testing data pekengkap predikat dosen', ()=>{
       cy.get(':nth-child(2) > :nth-child(6) > .btn-danger').click()
       cy.get('[data-bb-handler="confirm"]').click()
       cy.wait(400)
-  }
+    }
   });
 
 });

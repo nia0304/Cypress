@@ -5,7 +5,7 @@ module.exports = defineConfig({
   viewportHeight: 800,
   chromeWebSecurity: false,
   video: false,
-  numTestsKeptInMemory:50,
+  // numTestsKeptInMemory:0, //aktifkan kalo lg running open all page
   reporter: "cypress-mochawesome-reporter",
   e2e: {
    

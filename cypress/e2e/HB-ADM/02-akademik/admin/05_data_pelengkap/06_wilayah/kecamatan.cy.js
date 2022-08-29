@@ -152,7 +152,7 @@ describe('Automation Data Pelengkap Kecamatan', () =>{
     cy.get('td').contains(this.data.kecamatan08)
       .prev().invoke('text').then((text => {
         cy.wrap(text).should('have.length', 7)
-      })) 
+    })) 
     cy.get('td').contains(this.data.kecamatan08)
       .next()
       .find("button.btn.btn-danger.btn-xs.btn-flat")
