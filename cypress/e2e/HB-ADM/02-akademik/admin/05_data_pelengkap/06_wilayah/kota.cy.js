@@ -6,7 +6,7 @@ describe('Testing Data Pelengkap Negara', ()=>{
       cy.loginsuperadmin()
       cy.modulakademik()
       cy.visit('siakad/ms_kota');
-      cy.fixture('HB-ADM/02-akademik/06-wilayah/kota').as('data')
+      cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/06-wilayah/kota').as('data')
   });
 
   //positif test

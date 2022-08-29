@@ -1,20 +1,15 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Tarif Honor";
-
-describe(namaMenu, ()=>{
+describe('Testing data pelengkap tarif honor', ()=>{
  
   beforeEach(() => {
-    //login
       cy.loginsuperadmin()
-    //open Akademik module
       cy.modulakademik()
-    //go to target page
-      cy.Menu_Tarif_Honor()
+      cy.visit('siakad/list_honortarif');
   });
 
-  it('Buka Halaman', () => {
-    cy.get('.content-header > h1').should('contain',namaMenu)
+  it('Admin cek filter jenis honor', () => {
+    cy.get('#kodehonor').invoke('text').then((text => cy.log(text)))
   });
 
 });

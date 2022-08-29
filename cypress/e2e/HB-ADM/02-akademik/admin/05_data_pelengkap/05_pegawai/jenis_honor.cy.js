@@ -6,7 +6,7 @@ describe('Testing data pekengkap jenis honor', ()=>{
       cy.loginsuperadmin()
       cy.modulakademik()
       cy.visit('siakad/ms_honor');
-      cy.fixture('HB-ADM/02-akademik/05-pegawai/jenis_honor').as('data')
+      cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/05-pegawai/jenis_honor').as('data')
   });
 
   //positif test

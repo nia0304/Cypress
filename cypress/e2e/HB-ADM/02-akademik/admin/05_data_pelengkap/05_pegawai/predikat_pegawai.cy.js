@@ -6,7 +6,7 @@ describe('Testing data pekengkap predikat dosen', ()=>{
     cy.loginsuperadmin()
     cy.modulakademik()
     cy.visit('siakad/ms_predikatdosen');
-    cy.fixture('HB-ADM/02-akademik/05-pegawai/predikat').as('data')
+    cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/05-pegawai/predikat').as('data')
   });
 
   //positif test
