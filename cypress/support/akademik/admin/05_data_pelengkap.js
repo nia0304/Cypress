@@ -168,13 +168,13 @@ Cypress.Commands.add('Menu_Pekerjaan', () => {
   cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
 });
 
-Cypress.Commands.add('Menu_Penghasilan', () => {
+Cypress.Commands.add('menu_penghasilan', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
 });
 
-Cypress.Commands.add('Menu_Suku', () => {
+Cypress.Commands.add('menu_suku', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
