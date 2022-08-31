@@ -1,0 +1,22 @@
+{
+    "filterUniv": "Tes Universitas",
+    "namaUniv": "12345 - Tes Universitas",
+    "kode01": "12345",
+    "kode02": "76890",
+    "namaProdi01": "Tes Prodi IPA",
+    "namaProdi02": "Ubah Prodi IPA",
+    "jenjang01": "DIPLOMA 3",
+    "jenjang02": "STRATA 1",
+    "alamat01": "Medokan",
+    "alamat02": "Rungkut",
+    "telepon01": "989878900",
+    "telepon02": "0865454222",
+    "noTelpHuruf": "abcdefghijkl",
+    "alertGagalSimpan": "Penambahan data prodi gagal",
+    "alertSimpan": "Penambahan data prodi berhasil",
+    "alertUbah": "Pengubahan data prodi berhasil",
+    "alertHapus": "Penghapusan data prodi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertGagalHapus": "Penghapusan data prodi gagal, data masih dijadikan referensi"
+}
