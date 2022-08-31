@@ -1,0 +1,18 @@
+{
+    "pilihFilter": "Nama",
+    "filterProvinsi": "JAWA TIMUR",
+    "filterKota": "KOTA SURABAYA",
+    "kode01": "77777",
+    "kode02": "ABCDE",
+    "namaKota01": "KECAMATAN TES KECAMATAN",
+    "namaKota02": "Ubah KECAMATAN",
+    "kodeHuruf": "ABCDE",
+    "alertGagalSimpan": "Penambahan data kota gagal",
+    "alertSimpan": "Penambahan data kota berhasil",
+    "alertUbah": "Pengubahan data kota berhasil",
+    "alertHapus": "Penghapusan data kota berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data kota gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data kota gagal, data masih dijadikan referensi"
+}
