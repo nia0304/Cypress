@@ -1,0 +1,18 @@
+{
+    "kode01":"1",
+    "honor01":"Honor kode angak ",
+    "kode02":"AA",
+    "honor02":"Honor kode huruf",
+    "kode03":"//",
+    "honor03":"Honor kode karakter",
+    "kode04":"//12AB",
+    "honor04":"Ubah kode Honor ",
+    "kode05":"12345678910",
+    "honor05":"Kode honor lebih dari 10 digit",
+
+
+    "alertsimpan":"Penambahan data jenis honor berhasil",
+    "alertubah":"Pengubahan data jenis honor berhasil",
+    "alerthapus":"Penghapusan data jenis honor berhasil",
+    "alertduplikat":"Penambahan data jenis honor gagal, ada duplikasi data"
+}

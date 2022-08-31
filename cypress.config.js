@@ -5,10 +5,9 @@ module.exports = defineConfig({
   viewportHeight: 800,
   chromeWebSecurity: false,
   video: false,
-  numTestsKeptInMemory:50,
+  // numTestsKeptInMemory:0, //aktifkan ketika runn all open page
   reporter: "cypress-mochawesome-reporter",
   e2e: {
-   
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {

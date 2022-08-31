@@ -6,7 +6,7 @@ describe('Automation Data Pelengkap Kecamatan', () =>{
       cy.loginsuperadmin()
       cy.modulakademik()
       cy.visit('siakad/ms_kecamatan');
-      cy.fixture('HB-ADM/02-akademik/06-wilayah/kecamatan').as('data')
+      cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/06-wilayah/kecamatan').as('data')
   });
 
   //positif test
@@ -152,7 +152,7 @@ describe('Automation Data Pelengkap Kecamatan', () =>{
     cy.get('td').contains(this.data.kecamatan08)
       .prev().invoke('text').then((text => {
         cy.wrap(text).should('have.length', 7)
-      })) 
+    })) 
     cy.get('td').contains(this.data.kecamatan08)
       .next()
       .find("button.btn.btn-danger.btn-xs.btn-flat")

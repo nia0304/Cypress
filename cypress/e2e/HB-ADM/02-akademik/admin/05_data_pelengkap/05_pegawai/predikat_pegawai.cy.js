@@ -6,7 +6,7 @@ describe('Testing data pekengkap predikat dosen', ()=>{
     cy.loginsuperadmin()
     cy.modulakademik()
     cy.visit('siakad/ms_predikatdosen');
-    cy.fixture('HB-ADM/02-akademik/05-pegawai/predikat').as('data')
+    cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/05-pegawai/predikat').as('data')
   });
 
   //positif test
@@ -313,7 +313,7 @@ describe('Testing data pekengkap predikat dosen', ()=>{
       cy.get(':nth-child(2) > :nth-child(6) > .btn-danger').click()
       cy.get('[data-bb-handler="confirm"]').click()
       cy.wait(400)
-  }
+    }
   });
 
 });
