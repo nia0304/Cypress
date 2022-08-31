@@ -1,0 +1,18 @@
+{
+    "judul01": "Tes Pengumuman",
+    "jenis01": "Informasi",
+    "judul02": "Ubah Pengumuman",
+    "jenis02": "Pengumuman",
+    "informasi01": "Informasi terkait pengumuman",
+    "informasi02": "Edit ini Informasi terkait pengumuman",
+    "modalPeringatanFile": "File yang dapat diunggah hanya jpg",
+    "modalSimpan":"Apakah anda yakin akan menyimpan data ini?",
+    "alertGagalSimpan": "Penambahan data Pengumuman & Informasi gagal",
+    "alertSimpan": "Penambahan data Pengumuman & Informasi berhasil",
+    "alertUbah": "Pengubahan data Pengumuman & Informasi berhasil",
+    "alertHapus": "Penghapusan data Pengumuman & Informasi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Pengumuman & Informasi gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data Pengumuman & Informasi gagal, data masih dijadikan referensi"
+}

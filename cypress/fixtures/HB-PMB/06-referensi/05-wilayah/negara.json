@@ -1,0 +1,17 @@
+{
+    "pilihFilter": "Nama",
+    "filterNegara": "Indonesia",
+    "kode01": "12345",
+    "kode02": "ABCDE",
+    "namaNegara01": "Negara Tes",
+    "namaNegara02": "Ubah Negara",
+    "kodeHuruf": "abcdefghijkl",
+    "alertGagalSimpan": "Penambahan data negara gagal",
+    "alertSimpan": "Penambahan data negara berhasil",
+    "alertUbah": "Pengubahan data negara berhasil",
+    "alertHapus": "Penghapusan data negara berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data negara gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data negara gagal, data masih dijadikan referensi"
+}

@@ -1,0 +1,16 @@
+{
+    "namaTautan01": "Tes Tautan",
+    "url01": "siakadcloud.com",
+    "urutan01": "1",
+    "namaTautan02": "Edit Tautan",
+    "url02": "demo.siakadcloud.com",
+    "urutan02": "2",
+    "modalPeringatanFile": "File yang dapat diunggah hanya jpg",
+    "modalSimpan":"Apakah anda yakin akan menyimpan data ini?",
+    "alertGagalSimpan": "Penambahan data Link Terkait gagal",
+    "alertSimpan": "Penambahan data Link Terkait berhasil",
+    "alertUbah": "Pengubahan data Link Terkait berhasil",
+    "alertHapus": "Penghapusan data Link Terkait berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah"
+}
