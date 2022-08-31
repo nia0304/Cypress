@@ -1,0 +1,13 @@
+{
+    "i_tahun":"88",
+    "i_keterangan":"Testing tahun kurikulum",
+    "i_mulaiBerlaku":"20172",
+    "i_tglAwal":"30-08-2022",
+    "i_tglAkhir":"31-08-2022",
+    "u_tahun":"2090",
+    "u_keterangan":"Testing ubah tahun kurikulum",
+    "u_mulaiBerlaku":"20171",
+    "u_tglAwal":"30-07-2090",
+    "u_tglAkhir":"30-08-2090",
+    "pencarian_by":"Tahun,Keterangan,Mulai Berlaku,Tanggal Awal,Tanggal Akhir"
+}
