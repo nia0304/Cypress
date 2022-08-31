@@ -29,7 +29,7 @@ Cypress.Commands.add('Menu_Set_Grup_MK_Wajib_Pilihan', () => {
   cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
 });
 
-Cypress.Commands.add('Menu_Tahun_Kurikulum', () => {
+Cypress.Commands.add('menu_tahun_kurikulum', () => {
   cy.get('.container > .nav > :nth-child(3) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(1) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
