@@ -1,0 +1,20 @@
+{
+    "filterUniv": "Universitas Indonesia",
+    "kode01": "12345",
+    "kode02": "76890",
+    "kodeHuruf": "abdjshdj",
+    "namaUniv01": "Tes Universitas",
+    "namaUniv02": "Ubah Universitas",
+    "alamatUniv01": "Surabaya",
+    "alamatUniv02": "Medokan asri tengah",
+    "noTelp01": "098987675656",
+    "noTelp02": "087666666666",
+    "noTelpHuruf": "abcdefghijkl",
+    "alertGagalSimpan": "Pengubahan data universitas luar gagal",
+    "alertSimpan": "Penambahan data universitas luar berhasil",
+    "alertUbah": "Pengubahan data universitas luar berhasil",
+    "alertHapus": "Penghapusan data universitas luar berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertGagalHapus": "Penghapusan data universitas luar gagal, data masih dijadikan referensi"
+}
