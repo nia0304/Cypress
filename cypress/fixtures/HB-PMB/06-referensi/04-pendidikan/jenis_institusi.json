@@ -1,0 +1,14 @@
+{
+    "nama01": "Tes Jenis Institusi",
+    "nama02": "Ubah Jenis Institusi",
+    "jenjangPendidikan01": "DIPLOMA 3",
+    "jenjangPendidikan02": "STRATA 1",
+    "namaInstitusi": "POLITEKNIK",
+    "alertGagalSimpan": "Penambahan data Jenis Institusi gagal",
+    "alertSimpan": "Penambahan data Jenis Institusi berhasil",
+    "alertUbah": "Pengubahan data Jenis Institusi berhasil",
+    "alertHapus": "Penghapusan data Jenis Institusi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertGagalHapus": "Penghapusan data Jenis Institusi gagal, data masih dijadikan referensi"
+}
