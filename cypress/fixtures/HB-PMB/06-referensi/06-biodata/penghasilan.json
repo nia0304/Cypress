@@ -1,0 +1,18 @@
+{
+    "kode01": "99",
+    "kode02": "88",
+    "namaPenghasilan01": "penghasilan TES penghasilan",
+    "namaPenghasilan02": "Ubah penghasilan",
+    "poinKip01": "7",
+    "poinKip02": "8",
+    "poinKipHuruf": "B",
+    "kodeHuruf": "ABCDE",
+    "alertGagalSimpan": "Penambahan data penghasilan gagal",
+    "alertSimpan": "Penambahan data penghasilan berhasil",
+    "alertUbah": "Pengubahan data penghasilan berhasil",
+    "alertHapus": "Penghapusan data penghasilan berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data penghasilan gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data penghasilan gagal, data masih dijadikan referensi"
+}
