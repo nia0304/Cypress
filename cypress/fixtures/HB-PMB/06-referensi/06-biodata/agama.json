@@ -1,0 +1,15 @@
+{
+    "kode01": "12",
+    "kode02": "77",
+    "namaAgama01": "agama TES agama",
+    "namaAgama02": "Ubah agama",
+    "kodeHuruf": "ABCDE",
+    "alertGagalSimpan": "Penambahan data agama gagal",
+    "alertSimpan": "Penambahan data agama berhasil",
+    "alertUbah": "Pengubahan data agama berhasil",
+    "alertHapus": "Penghapusan data agama berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data agama gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data agama gagal, data masih dijadikan referensi"
+}
