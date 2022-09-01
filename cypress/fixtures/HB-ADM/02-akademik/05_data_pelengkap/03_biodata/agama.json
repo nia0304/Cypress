@@ -1,11 +1,6 @@
 {
     "i_kode":10,
     "i_namaAgama":"Testing Agama",
-    "i_alert":"Penambahan data agama berhasil",
-    "i_alertDuplicate":"Penambahan data agama gagal, ada duplikasi data",
     "u_kode":99,
-    "u_namaAgama":"Agama Tester",
-    "u_alert":"Pengubahan data agama berhasil",
-    "d_alert":"Penghapusan data agama berhasil",
-    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
-}
+    "u_namaAgama":"Agama Tester"
+ }

@@ -1,16 +1,16 @@
-Cypress.Commands.add('alert_notifikasi', function (step) {
+Cypress.Commands.add('alert_notifikasi', function (step, menu) {
   var text;
   if(step=="C"){
-    text="Penambahan data tahun kurikulum berhasil";
+    text="Penambahan data "+menu+" berhasil";
   }
   else if(step=="U"){
-    text="Pengubahan data tahun kurikulum berhasil";
+    text="Pengubahan data "+menu+" berhasil";
   }
   else if(step=="D"){
-    text="Penghapusan data tahun kurikulum berhasil";
+    text="Penghapusan data "+menu+" berhasil";
   }
   else{
-    text="Penambahan data tahun kurikulum gagal, ada duplikasi data";
+    text="Penambahan data "+menu+" gagal, ada duplikasi data";
   }
   cy.get(".alert").should("be.visible").contains(text);
 });

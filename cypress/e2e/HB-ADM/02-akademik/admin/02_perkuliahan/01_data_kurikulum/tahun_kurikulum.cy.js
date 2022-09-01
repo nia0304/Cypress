@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 
 var namaMenu="Tahun Kurikulum";
+var namaMenuAlert="tahun kurikulum";
 describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu "+namaMenu, ()=>{
  
   beforeEach(() => {
@@ -41,7 +42,7 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     cy.get('#i_tglawal').type(this.data.i_tglAwal);
     cy.get('#i_tglakhir').type(this.data.i_tglAkhir);
     cy.get(':nth-child(6) > .btn-success > .fa').click();
-    cy.alert_notifikasi("C");
+    cy.alert_notifikasi("C", namaMenuAlert);
   });
 
   it("Super Admin Bisa Searching "+namaMenu+" Baru - Ditemukan", function () {
@@ -96,7 +97,7 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     cy.get('#i_tglawal').type(this.data.i_tglAwal);
     cy.get('#i_tglakhir').type(this.data.i_tglAkhir);
     cy.get(':nth-child(6) > .btn-success > .fa').click();
-    cy.alert_notifikasi("X");
+    cy.alert_notifikasi("X", namaMenuAlert);
   });
 
   it("Super Admin Batalkan Proses Create/Edit", function () {
@@ -136,7 +137,7 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     cy.get('#u_tglakhir').clear().type(this.data.u_tglAkhir)
       .tab()
       .click();
-    cy.alert_notifikasi("U");
+    cy.alert_notifikasi("U", namaMenuAlert);
   });
 
   it("Super Admin Check Batal Delete", function () {
@@ -165,6 +166,6 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     .next()
     .find('button.btn.btn-danger.btn-xs.btn-flat').click();
     cy.delete("Ya");
-    cy.alert_notifikasi("D");
+    cy.alert_notifikasi("D", namaMenuAlert);
   });
 });
