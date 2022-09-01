@@ -1,0 +1,15 @@
+{
+    "kode01": "99",
+    "kode02": "XXX",
+    "namaAlmamater01": "Almamater TES Almamater",
+    "namaAlmamater02": "Ubah Almamater",
+    "kodeHuruf": "ABCDE",
+    "alertGagalSimpan": "Penambahan data Almamater gagal",
+    "alertSimpan": "Penambahan data Almamater berhasil",
+    "alertUbah": "Pengubahan data Almamater berhasil",
+    "alertHapus": "Penghapusan data Almamater berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Almamater gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data Almamater gagal, data masih dijadikan referensi"
+}
