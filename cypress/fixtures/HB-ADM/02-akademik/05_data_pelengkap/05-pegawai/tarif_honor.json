@@ -1,0 +1,17 @@
+{
+    "praktikum": "Honor Praktikum",
+    "mengajar": "Honor Mengajar",
+    "transport": "Transport",
+    "jabfung": "Asisten Ahli (100)",
+    "jenjang": "S1 - STRATA 1",
+    "jenispeg": "Dosen",
+    "jabstruk": "Rektor",
+    "nominal01":"200000",
+    "nominal02":"500000",
+    "nominal03":"-125000",
+
+    "alertsimpan": "Penambahan data tarif honor berhasil",
+    "alerthapus": "Penghapusan data tarif honor berhasil",
+    "alertduplikasi": "Penambahan data tarif honor gagal, ada duplikasi data"
+    
+}

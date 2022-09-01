@@ -22,6 +22,7 @@ import "./pmb";
 import "./pmb_front";
 import "./akademik/login_user";
 import "./akademik/dosen";
+import "./akademik/modal_konfirmasi"
 import "./akademik/admin/00_beranda";
 import "./akademik/admin/01_portal";
 import "./akademik/admin/02_perkuliahan";
