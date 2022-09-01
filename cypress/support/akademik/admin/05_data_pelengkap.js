@@ -162,7 +162,7 @@ Cypress.Commands.add('menu_agama', () => {
   cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
 });
 
-Cypress.Commands.add('Menu_Pekerjaan', () => {
+Cypress.Commands.add('menu_pekerjaan', () => {
   cy.get('.container > .nav > :nth-child(6) > :nth-child(1)').click()
   cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
   cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()

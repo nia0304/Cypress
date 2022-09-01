@@ -1,0 +1,17 @@
+{
+    "pilihFilter": "Nama",
+    "filterProvinsi": "JAWA TIMUR",
+    "kode01": "12345",
+    "kode02": "54321",
+    "namaPropinsi01": "Provinsi Tes",
+    "namaPropinsi02": "Ubah Provinsi",
+    "kodeHuruf": "ABCDE",
+    "alertGagalSimpan": "Penambahan data propinsi gagal",
+    "alertSimpan": "Penambahan data propinsi berhasil",
+    "alertUbah": "Pengubahan data propinsi berhasil",
+    "alertHapus": "Penghapusan data propinsi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data propinsi gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data propinsi gagal, data masih dijadikan referensi"
+}

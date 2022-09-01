@@ -21,6 +21,7 @@ import "./commands";
 import "./pmb";
 import "./pmb_front";
 import "./akademik/login_user";
+import "./akademik/common_function";
 import "./akademik/dosen";
 import "./akademik/modal_konfirmasi"
 import "./akademik/admin/00_beranda";
