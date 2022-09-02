@@ -2,12 +2,7 @@
     "i_kode":"55",
     "i_namaPenghasilan":"Testing Penghasilan",
     "i_kodeEmis":"55",
-    "i_alert":"Penambahan data penghasilan berhasil",
-    "i_alertDuplicate":"Penambahan data penghasilan gagal, ada duplikasi data",
     "u_kode":99,
     "u_namaPenghasilan":"Penghasilan Tester",
-    "u_kodeEmis":99,
-    "u_alert":"Pengubahan data penghasilan berhasil",
-    "d_alert":"Penghapusan data penghasilan berhasil",
-    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
+    "u_kodeEmis":99
 }

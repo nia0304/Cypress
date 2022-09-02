@@ -1,11 +1,6 @@
 {
     "i_kode":100,
     "i_namaTransportasi":"Testing Transportasi",
-    "i_alert":"Penambahan data transport berhasil",
-    "i_alertDuplicate":"Penambahan data transport gagal, ada duplikasi data",
     "u_kode":10,
-    "u_namaTransportasi":"Transportasi Tester",
-    "u_alert":"Pengubahan data transport berhasil",
-    "d_alert":"Penghapusan data transport berhasil",
-    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
+    "u_namaTransportasi":"Transportasi Tester"
 }

@@ -1,11 +1,5 @@
 {
     "i_namaSuku":"Testing Suku",
-    "i_alert":"Penambahan data suku berhasil",
-    "i_alertDuplicate":"Penambahan data suku gagal, ada duplikasi data",
     "u_namaSuku":"Suku Tester",
-    "u_alert":"Pengubahan data suku berhasil",
-    "d_alert":"Penghapusan data suku berhasil",
-    "popup_mandatory":"Mohon mengisi isian yang bergaris merah",
-    "pencarian_by":"Nama Suku",
-    "empty_data":"Data kosong"
+    "pencarian_by":"Nama Suku"
 }

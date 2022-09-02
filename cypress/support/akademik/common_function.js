@@ -19,7 +19,8 @@ Cypress.Commands.add('alert_mandatory', () => {
   cy.get('.modal-content')
       .should("be.visible")
       .contains("Mohon mengisi isian yang bergaris merah");
-    cy.get('.modal-footer > .btn').click();
+  cy.get('.modal-title').contains("Informasi");
+  cy.get('.modal-footer > .btn').click();
 });
 
 Cypress.Commands.add('refresh_page', function (namaMenu) {
