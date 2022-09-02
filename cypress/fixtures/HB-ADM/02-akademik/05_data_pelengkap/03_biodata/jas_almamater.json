@@ -1,11 +1,6 @@
 {
     "i_kode":100,
     "i_namaAlmamater":"Testing Almamater",
-    "i_alert":"Penambahan data Almamater berhasil",
-    "i_alertDuplicate":"Penambahan data Almamater gagal, ada duplikasi data",
     "u_kode":10,
-    "u_namaAlmamater":"Almamater Tester",
-    "u_alert":"Pengubahan data Almamater berhasil",
-    "d_alert":"Penghapusan data Almamater berhasil",
-    "popup_mandatory":"Mohon mengisi isian yang bergaris merah"
+    "u_namaAlmamater":"Almamater Tester"
 }

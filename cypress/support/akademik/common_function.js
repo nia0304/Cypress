@@ -1,16 +1,16 @@
-Cypress.Commands.add('alert_notifikasi', function (step) {
+Cypress.Commands.add('alert_notifikasi', function (step, menu) {
   var text;
   if(step=="C"){
-    text="Penambahan data tahun kurikulum berhasil";
+    text="Penambahan data "+menu+" berhasil";
   }
   else if(step=="U"){
-    text="Pengubahan data tahun kurikulum berhasil";
+    text="Pengubahan data "+menu+" berhasil";
   }
   else if(step=="D"){
-    text="Penghapusan data tahun kurikulum berhasil";
+    text="Penghapusan data "+menu+" berhasil";
   }
   else{
-    text="Penambahan data tahun kurikulum gagal, ada duplikasi data";
+    text="Penambahan data "+menu+" gagal, ada duplikasi data";
   }
   cy.get(".alert").should("be.visible").contains(text);
 });
@@ -19,7 +19,8 @@ Cypress.Commands.add('alert_mandatory', () => {
   cy.get('.modal-content')
       .should("be.visible")
       .contains("Mohon mengisi isian yang bergaris merah");
-    cy.get('.modal-footer > .btn').click();
+  cy.get('.modal-title').contains("Informasi");
+  cy.get('.modal-footer > .btn').click();
 });
 
 Cypress.Commands.add('refresh_page', function (namaMenu) {

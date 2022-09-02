@@ -1,49 +1,45 @@
 /// <reference types="cypress"/>
 
-describe("Super Administrator bisa melakukan management penghasilan pada menu penghasilan", ()=>{
+var namaMenu="Penghasilan";
+var namaMenuAlert="penghasilan";
+describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu "+namaMenu, ()=>{
  
   beforeEach(() => {
     cy.loginsuperadmin()
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.modulakademik();
     cy.menu_penghasilan()
-    cy.get('.content-header > h1').should('contain',"Penghasilan");
+    cy.get('.content-header > h1').should('contain',namaMenu);
     cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/03_biodata/penghasilan").as('data');
   });
 
-  it("Super Admin Create Penghasilan Required Fields Harus Di isi", function () {
+  it("Super Admin Create "+ namaMenu+" Required Fields Harus Di isi", function () {
     cy.get('#wrap-button > button').click();
     cy.get('#i_namapenghasilan').type(this.data.i_namaPenghasilan);
     cy.get(':nth-child(4) > .btn-success').click();
-    cy.get('.modal-content')
-      .should("be.visible")
-      .contains(this.data.popup_mandatory);
-    cy.get('.modal-footer > .btn').click();
+    cy.alert_mandatory();
     cy.get('#i_idpenghasilan').type(this.data.i_kode);
     cy.get('#i_namapenghasilan').clear();
     cy.get(':nth-child(4) > .btn-success').click();
-    cy.get('.modal-content')
-      .should("be.visible")
-      .contains(this.data.popup_mandatory);
-    cy.get('.modal-footer > .btn').click();
+    cy.alert_mandatory();
   });
 
-  it("Super Admin Bisa Create Penghasilan Baru", function () {
+  it("Super Admin Bisa Create "+ namaMenu +" Baru", function () {
       cy.get('#wrap-button > button').click();
       cy.get('#i_idpenghasilan').type(this.data.i_kode);
       cy.get('#i_namapenghasilan').type(this.data.i_namaPenghasilan);
       cy.get('#i_kodeemispenghasilan').type(this.data.i_kodeEmis);
       cy.get(':nth-child(4) > .btn-success').click();
-      cy.get(".alert").should("be.visible").contains(this.data.i_alert);
+      cy.alert_notifikasi("C", namaMenuAlert);
   });
 
-  it("Super Admin Ga Bisa Create Penghasilan Yang Sama", function () {
+  it("Super Admin Ga Bisa Create "+namaMenu+" Yang Sama", function () {
     cy.get('#wrap-button > button').click();
     cy.get('#i_idpenghasilan').type(this.data.i_kode);
     cy.get('#i_namapenghasilan').type(this.data.i_namaPenghasilan);
     cy.get('#i_kodeemispenghasilan').type(this.data.i_kodeEmis);
     cy.get(':nth-child(4) > .btn-success').click();
-    cy.get(".alert").should("be.visible").contains(this.data.i_alertDuplicate);
+    cy.alert_notifikasi("X", namaMenuAlert);
   });
 
   it("Super Admin Batalkan Proses Create/Edit", function () {
@@ -60,7 +56,7 @@ describe("Super Administrator bisa melakukan management penghasilan pada menu pe
       .click();
   });
 
-  it("Super Admin Bisa Edit Salah Satu Penghasilan", function () {
+  it("Super Admin Bisa Edit Salah Satu "+namaMenu, function () {
     cy.get('td').contains(this.data.i_kode)
       .next()
       .next()
@@ -71,9 +67,16 @@ describe("Super Administrator bisa melakukan management penghasilan pada menu pe
     cy.get('#u_kodeemispenghasilan').clear().type(this.data.u_kodeEmis)
       .tab()
       .click();
-    cy.get(".alert")
-      .should("be.visible")
-      .contains(this.data.u_alert);
+    cy.alert_notifikasi("U", namaMenuAlert);
+  });
+
+  it("Super Admin Check Batal Delete", function () {
+    cy.get('td').contains(this.data.u_kode)
+    .next()
+    .next()
+    .next()
+    .find('button.btn.btn-danger.btn-xs.btn-flat').click();
+    cy.delete("Tidak");
   });
 
   it("Super Admin Bisa Delete Penghasilan Baru", function () {
@@ -82,9 +85,7 @@ describe("Super Administrator bisa melakukan management penghasilan pada menu pe
     .next()
     .next()
     .find('button.btn.btn-danger.btn-xs.btn-flat').click();
-    cy.get('.modal-footer > .btn-primary').click();
-    cy.get(".alert")
-      .should("be.visible")
-      .contains(this.data.d_alert);
+    cy.delete("Ya");
+    cy.alert_notifikasi("D", namaMenuAlert);
   });
 });
