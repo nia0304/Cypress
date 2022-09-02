@@ -1,0 +1,21 @@
+{
+    "pilihFilter": "Nama",
+    "dataKosong": "Data kosong",
+    "nama01": "Tes Rekom",
+    "nama02": "Ubah Rekom",
+    "noHp01": "087777373773",
+    "noHp02": "ABCDE",
+    "noHpHuruf": "ABCDE",
+    "sekolah01": "Sekolah Satu",
+    "sekolah02": "Sekolah Dua",
+    "keterangan01": "Keterangan Satu",
+    "keterangan02": "Keterangan Dua",
+    "alertGagalSimpan": "Penambahan data Perekomendasi gagal",
+    "alertSimpan": "Penambahan data Perekomendasi berhasil",
+    "alertUbah": "Pengubahan data Perekomendasi berhasil",
+    "alertHapus": "Penghapusan data Perekomendasi berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Perekomendasi gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data Perekomendasi gagal, data masih dijadikan referensi"
+}
