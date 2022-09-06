@@ -23,10 +23,10 @@ describe(judulHalaman, () => {
 
     cy.get('#universitas_label').type(this.data.filterUniv)
     cy.get('.tt-suggestions div').each(($el, index, $list) => {
-			if ($el.text() === this.data.namaUniv) {
-			cy.wrap($el).click().wait(0)
-			}
-		})
+      if ($el.text() === this.data.namaUniv) {
+        cy.wrap($el).click().wait(0)
+      }
+    })
 
     // filter by nama
     // cy.get('#wrap-filter > div.col-xs-8.pad-xs-l7 > div > input').type(this.data.filterUniv)
@@ -57,19 +57,19 @@ describe(judulHalaman, () => {
     // mengisi univ dulu
     cy.get('#universitas_label').type(this.data.filterUniv)
     cy.get('.tt-suggestions div').each(($el, index, $list) => {
-			if ($el.text() === this.data.namaUniv) {
-			cy.wrap($el).click().wait(0)
-			}
-		})
+      if ($el.text() === this.data.namaUniv) {
+        cy.wrap($el).click().wait(0)
+      }
+    })
 
     cy.get('#wrap-button > .btn').click()
 
-    cy.get('#i_iduniversitasprodi').type(this.data.kode01, {force: true})
-    cy.get('#i_namaprodi').type(this.data.namaProdi01, {force: true})
-    cy.get('#i_idjenjang').select(this.data.jenjang01, {force: true})
-    cy.get('#i_alamat').type(this.data.alamat01, {force: true})
-    cy.get('#i_telepon').type(this.data.telepon01, {force: true})
-    cy.get('button.btn.btn-success.btn-xs.btn-flat').click({force: true})
+    cy.get('#i_iduniversitasprodi').type(this.data.kode01, { force: true })
+    cy.get('#i_namaprodi').type(this.data.namaProdi01, { force: true })
+    cy.get('#i_idjenjang').select(this.data.jenjang01, { force: true })
+    cy.get('#i_alamat').type(this.data.alamat01, { force: true })
+    cy.get('#i_telepon').type(this.data.telepon01, { force: true })
+    cy.get('button.btn.btn-success.btn-xs.btn-flat').click({ force: true })
 
     // assert
     cy.get('.alert').should('contain', this.data.alertSimpan)
@@ -80,21 +80,21 @@ describe(judulHalaman, () => {
     // mengisi univ dulu
     cy.get('#universitas_label').type(this.data.filterUniv)
     cy.get('.tt-suggestions div').each(($el, index, $list) => {
-			if ($el.text() === this.data.namaUniv) {
-			cy.wrap($el).dblclick()
-      // ketika event click() tidak melakukan reload data, maka perlu mengganti menjadi dblclick()
-			}
-		})
+      if ($el.text() === this.data.namaUniv) {
+        cy.wrap($el).dblclick()
+        // ketika event click() tidak melakukan reload data, maka perlu mengganti menjadi dblclick()
+      }
+    })
 
     cy.get('td').contains(this.data.kode01)
       .parent()
       .find('.btn-primary').click()
 
-    cy.get('#u_iduniversitasprodi').clear().type(this.data.kode02, {force: true})
-    cy.get('#u_namaprodi').clear().type(this.data.namaProdi02, {force: true})
-    cy.get('#u_idjenjang').select(this.data.jenjang02, {force: true})
-    cy.get('#u_alamat').clear().type(this.data.alamat02, {force: true})
-    cy.get('#u_telepon').clear().type(this.data.telepon02, {force: true})
+    cy.get('#u_iduniversitasprodi').clear().type(this.data.kode02, { force: true })
+    cy.get('#u_namaprodi').clear().type(this.data.namaProdi02, { force: true })
+    cy.get('#u_idjenjang').select(this.data.jenjang02, { force: true })
+    cy.get('#u_alamat').clear().type(this.data.alamat02, { force: true })
+    cy.get('#u_telepon').clear().type(this.data.telepon02, { force: true })
     cy.get('button.btn.btn-success.btn-xs.btn-flat').last().click()
 
     // assert
@@ -106,21 +106,21 @@ describe(judulHalaman, () => {
     // mengisi univ dulu
     cy.get('#universitas_label').type(this.data.filterUniv)
     cy.get('.tt-suggestions div').each(($el, index, $list) => {
-			if ($el.text() === this.data.namaUniv) {
-			cy.wrap($el).dblclick()
-      // ketika event click() tidak melakukan reload data, maka perlu mengganti menjadi dblclick()
-			}
-		})
+      if ($el.text() === this.data.namaUniv) {
+        cy.wrap($el).dblclick()
+        // ketika event click() tidak melakukan reload data, maka perlu mengganti menjadi dblclick()
+      }
+    })
 
     cy.get('td').contains(this.data.kode02)
       .parent()
       .find('.btn-danger ').click()
 
-      cy.get('.modal-content').should('contain', this.data.modalHapus)
-      cy.get('.modal-footer > .btn-primary').click()
-  
-      // assert berhasil hapus 
-      cy.get('.alert').should('contain', this.data.alertHapus)
+    cy.get('.modal-content').should('contain', this.data.modalHapus)
+    cy.get('.modal-footer > .btn-primary').click()
+
+    // assert berhasil hapus 
+    cy.get('.alert').should('contain', this.data.alertHapus)
 
   })
 
@@ -134,10 +134,10 @@ describe(judulHalaman, () => {
     cy.get('#i_idjenjang').select(this.data.jenjang01)
     cy.get('#i_alamat').type(this.data.alamat01)
     cy.get('#i_telepon').type(this.data.telepon01)
-    .parent()
-    .next()
-    .find('button.btn.btn-success.btn-xs.btn-flat')
-    .click()
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
     // cy.get('button.btn.btn-success.btn-xs.btn-flat')
 
     // assert
@@ -153,10 +153,10 @@ describe(judulHalaman, () => {
     cy.get('#i_idjenjang').select(this.data.jenjang01)
     cy.get('#i_alamat').type(this.data.alamat01)
     cy.get('#i_telepon').type(this.data.telepon01)
-    .parent()
-    .next()
-    .find('button.btn.btn-success.btn-xs.btn-flat')
-    .click()
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
     // cy.get('button.btn.btn-success.btn-xs.btn-flat')
 
     // assert
@@ -169,25 +169,25 @@ describe(judulHalaman, () => {
     // mengisi univ dulu
     cy.get('#universitas_label').type(this.data.filterUniv)
     cy.get('.tt-suggestions div').each(($el, index, $list) => {
-			if ($el.text() === this.data.namaUniv) {
-			cy.wrap($el).click().wait(0)
-			}
-		})
+      if ($el.text() === this.data.namaUniv) {
+        cy.wrap($el).click().wait(0)
+      }
+    })
 
     cy.get('#wrap-button > .btn').click()
 
-    cy.get('#i_iduniversitasprodi').type(this.data.kode01, {force: true})
-    cy.get('#i_namaprodi').type(this.data.namaProdi01, {force: true})
-    cy.get('#i_idjenjang').select(this.data.jenjang01, {force: true})
-    cy.get('#i_alamat').type(this.data.alamat01, {force: true})
-    cy.get('#i_telepon').type(this.data.telepon01, {force: true})
-    cy.get('button.btn.btn-success.btn-xs.btn-flat').click({force: true})
+    cy.get('#i_iduniversitasprodi').type(this.data.kode01, { force: true })
+    cy.get('#i_namaprodi').type(this.data.namaProdi01, { force: true })
+    cy.get('#i_idjenjang').select(this.data.jenjang01, { force: true })
+    cy.get('#i_alamat').type(this.data.alamat01, { force: true })
+    cy.get('#i_telepon').type(this.data.telepon01, { force: true })
+    cy.get('button.btn.btn-success.btn-xs.btn-flat').click({ force: true })
 
     // assert 
-  cy.get('.alert').should('contain', this.data.alertDuplikasi)
+    cy.get('.alert').should('contain', this.data.alertDuplikasi)
 
   })
-  
+
 
 
 

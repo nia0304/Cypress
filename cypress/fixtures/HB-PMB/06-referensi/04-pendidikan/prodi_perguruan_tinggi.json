@@ -18,5 +18,6 @@
     "alertHapus": "Penghapusan data prodi berhasil",
     "modalHapus":"Apakah anda yakin akan menghapus data ini?",
     "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
-    "alertGagalHapus": "Penghapusan data prodi gagal, data masih dijadikan referensi"
+    "alertGagalHapus": "Penghapusan data prodi gagal, data masih dijadikan referensi",
+    "alertDuplikasi": "Penambahan data prodi gagal, ada duplikasi data"
 }
