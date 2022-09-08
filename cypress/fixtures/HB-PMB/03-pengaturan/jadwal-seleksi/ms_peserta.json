@@ -1,0 +1,29 @@
+{
+    "menu": "Peserta",
+    "filterPeriode": "2020/2021 Genap",
+    "filterJalur": "Prestasi",
+    "filterGelombang": "Gelombang 4",
+    "filterSistemKuliah": "Reguler B",
+    "filterSeleksi1": "TES CBT",
+    "filterSeleksi2": "TES POTENSI AKADEMIK",
+    "cariDosen1": "andr",
+    "namaDosen1": "1001079001 - ANDREW SHANDY UTAMA",
+    "cariDosen2": "yetti",
+    "namaDosen2": "1001106501 - YETTI",
+
+    "namaPeserta": "2021104010001Ana Elsa2021104010001",
+    "nilaiSeleksi": "98",
+
+
+    "alertGagalSimpan": "Pengubahan data Seleksi Pendaftar gagal",
+    "alertSimpan": "Penambahan data Seleksi Pendaftar berhasil",
+    "alertUbah": "Pengubahan data Seleksi Pendaftar berhasil",
+    "alertHapus": "Penghapusan data Seleksi Pendaftar berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "modalGenerate": "Apakah anda yakin akan melakukan generate peserta ke jadwal ini?",
+    "alertBentrok": "Bentrok Dengan Seleksi",
+    "alertGagalGenerate": "Semua Peserta Sudah Terdaftar",
+    "alertBerhasilGenerate": "Berhasil Generate",
+    "modalKonfirmasiHapus": "Silakan centang data yang ingin dihapus terlebih dahulu"
+}
