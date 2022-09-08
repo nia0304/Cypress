@@ -14,7 +14,7 @@ describe(namaMenu, ()=>{
   });
 
   it('Buka Halaman', () => {
-    cy.get('.content-header > h1').should('contain',namaMenu)
+    //cy.get('.content-header > h1').should('contain',namaMenu)
   });
 
 });

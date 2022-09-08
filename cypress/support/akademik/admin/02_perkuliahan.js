@@ -105,6 +105,7 @@ Cypress.Commands.add('menukelaskuliah', () => {
 });
 
 Cypress.Commands.add('menujadwalpresensi', () => {
+  cy.visit("siakad/list_jadwal");
   cy.get(".content-header > h1").should(
     "contain.text",
     "Jadwal & Presensi Riwayat dan Presensi Perkuliahan"
