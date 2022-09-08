@@ -9,7 +9,7 @@ describe(judulHalaman, () => {
     //open Akademik module
     cy.modulakademik();
     // go to target page
-    cy.Menu_Beranda();
+    cy.menuberanda();
   });
 
   it("Buka Halaman", () => {
