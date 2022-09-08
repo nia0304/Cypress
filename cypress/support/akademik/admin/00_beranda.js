@@ -1,3 +1,7 @@
-Cypress.Commands.add('Menu_Beranda', () => {
-  cy.get('.container > .nav > :nth-child(1) > :nth-child(1)').click()
+Cypress.Commands.add('menuberanda', () => {
+  cy.visit("siakad/home");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Beranda"
+  );
 });

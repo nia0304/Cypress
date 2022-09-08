@@ -9,7 +9,7 @@ describe(namaMenu, () => {
     //open Akademik module
     cy.modulakademik();
     //go to target page
-    cy.Menu_Mahasiswa();
+    cy.menumahasiswa();
   });
 
   it("Buka Halaman", () => {

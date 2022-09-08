@@ -8,8 +8,7 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     cy.loginsuperadmin()
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.modulakademik();
-    cy.menu_tahun_kurikulum();
-    cy.get('.content-header > h1').should('contain',namaMenu);
+    cy.menutahunkurikulum();
     cy.fixture("HB-ADM/02-akademik/02_perkuliahan/01_data_kurikulum/tahun_kurikulum").as('data');
   });
 

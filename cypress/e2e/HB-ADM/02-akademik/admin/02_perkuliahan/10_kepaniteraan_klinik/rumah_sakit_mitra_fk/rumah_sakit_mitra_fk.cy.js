@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Rumah_Sakit_Mitra_Fk()
+      cy.menurumahsakitmitrafk()
   });
 
   it('Buka Halaman', () => {
