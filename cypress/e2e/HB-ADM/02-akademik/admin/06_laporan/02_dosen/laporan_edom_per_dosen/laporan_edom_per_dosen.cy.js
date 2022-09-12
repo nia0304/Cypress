@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Laporan_EDOM_per_Dosen();
+      cy.menulaporanedomperdosen();
   });
 
   it('Buka Halaman', () => {

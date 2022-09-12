@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Berita_Acara_Proposal_TA();
+      cy.menuberitaacaraproposalta();
   });
 
   it('Buka Halaman', () => {

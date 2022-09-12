@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Kelengkapan_Biodata_Dosen();
+      cy.menukelengkapanbiodatadosen();
   });
 
   it('Buka Halaman', () => {

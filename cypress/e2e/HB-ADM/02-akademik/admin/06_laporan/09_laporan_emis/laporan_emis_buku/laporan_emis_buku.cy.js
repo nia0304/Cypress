@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Emis Mahasiswa";
+const namaMenu="Emis Buku";
 
 describe(namaMenu, ()=>{
  
@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Laporan_Emis_Mhs();
+      cy.menulaporanemisbuku();
   });
 
   it('Buka Halaman', () => {

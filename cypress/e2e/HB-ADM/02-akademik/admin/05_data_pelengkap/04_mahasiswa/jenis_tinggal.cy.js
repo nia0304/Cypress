@@ -8,9 +8,8 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
       cy.loginsuperadmin();
       cy.get(".main_title").should("contain", "Daftar Modul");
       cy.modulakademik();
-      cy.menu_jenis_tinggal();
-      cy.get('.content-header > h1').should('contain',namaMenu);
-      cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/04_mahasiswa/jenis_tinggal").as('data');
+      cy.menujenistinggal();
+     cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/04_mahasiswa/jenis_tinggal").as('data');
   });
 
   it("Super Admin Create "+ namaMenu+" Required Fields Harus Di isi", function () {

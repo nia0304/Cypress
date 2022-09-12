@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Laporan Emis Jurnal";
+const namaMenu="Emis Jurnal";
 
 describe(namaMenu, ()=>{
  
@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Laporan_Emis_Jurnal();
+      cy.menulaporanemisjurnal();
   });
 
   it('Buka Halaman', () => {
