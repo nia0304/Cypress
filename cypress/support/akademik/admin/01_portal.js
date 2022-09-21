@@ -1,53 +1,80 @@
-Cypress.Commands.add('Menu_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(1) > a').click()
+Cypress.Commands.add('menumahasiswa', () => {
+  cy.visit("siakad/list_mahasiswa");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mahasiswa Daftar Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Pegawai', ()=>{
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(2) > a').click()
+Cypress.Commands.add('menupegawai', ()=>{
+  cy.visit("siakad/list_pegawai");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Pegawai Daftar Pegawai"
+  );
 });
 
-Cypress.Commands.add('Menu_Pengumuman', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > a').click()
+Cypress.Commands.add('menupengumuman', () => {
+  cy.visit("siakad/list_berita");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Pengumuman Daftar Pengumuman"
+  );
 });
 
-Cypress.Commands.add('Menu_Kelas_EdLink', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > a').click()
+Cypress.Commands.add('menukelasedLink', () => {
+  cy.visit("siakad/list_forumedlink");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kelas EdLink Daftar Forum Kelas EdLink"
+  );
 });
 
-Cypress.Commands.add('Menu_Forum_Kelas', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > a').click()
+Cypress.Commands.add('menuforumkelas', () => {
+  cy.visit("siakad/list_forum");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Forum Kelas (Lama) Daftar Forum Diskusi Kelas"
+  );
 });
 
-Cypress.Commands.add('Menu_Konsultasi', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > a').click()
+Cypress.Commands.add('menukonsultasi', () => {
+  cy.visit("siakad/list_konsultasi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Konsultasi Pembimbing Daftar Konsultasi Pembimbing"
+  );
 });
 
-Cypress.Commands.add('Menu_Kegiatan_Akademik', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > a').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menukegiatanakademik', () => {
+  cy.visit("siakad/ms_kegiatan");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Kegiatan Akad."
+  );
 });
 
-Cypress.Commands.add('Menu_Kalender_Akademik', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-      cy.get('.open > :nth-child(2) > :nth-child(7) > a').click()
-      cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menukalenderakademik', () => {
+  cy.visit("siakad/ms_kalender");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kalender Akademik Daftar Kegiatan"
+  );
 });
 
-Cypress.Commands.add('Menu_Monitoring_Kegiatan_Akademik', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-      cy.get('.open > :nth-child(2) > :nth-child(7) > a').click()
-      cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menumonitoringkegiatanakademik', () => {
+  cy.visit("siakad/data_monitorkalender");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Monitoring Kalender Akademik"
+  );
 });
 
-Cypress.Commands.add('Menu_Broadcast', () => {
-  cy.get('.container > .nav > :nth-child(2) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > a').click()
+Cypress.Commands.add('menubroadcast', () => {
+  cy.visit("siakad/list_broadcast");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Broadcast Daftar Broadcast"
+  );
 });
 

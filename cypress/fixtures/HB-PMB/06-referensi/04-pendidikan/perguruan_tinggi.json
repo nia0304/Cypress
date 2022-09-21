@@ -16,5 +16,6 @@
     "alertHapus": "Penghapusan data universitas luar berhasil",
     "modalHapus":"Apakah anda yakin akan menghapus data ini?",
     "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
-    "alertGagalHapus": "Penghapusan data universitas luar gagal, data masih dijadikan referensi"
+    "alertGagalHapus": "Penghapusan data universitas luar gagal, data masih dijadikan referensi",
+    "alertDuplikasi": "Penambahan data universitas luar gagal, ada duplikasi data"
 }

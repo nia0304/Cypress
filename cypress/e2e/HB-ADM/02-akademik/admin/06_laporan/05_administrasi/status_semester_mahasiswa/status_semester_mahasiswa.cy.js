@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Status_Semester_Mahasiswa();
+      cy.menustatussemestermahasiswa();
   });
 
   it('Buka Halaman', () => {

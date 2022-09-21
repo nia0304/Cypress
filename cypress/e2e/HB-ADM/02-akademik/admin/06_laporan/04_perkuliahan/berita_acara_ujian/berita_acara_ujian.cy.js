@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Form Presensi Mhs. UTS / UAS";
+const namaMenu="Berita Acara Ujian";
 
 describe(namaMenu, ()=>{
  
@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Berita_Acara_Ujian();
+      cy.menuberitaacaraujian();
   });
 
   it('Buka Halaman', () => {

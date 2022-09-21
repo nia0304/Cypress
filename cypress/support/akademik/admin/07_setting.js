@@ -1,41 +1,58 @@
 //01_periode_akademik-=====================================================================
-Cypress.Commands.add('Menu_Periode_Akademik', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(1) > a').click()
+Cypress.Commands.add('menuperiodeakademik', () => {
+  cy.visit("siakad/list_periode");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Periode Akademik Daftar Periode Akademik"
+  );
 });
 
 //02_setting_prodi-========================================================================
-Cypress.Commands.add('Menu_Setting_Prodi', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(2) > a').click()
+Cypress.Commands.add('menusettingprodi', () => {
+  cy.visit("siakad/list_settingprodi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Setting Setting Program Studi"
+  );
 });
 
 //03_kuesioner_layanan-====================================================================
-Cypress.Commands.add('Menu_Kategori_Kuesioner_Layanan', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menukategorikuesionerlayanan', () => {
+  cy.visit("siakad/ms_katkuesionerlayanan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kategori Kuesioner Layanan"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Kuesioner_Layanan_Lama', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menudaftarkuesionerlayananlama', () => {
+  cy.visit("siakad/list_angketlayanan");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Angket Layanan"
+  );
 });
 
-Cypress.Commands.add('Menu_Jenis_Jawaban', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menujenisjawaban', () => {
+  cy.visit("siakad/list_jenisjawabanangket");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jenis Jawaban Daftar Jenis Jawaban"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Kuesioner_Layanan', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menudaftarkuesionerlayanan', () => {
+  cy.visit("siakad/list_kuesionerlayanan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kuesioner Layanan Daftar Kuesioner Layanan"
+  );
 });
 //04_setting_aplikasi-=====================================================================
-Cypress.Commands.add('Menu_Setting_Aplikasi', () => {
-  cy.get('.container > .nav > :nth-child(8) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > a').click()
+Cypress.Commands.add('menusettingaplikasi', () => {
+  cy.visit("siakad/ms_settingapk/detail");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Setting Setting Pengaturan SIM"
+  );
 });

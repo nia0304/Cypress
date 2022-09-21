@@ -1,0 +1,16 @@
+{
+    "kode01": "12345",
+    "kode02": "XXX",
+    "namaReferensi01": "Referensi Website TES",
+    "namaReferensi02": "Ubah Referensi Website",
+    "urlReferensi01": "Siakadcloud.com",
+    "urlReferensi02": "Maukuliah",
+    "alertGagalSimpan": "Penambahan data Referensi Website gagal",
+    "alertSimpan": "Penambahan data Referensi Website berhasil",
+    "alertUbah": "Pengubahan data Referensi Website berhasil",
+    "alertHapus": "Penghapusan data Referensi Website berhasil",
+    "modalHapus":"Apakah anda yakin akan menghapus data ini?",
+    "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
+    "alertDuplikasi": "Penambahan data Referensi Website gagal, ada duplikasi data",
+    "alertGagalHapus": "Penghapusan data Referensi Website gagal, data masih dijadikan referensi"
+}

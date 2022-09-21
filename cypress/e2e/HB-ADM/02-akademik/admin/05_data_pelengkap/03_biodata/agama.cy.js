@@ -8,8 +8,7 @@ describe("Super Administrator bisa melakukan management "+namaMenu+ " pada menu 
     cy.loginsuperadmin()
     cy.get(".main_title").should("contain", "Daftar Modul");
     cy.modulakademik();
-    cy.menu_agama();
-    cy.get('.content-header > h1').should('contain',namaMenu);
+    cy.menuagama();
     cy.fixture("HB-ADM/02-akademik/05_data_pelengkap/03_biodata/agama").as('data');
   });
 

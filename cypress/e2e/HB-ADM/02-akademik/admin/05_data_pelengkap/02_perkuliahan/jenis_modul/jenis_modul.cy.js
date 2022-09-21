@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Jenis_Modul()
+      cy.menujenismodul()
   });
 
   it('Buka Halaman', () => {

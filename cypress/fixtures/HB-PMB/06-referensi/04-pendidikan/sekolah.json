@@ -33,5 +33,6 @@
     "modalPeringatan":"Mohon mengisi isian yang bergaris merah",
     "modalHapusAll": "Silakan centang data yang ingin dihapus terlebih dahulu",
     "modalSimpan": "Apakah anda yakin akan menyimpan data ini?",
-    "alertGagalHapus": "Penghapusan data sekolah gagal, data masih dijadikan referensi"
+    "alertGagalHapus": "Penghapusan data sekolah gagal, data masih dijadikan referensi",
+    "alertDuplikasi": "Penambahan data sekolah gagal, ada duplikasi data"
 }

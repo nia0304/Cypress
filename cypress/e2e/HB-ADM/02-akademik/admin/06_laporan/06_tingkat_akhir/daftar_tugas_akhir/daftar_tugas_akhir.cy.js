@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Daftar_Tugas_Akhir();
+      cy.menudaftartugasakhir();
   });
 
   it('Buka Halaman', () => {

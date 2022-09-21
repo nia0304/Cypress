@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Laporan_Emis_Penelitian();
+      cy.menulaporanemispenelitian();
   });
 
   it('Buka Halaman', () => {

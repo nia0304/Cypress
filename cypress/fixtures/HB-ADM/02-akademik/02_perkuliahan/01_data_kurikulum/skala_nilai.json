@@ -1,0 +1,13 @@
+{
+    "unit":"S1 - Sistem Informasi",
+    "jenjang":"S1 - STRATA 1",
+    "i_nhuruf":"A",
+    "i_nangka":"4,00",
+    "i_batasbawah":"80,00",
+    "i_batasatas":"100,00",
+    "u_keterangan":"Testing ubah tahun kurikulum",
+    "u_mulaiBerlaku":"20171",
+    "u_tglAwal":"30-07-2090",
+    "u_tglAkhir":"30-08-2090",
+    "pencarian_by":"Tahun,Keterangan,Mulai Berlaku,Tanggal Awal,Tanggal Akhir"
+}

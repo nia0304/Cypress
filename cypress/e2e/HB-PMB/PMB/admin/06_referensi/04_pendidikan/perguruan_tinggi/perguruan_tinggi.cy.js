@@ -138,4 +138,24 @@ describe(judulHalaman, ()=>{
 
   })
 
+  it('Admin menambahkan data perguruan tinggi dengan kode yang sama', function () {
+    cy.get('.col-md-6 > .btn-success').click()
+
+    cy.get('#i_iduniversitas').type(this.data.kode01)
+    cy.get('#i_namauniversitas').type(this.data.namaUniv01)
+    cy.get('#i_alamat').type(this.data.alamatUniv01)
+  
+    cy.get('#i_telepon').type(this.data.noTelp01)
+    .parent()
+    .next()
+    .next()
+    .find('button.btn.btn-success.btn-xs.btn-flat')
+    .click()
+    // cy.get('button.btn.btn-success.btn-xs.btn-flat')
+
+    // assert
+    cy.get('.alert').should('contain', this.data.alertDuplikasi)
+
+  })
+
 });

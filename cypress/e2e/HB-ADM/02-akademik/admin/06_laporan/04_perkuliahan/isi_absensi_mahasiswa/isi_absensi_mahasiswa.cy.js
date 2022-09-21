@@ -10,7 +10,7 @@ describe(namaMenu, ()=>{
     //open Akademik module
       cy.modulakademik()
     //go to target page
-      cy.Menu_Isi_Absensi_Mahasiswa();
+      cy.menuisiabsensimahasiswa();
   });
 
   it('Buka Halaman', () => {

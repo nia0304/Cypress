@@ -1,23 +1,33 @@
 //01_mahasiswa-=====================================================================
-Cypress.Commands.add('Menu_Mahasiswa_Merdeka', () => {
-  cy.get('.container > .nav > :nth-child(5) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(1) > a').click()
+Cypress.Commands.add('menumahasiswamerdeka', () => {
+  cy.visit("siakad/list_mahasiswakm");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mahasiswa Daftar Mahasiswa Kampus Merdeka"
+  );
 });
 
 //02_kelas_kuliah-==================================================================
-Cypress.Commands.add('Menu_Kelas_Kuliah', ()=>{
-  cy.get('.container > .nav > :nth-child(5) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(2) > a').click()
+Cypress.Commands.add('menukelaskuliah', ()=>{
+  cy.visit("siakad/list_kelaskm");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kelas Kuliah Daftar Kelas Kuliah Kampus Merdeka"
+  );
 });
 //03_laporan-=======================================================================
-Cypress.Commands.add('Menu_Nilai_per_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(5) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menunilaipermahasiswa', () => {
+  cy.visit("siakad/repp_nilaimhskm");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Nilai per Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Nilai_per_Kelas', () => {
-  cy.get('.container > .nav > :nth-child(5) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > .dropdown-submenu > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menunilaiperkelas', () => {
+  cy.visit("siakad/repp_nilaikelaskm");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Nilai per Kelas"
+  );
 });

@@ -1,589 +1,786 @@
 //01_laporan_manual-================================================================
-Cypress.Commands.add('Menu_Manajemen_Laporan_Manual', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(2) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menumanajemenlaporanmanual', () => {
+  cy.visit("siakad/list_laporan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Daftar Laporan Manual"
+  );
 });
 
-Cypress.Commands.add('Menu_Cetak_Laporan_Manual', ()=>{
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(2) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menucetaklaporanmanual', ()=>{
+  cy.visit("siakad/repp_laporan");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan Manual"
+  );
 });
 
 //02_dosen-=========================================================================
-Cypress.Commands.add('Menu_Jadwal_Mengajar_Semester_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menujadwalmengajarsemesterdosen', () => {
+  cy.visit("siakad/repp_jadwalajar");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jadwal Semester Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menudaftardosen', () => {
+  cy.visit("siakad/repp_daftardosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Daftar Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Rasio_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menurasiodosen', () => {
+  cy.visit("siakad/repp_rasiodosenins");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Rasio Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Presensi_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menurekappresensidosen', () => {
+  cy.visit("siakad/repp_rekapabsendosen");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Presensi Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_SK_Jadwal_Mengajar_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menuskjadwalmengajardosen', () => {
+  cy.visit("siakad/repp_jadwalmengajar");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jadwal Mengajar Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Jadwal_Mengajar_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menurekapjadwalmengajardosen', () => {
+  cy.visit("siakad/repp_rekapmengajar");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Jadwal Mengajar Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_Dosen_Wali', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menudistribusidosenwali', () => {
+  cy.visit("siakad/repp_distribusidosenwali");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Distribusi Dosen Wali"
+  );
+
 });
 
-Cypress.Commands.add('Menu_Jurnal_Perwalian', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menujurnalperwalian', () => {
+  cy.visit("siakad/repp_jurnalperwalian");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Jurnal Perwalian"
+  );
 });
 
-Cypress.Commands.add('Menu_Dosen_Pembimbing', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menudosenpembimbing', () => {
+  cy.visit("siakad/repp_dpa");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mahasiswa Bimbingan"
+  );
 });
 
-Cypress.Commands.add('Menu_Honorarium_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(10) > a').click()
+Cypress.Commands.add('menuhonorariumdosen', () => {
+  cy.visit("siakad/repp_honordosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Honorarium Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Kelengkapan_Biodata_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(11) > a').click()
+Cypress.Commands.add('menukelengkapanbiodatadosen', () => {
+  cy.visit("siakad/repp_kelengkapanbiodosen");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kelengkapan Biodata Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Detail_Presensi_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
+Cypress.Commands.add('menudetailpresensidosen', () => {
+  cy.visit("siakad/repp_isiabsensidosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Isi Presensi Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_Pengajar', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(13) > a').click()
+Cypress.Commands.add('menudistribusipengajar', () => {
+  cy.visit("siakad/repp_distribusipengajar");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Distribusi Pengajar"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_EDOM_per_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(3) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(14) > a').click()
+Cypress.Commands.add('menulaporanedomperdosen', () => {
+  cy.visit("siakad/repp_rekapedomdosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan EDOM"
+  );
 });
 
 //03_mahasiswa-=====================================================================
-Cypress.Commands.add('Menu_Daftar_Hadir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menudaftarhadir', () => {
+  cy.visit("siakad/repp_absensi");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Daftar Hadir"
+  );
 });
 
-Cypress.Commands.add('Menu_KHS', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menukhs', () => {
+  cy.visit("siakad/repp_khsmahasiswa");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "KHS Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_KRS', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menukrs', () => {
+  cy.visit("siakad/repp_krsmahasiswa");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "KRS Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menudaftarmahasiswa', () => {
+  cy.visit("siakad/repp_daftarmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Daftar Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Mahasiswa_DO_Terancam', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menumahasiswadoterancam', () => {
+  cy.visit("siakad/repp_terancamdo");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Mhs Terancam DO"
+  );
 });
 
-Cypress.Commands.add('Menu_Transkrip_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menutranskripmahasiswa', () => {
+  cy.visit("siakad/repp_transkrip");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Transkrip"
+  );
 });
 
-Cypress.Commands.add('Menu_Mahasiswa_Transfer', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menumahasiswatransfer', () => {
+  cy.visit("siakad/repp_daftarmhstransfer");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Daftar Mhs. Transfer"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Cekal', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menudaftarcekal', () => {
+  cy.visit("siakad/repp_cekalmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Cekal Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Transkrip_Sementara', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menutranskripsementara', () => {
+  cy.visit("siakad/repp_transkripsmt");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Transkrip Sementara"
+  );
 });
 
-Cypress.Commands.add('Menu_Ijazah_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(10) > a').click()
+Cypress.Commands.add('menuijazahmahasiswa', () => {
+  cy.visit("siakad/repp_ijazah");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Ijazah Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_KTM_per_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(11) > a').click()
+Cypress.Commands.add('menuktmpermahasiswa', () => {
+  cy.visit("siakad/repp_ktm");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "KTM Per Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Absensi_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
+Cypress.Commands.add('menurekapabsensimahasiswa', () => {
+  cy.visit("siakad/repp_rekapabsenmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Presensi Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Status_KRS_Mhs', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(13) > a').click()
+Cypress.Commands.add('menustatuskrsmhs', () => {
+  cy.visit("siakad/repp_krsmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan Status KRS"
+  );
 });
 
-Cypress.Commands.add('Menu_KHS_Mahasiswa_Kolektif', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(14) > a').click()
+Cypress.Commands.add('menukhsmahasiswakolektif', () => {
+  cy.visit("siakad/repp_khsmhskolektif");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "KHS Mahasiswa Kolektif"
+  );
 });
 
-Cypress.Commands.add('Menu_Monitoring_Absensi_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(15) > a').click()
+Cypress.Commands.add('menumonitoringabsensimahasiswa', () => {
+  cy.visit("siakad/repp_absensimhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mon. Presensi Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Masa_Studi', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(16) > a').click()
+Cypress.Commands.add('menumasastudi', () => {
+  cy.visit("siakad/repp_masastudi");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Masa Studi"
+  );
 });
 
-Cypress.Commands.add('Menu_Nilai_Konversi', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(17) > a').click()
+Cypress.Commands.add('menunilaikonversi', () => {
+  cy.visit("siakad/repp_nilaikonversi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Nilai Konversi"
+  );
 });
 
-Cypress.Commands.add('Menu_Kurikulum_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(4) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(18) > a').click()
+Cypress.Commands.add('menukurikulummahasiswa', () => {
+  cy.visit("siakad/repp_kurikulummhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kurikulum Mahasiswa"
+  );
 });
 
 //04_perkuliahan-===================================================================
-Cypress.Commands.add('Menu_Jadwal_Kuliah', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menujadwalkuliah', () => {
+  cy.visit("siakad/repp_jadwalkuliah");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jadwal Perkuliahan Semester Ini (Mahasiswa)"
+  );
 });
 
-Cypress.Commands.add('Menu_Presentase_Kehadiran_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menupresentasekehadiranmahasiswa', () => {
+  cy.visit("siakad/repp_prosentaseabs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Persentase Presensi Mhs."
+  );
 });
 
-Cypress.Commands.add('Menu_Isi_Absensi_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menuisiabsensimahasiswa', () => {
+  cy.visit("siakad/repp_isiabsensi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Isi Presensi Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Pelaksanaan_Perkuliahan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menupelaksanaanperkuliahan', () => {
+  cy.visit("siakad/repp_perkuliahan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jurnal/Pelaksanaan Kuliah"
+  );
 });
 
-Cypress.Commands.add('Menu_MK_Mengulang', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menumkmengulang', () => {
+  cy.visit("siakad/repp_mkmengulang");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mata Kuliah Mengulang"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Kuesioner', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menulaporankuesioner', () => {
+  cy.visit("siakad/repp_angket");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan Kuesioner"
+  );
 });
 
-Cypress.Commands.add('Menu_Berita_Acara_Ujian', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menuberitaacaraujian', () => {
+  cy.visit("siakad/repp_absensiujian");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Berita Acara Ujian"
+  );
 });
 
-Cypress.Commands.add('Menu_Kartu_Ujian', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menukartuujian', () => {
+  cy.visit("siakad/repp_kartuujian");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Kartu Ujian"
+  );
 });
 
-Cypress.Commands.add('Menu_Silabus_Mata_Kuliah', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menusilabusmatakuliah', () => {
+  cy.visit("siakad/repp_silabus");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Silabus Mata Kuliah"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_KRS_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(10) > a').click()
+Cypress.Commands.add('menudistribusikrsmahasiswa', () => {
+  cy.visit("siakad/repp_distribusikrsmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Distribusi KRS Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Kurikulum_Prodi', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(11) > a').click()
+Cypress.Commands.add('menudaftarkurikulumprodi', () => {
+  cy.visit("siakad/repp_kurikulumprodi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Daftar Kurikulum Prodi"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Matakuliah', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
+Cypress.Commands.add('menudaftarmatakuliah', () => {
+  cy.visit("siakad/repp_matakuliah");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Daftar matakuliah"
+  );
 });
 
-Cypress.Commands.add('Menu_Mahasiswa_Tercekal_Ujian', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(13) > a').click()
+Cypress.Commands.add('menumahasiswatercekalujian', () => {
+  cy.visit("siakad/repp_cekalujian");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Mahasiswa Tercekal Ujian"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_EDOM_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(14) > a').click()
+Cypress.Commands.add('menurekapedommahasiswa', () => {
+  cy.visit("siakad/repp_rekapedommhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Rekap Angket Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_RPS_Mata_Kuliah', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(5) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(15) > a').click()
+Cypress.Commands.add('menudistribusirpsmatakuliah', () => {
+  cy.visit("siakad/repp_distrps");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Distribusi RPS Mata Kuliah"
+  );
 });
 
 //05_administrasi-==================================================================
-Cypress.Commands.add('Menu_Rekap_Kuesioner', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menurekapkuesioner', () => {
+  cy.visit("siakad/repp_rekapangket");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Rekap Kuesioner"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_KRS', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menurekapkrs', () => {
+  cy.visit("siakad/repp_rekapkrs");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Rekap KRS"
+  );
 });
 
-Cypress.Commands.add('Menu_Status_Semester_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menustatussemestermahasiswa', () => {
+  cy.visit("siakad/repp_statussemester");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan status Semester Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Jumlah_Mahasiswa_per_Status', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menujumlahmahasiswaperstatus', () => {
+  cy.visit("siakad/repp_statusmhs5thn");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jumlah Mahasiswa Per Status"
+  );
 });
 
-Cypress.Commands.add('Menu_Status_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menulaporanstatusmahasiswa', () => {
+  cy.visit("siakad/repp_statusmhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Status Akademik"
+  );
 });
 
-Cypress.Commands.add('Menu_Kalendar_Akademik_Laporan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menukalendarakademiklaporan', () => {
+  cy.visit("siakad/repp_kalender");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Kalender Akademik"
+  );
 });
 
-Cypress.Commands.add('Menu_Kapasitas_Kelas', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menukapasitaskelas', () => {
+  cy.visit("siakad/repp_kapasitaskelas");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Kapasitas Kelas"
+  );
 });
 
-Cypress.Commands.add('Menu_Monitoring_Kelas', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menumonitoringkelas', () => {
+  cy.visit("siakad/repp_monitoringkelas");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Monitoring Kelas"
+  );
 });
 
-Cypress.Commands.add('Menu_Jadwal_Mingguan_Prodi', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menujadwalmingguanprodi', () => {
+  cy.visit("siakad/repp_jadwalmingguanprodi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jadwal Mingguan Prodi"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(10) > a').click()
+Cypress.Commands.add('menurekapmahasiswa', () => {
+  cy.visit("siakad/repp_rekapmhsprodi");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Rekap Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Kuesioner_per_Pertanyaan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(11) > a').click()
+Cypress.Commands.add('menurekapkuesionerperpertanyaan', () => {
+  cy.visit("siakad/repp_rekapangketperpertanyaan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Kuesioner Per Pertanyaan"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Angket_Layanan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
+Cypress.Commands.add('menurekapangketlayanan', () => {
+  cy.visit("siakad/repp_rekapangketlayanan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Kuesioner Layanan"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Biodata_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(13) > a').click()
+Cypress.Commands.add('menurekapbiodatamahasiswa', () => {
+  cy.visit("siakad/repp_rekapbiodata");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Rekap Biodata Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Evaluasi_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(14) > a').click()
+Cypress.Commands.add('menuevaluasimahasiswa', () => {
+  cy.visit("siakad/repp_evaluasimhs");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Evaluasi Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Riwayat_Meet', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(6) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(15) > a').click()
+Cypress.Commands.add('menuriwayatmeet', () => {
+  cy.visit("siakad/repp_riwayatmeet");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Riwayat Meet"
+  );
 });
 
 //06_tingkat_akhir-=================================================================
-Cypress.Commands.add('Menu_Proposal_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menuproposaltugasakhir', () => {
+  cy.visit("siakad/repp_proposalskripsi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Proposal Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menudaftartugasakhir', () => {
+  cy.visit("siakad/repp_skripsi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Jadwal_Ujian_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menujadwalujiantugasakhir', () => {
+  cy.visit("siakad/repp_jadwalujita");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Jadwal Ujian Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Jumlah_Mahasiswa_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menujumlahmahasiswatugasakhir', () => {
+  cy.visit("siakad/repp_totalmhsskripsi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Jumlah Mahasiswa Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Bimbingan_TA', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menubimbinganta', () => {
+  cy.visit("siakad/repp_bimbinganta");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Bimbingan Tugas Akhir Mhs"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Mahasiswa_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menurekapmahasiswatugasakhir', () => {
+  cy.visit("siakad/repp_mhsskripsi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Rekap Mahasiswa Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Nilai_Uji_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menunilaiujitugasakhir', () => {
+  cy.visit("siakad/repp_nilaiujiskripsi");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Nilai Tugas Akhir"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Wisuda_Yudisium', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menudaftarwisudayudisium', () => {
+  cy.visit("siakad/repp_daftarwisuda");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Daftar Wisuda / Yudisium"
+  );
 });
 
-Cypress.Commands.add('Menu_Daftar_Yudisium', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menudaftaryudisium', () => {
+  cy.visit("siakad/repp_yudisium");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Yudisium"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Pembimbing_TA', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(10) > a').click()
+Cypress.Commands.add('menurekappembimbingta', () => {
+  cy.visit("siakad/repp_rekappembimbingta");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Rekap Pembimbing TA"
+  );
 });
 
-Cypress.Commands.add('Menu_Berita_Acara_TA', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(11) > a').click()
+Cypress.Commands.add('menuberitaacarata', () => {
+  cy.visit("siakad/repp_beritaacarata");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Berita Acara TA"
+  );
 });
 
-Cypress.Commands.add('Menu_Berita_Acara_Proposal_TA', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(12) > a').click()
+Cypress.Commands.add('menuberitaacaraproposalta', () => {
+  cy.visit("siakad/repp_beritaacaraajuta");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Berita Acara Proposal TA"
+  );
 });
 
-Cypress.Commands.add('Menu_Buku_Wisuda', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(13) > a').click()
+Cypress.Commands.add('menubukuwisuda', () => {
+  cy.visit("siakad/repp_bukuwisuda");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Buku Wisuda"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_Dosen_Tugas_Akhir', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(7) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(14) > a').click()
+Cypress.Commands.add('menudistribusidosentugasakhir', () => {
+  cy.visit("siakad/repp_distgsakhir");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Distribusi Dosen Tugas Akhir"
+  );
 });
 
 //07_nilai-=========================================================================
-Cypress.Commands.add('Menu_IPK_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menuipkmahasiswa', () => {
+  cy.visit("siakad/repp_ipk");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan IPK"
+  );
 });
 
-Cypress.Commands.add('Menu_Rekap_Laporan_IPK', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menurekaplaporanipk', () => {
+  cy.visit("siakad/repp_rekapipk");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan IPK"
+  );
 });
 
-Cypress.Commands.add('Menu_Distribusi_Nilai', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menudistribusinilai', () => {
+  cy.visit("siakad/repp_distribusinilai");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Distribusi Nilai"
+  );
 });
 
-Cypress.Commands.add('Menu_Nilai_KKN', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menunilaikkn', () => {
+  cy.visit("siakad/repp_nilaikkn");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan Nilai KKN"
+  );
 });
 
-Cypress.Commands.add('Menu_Cetak_Nilai_Perkuliahan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menucetaknilaiperkuliahan', () => {
+  cy.visit("siakad/repp_nilaikuliah");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Nilai Perkuliahan"
+  );
 });
 
-Cypress.Commands.add('Menu_Nilai_Mahasiswa', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menunilaimahasiswa', () => {
+  cy.visit("siakad/repp_nilaimhs");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Nilai Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Rangking_IPK', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menurangkingipk', () => {
+  cy.visit("siakad/repp_ipktertinggi");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Rangking IPK"
+  );
+
 });
 
-Cypress.Commands.add('Menu_Nilai_MK_per_Periode', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menunilaimkperperiode', () => {
+  cy.visit("siakad/repp_nilaimk");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Nilai MK per Periode"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Kunci_Nilai_Perkuliahan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(8) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menulaporankuncinilaiperkuliahan', () => {
+  cy.visit("siakad/repp_kuncinilai");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Kunci Nilai Perkuliahan"
+  );
 })
 
 //08_laporan_pddikti-===============================================================
-Cypress.Commands.add('Menu_Laporan_PDDikti', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(9) > a').click()
+Cypress.Commands.add('menulaporanpddikti', () => {
+  cy.visit("siakad/repp_datapdd");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan PD-DIKTI"
+  );
 });
 
 //09_laporan_emis-==================================================================
-Cypress.Commands.add('Menu_Laporan_Emis_Mhs', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(1) > a').click()
+Cypress.Commands.add('menulaporanemismhs', () => {
+  cy.visit("siakad/repp_emismhs");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Mahasiswa"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Dosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(2) > a').click()
+Cypress.Commands.add('menulaporanemisdosen', () => {
+  cy.visit("siakad/repp_emisdosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Laporan Emis Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Buku', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(3) > a').click()
+Cypress.Commands.add('menulaporanemisbuku', () => {
+  cy.visit("siakad/repp_emisbuku");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Buku"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Bukudosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(4) > a').click()
+Cypress.Commands.add('menulaporanemisbukudosen', () => {
+  cy.visit("siakad/repp_emisbukudosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Buku Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Jurnal', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(5) > a').click()
+Cypress.Commands.add('menulaporanemisjurnal', () => {
+  cy.visit("siakad/repp_emisjurnal");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Jurnal"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Lulusan', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(6) > a').click()
+Cypress.Commands.add('menulaporanemislulusan', () => {
+  cy.visit("siakad/repp_emislulusan");
+  cy.get(".content-header > h1").should(
+    "contain.text",
+    "Laporan Emis Lulusan"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Penelitian', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(7) > a').click()
+Cypress.Commands.add('menulaporanemispenelitian', () => {
+  cy.visit("siakad/repp_emispenelitian");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Penilitian"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Tugasdosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(8) > a').click()
+Cypress.Commands.add('menulaporanemistugasdosen', () => {
+  cy.visit("siakad/repp_emistugasdosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Tugas Dosen"
+  );
 });
 
-Cypress.Commands.add('Menu_Laporan_Emis_Jurnaldosen', () => {
-  cy.get('.container > .nav > :nth-child(7) > :nth-child(1)').click()
-  cy.get('.open > :nth-child(2) > :nth-child(10) > .dropdown-toggle').click()
-  cy.get('.show > .dropdown-menu > :nth-child(9) > a').click()
+Cypress.Commands.add('menulaporanemisjurnaldosen', () => {
+  cy.visit("siakad/repp_emisjurnaldosen");
+  cy.get(".content-header > h1").should(
+    "contain.text", 
+    "Emis Jurnal Dosen"
+  );
 });
