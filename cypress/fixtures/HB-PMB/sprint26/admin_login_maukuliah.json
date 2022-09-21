@@ -1,0 +1,10 @@
+{
+    "alertAddon": "App ID atau Secret ID tidak sesuai",
+    "alertEmailKosong" : "Email tidak ditemukan, mohon melengkapi email akun SiakadCloud Anda",
+    "alertUnivBelumTerdaftar": "Universitas Anda tidak terdaftar di Maukuliah",
+    "namaAwal": "Admin PMB",
+    "namaAkhir": "Siakad",
+    "password": "12345678",
+    "noTelp": "087545454556",
+    "jabatan": "Admin PMB"
+}
