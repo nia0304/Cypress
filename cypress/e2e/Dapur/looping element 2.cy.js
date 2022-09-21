@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import data from '../../fixtures/looping.json'
 
 describe('Automation Test Suite - Fixtures',  () => {
     //looping data dari fixture
@@ -40,7 +41,7 @@ describe('Automation Test Suite - Fixtures',  () => {
          })
      });
 
-     it.only('test get element from tabel', () => {
+     it('test get element from tabel', () => {
       cy.modulakademik()
       cy.visit('siakad/ms_kota');
         cy.get('#propinsi').select('JAWA TIMUR').wait(0)
@@ -52,4 +53,27 @@ describe('Automation Test Suite - Fixtures',  () => {
           cy.log($el.text())
         })
       });
+})
+
+describe('Dynamic loop', () => {
+    data.login.forEach((tes) => {  
+        it.only('Login user ketika '+tes.case, () => {
+            cy.visit('http://localhost/siacloud')
+            if (tes.user) {
+                cy.get('#userid').type(tes.user)
+            }
+            if(tes.pass){
+                cy.get('#password').type(tes.pass)
+            }
+            cy.get('.btn').click()
+
+            //assertion
+            if(tes.negatif){
+                cy.get('.alert').should('be.visible')
+                // if()
+            }else{
+                cy.get('.out').should('be.visible')
+            }
+        });
+    }) 
 })

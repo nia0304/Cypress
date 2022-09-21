@@ -26,5 +26,36 @@
             "urut": "3",
             "nama": "Tesis 3"
         }
+    ],
+    "login": [
+        {
+            "case": "password salah",
+            "negatif": true,
+            "user" : "fikri",
+            "pass" : "fikri"
+        },
+        {
+            "case": "username salah",
+            "negatif": true,
+            "user" : "zain",
+            "pass" : "fikri"
+        },
+        {
+            "case": "username kosong",
+            "negatif": true,
+            "user" : "",
+            "pass" : "fikri"
+        },
+        {
+            "case": "password kosong",
+            "negatif": true,
+            "user" : "fikri",
+            "pass" : ""
+        },
+        {
+            "case": "login berhasil",
+            "user" : "fikri",
+            "pass" : "j77/FQjF"   
+        }
     ]
 }

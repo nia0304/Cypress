@@ -67,7 +67,7 @@ describe('Testing data pelengkap tarif honor', ()=>{
     cy.konfirmasi_isian_kosong()
   });
 
-  it('Admin menambahkan data tarif honor', function () {
+  it.only('Admin menambahkan data tarif honor', function () {
     cy.get('[data-type="add"]').should('be.visible').click();
     cy.get('#kodehonor').select(this.data.mengajar)
     cy.get('#idjenispeg').select(this.data.jenispeg)
@@ -76,7 +76,7 @@ describe('Testing data pelengkap tarif honor', ()=>{
     cy.get('#idjenjang').select(this.data.jenjang)
     cy.get('#nominal').type(this.data.nominal01)
     cy.get('[data-type="save"]').should('be.visible').click()
-    cy.konfirmasi_simpan()
+    cy.konfirmasi_simpan("ya")
     cy.get('.alert').should('contain', this.data.alertsimpan)
       .and('be.visible')
   });
