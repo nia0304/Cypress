@@ -52,3 +52,9 @@ Cypress.Commands.add("modulkeuangan", () => {
   cy.get("#keuangan > .content > .role_box").click();
   cy.get(".container > .nav > :nth-child(1) > a").click();
 });
+
+Cypress.Commands.add("modulmbkm", () => {
+  cy.get('.mbkm > .inner').click();
+  cy.get("#mbkm").contains("Super Admin").should('be.visible').click();
+  cy.get('.container > .nav > :nth-child(1) > a').click()
+});
