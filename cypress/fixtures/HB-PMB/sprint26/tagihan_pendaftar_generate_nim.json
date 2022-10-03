@@ -1,0 +1,12 @@
+{
+    "pilihFilter": "ID Pendaftar",
+    "idPendaftar": "123000067",
+    "namaPendaftar" : "Ferlinyy",
+    "nimPendaftar": "abc123",
+    "alertBerhasilEditNim": "Pengubahan data Pendaftar berhasil",
+    "modalGenerateNim": "Apakah anda yakin akan melakukan generate NIM pendaftar?",
+    "alertBerhasilGenerateNim": "Berhasil Generate NIM",
+    "alertGagalEditNim": "Pendaftar memiliki tagihan belum lunas",
+    "alertGagalGenerateNim": "Gagal Generate NIM (Pendaftar memiliki tagihan belum lunas)",
+    "alertGagalBelumDaftarUlang": "Pendaftar belum Daftar Ulang"
+}

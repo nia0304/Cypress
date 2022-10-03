@@ -33,6 +33,9 @@ import "./akademik/admin/05_data_pelengkap";
 import "./akademik/admin/06_laporan";
 import "./akademik/admin/07_setting";
 
+// import untuk modul mbkm
+import "./mbkm/admin/03_data_pelengkap";
+
 // import untuk modul pmb
 import "./PMB/login_user";
 import "./PMB/admin/00_dashboard";
