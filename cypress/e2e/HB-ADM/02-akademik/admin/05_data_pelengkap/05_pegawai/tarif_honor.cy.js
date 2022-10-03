@@ -7,6 +7,7 @@ describe('Testing data pelengkap tarif honor', ()=>{
       cy.modulakademik()
       cy.visit('siakad/list_honortarif');
       cy.fixture('HB-ADM/02-akademik/05_data_pelengkap/05-pegawai/tarif_honor').as('data')
+      cy.fixture('modal_konfirmasi').as('writing')
   });
 
   //positif rest
@@ -76,7 +77,7 @@ describe('Testing data pelengkap tarif honor', ()=>{
     cy.get('#idjenjang').select(this.data.jenjang)
     cy.get('#nominal').type(this.data.nominal01)
     cy.get('[data-type="save"]').should('be.visible').click()
-    cy.konfirmasi_simpan("ya")
+    cy.modal_konfirmasi("ya", this.writing.simpan)
     cy.get('.alert').should('contain', this.data.alertsimpan)
       .and('be.visible')
   });
