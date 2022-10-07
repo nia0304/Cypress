@@ -49,7 +49,8 @@ describe(judulHalaman, () => {
             .find('button.btn.btn-danger.btn-xs.btn-flat').click().wait(0)
 
         // assert modal
-        cy.get('.bootbox-body').should('contain', this.data.modalBatalMhsAll)
+        cy.get('.bootbox-body').should('contain', this.data.modalBatalMhs)
+        cy.get('.bootbox-body > span').should('contain', this.data.namaPendaftar)
 
         // klik ya yakin
         cy.get('.modal-footer > .btn-primary').click()
@@ -73,12 +74,13 @@ describe(judulHalaman, () => {
 
         cy.get('.input-group-btn > .btn-success').click()
 
-        cy.get('td').contains(this.data.namaPendaftar)
+        cy.get('td').contains(this.data.namaPendaftarFilter)
             .parent()
             .find('.btn-danger').click().wait(0)
 
         // assert modal
-        cy.get('.bootbox-body').should('contain', this.data.modalBatalMhsAll)
+        cy.get('.bootbox-body').should('contain', this.data.modalBatalMhs)
+        cy.get('.bootbox-body > span').should('contain', this.data.namaPendaftarFilter)
 
         // klik ya yakin
         cy.get('.modal-footer > .btn-primary').click()
