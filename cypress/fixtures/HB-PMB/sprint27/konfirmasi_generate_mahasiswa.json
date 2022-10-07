@@ -1,0 +1,14 @@
+{
+    "pilihFilter": "ID Pendaftar",
+    "modalGenerateMhsAll" : "Apakah anda yakin akan melakukan generate Mahasiswa dan Mengirimkan Email pemberitahuan lulus kepada",
+    "modalGenerateMhs" : "Apakah anda yakin akan melakukan generate Mahasiswa dan Mengirimkan Email pemberitahuan lulus kepada",
+    "idPendaftar": "123123124",
+    "namaPendaftar": "galuh",
+    "idPendaftarFilter": "123000004",
+    "namaPendaftarFilter": "DELLA",
+    "idMhs": "123000007",
+    "namaMhs": "RIKA",
+    "alertBerhasilGenerateMhs":"Berhasil Generate Mahasiswa",
+    "alertBerhasilGenerateBatalMhsAll": "Berhasil 3 dan Gagal 0 generate Mahasiswa",
+    "alertGagal": "Gagal Batalkan Mahasiswa (Penghapusan data mahasiswa gagal, data masih dijadikan referensi )"
+}
