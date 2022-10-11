@@ -1,5 +1,5 @@
 Cypress.Commands.add('modal_konfirmasi', (writting, button_konfirmasi) => {
-    cy.get('.modal-content').should('be.visible')
+    cy.get('#modal-konfirmasi').should('be.visible')
       .and('contain', writting)
       if(button_konfirmasi=="ya"){
         cy.get('[data-bb-handler="confirm"]').should('be.visible').and('contain', 'Ya, Yakin').click()

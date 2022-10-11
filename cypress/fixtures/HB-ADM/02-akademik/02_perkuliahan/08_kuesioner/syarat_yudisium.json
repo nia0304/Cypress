@@ -1,0 +1,23 @@
+{
+    "tambah" : [
+        {
+            "case" : "menggunakan angka",
+            "nama_kategori" : "12"
+        },
+        {
+            "case" : "menggunakan karakter",
+            "nama_kategori" : "!?"
+        },
+        {
+            "case" : "menggunakan huruf",
+            "nama_kategori" : "Testing"
+        },
+        {
+            "case" : "menggunakan campuran angka, huruf, dan karakter",
+            "nama_kategori" : "12testing!?"
+        }
+    ],
+    "alert_simpan" : "Penambahan data Kategori Edom berhasil",
+    "alert_ubah" : "Pengubahan data Kategori Edom berhasil",
+    "alert_hapus" : "Penghapusan data Kategori Edom berhasil"
+}

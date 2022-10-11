@@ -1,20 +1,59 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Syarat Yudisium";
+import data from "../../../../../../../fixtures/HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/syarat_yudisium.json"
 
-describe(namaMenu, ()=>{
+describe('Automation Syarat Yudisium', ()=>{
  
   beforeEach(() => {
-    //login
       cy.loginsuperadmin()
-    //open Akademik module
       cy.modulakademik()
-    //go to target page
-      cy.menusyaratyudisium()
+      cy.visit('siakad/ms_katedom');
+      cy.fixture('modal_konfirmasi').as('writting')
   });
 
-  it('Buka Halaman', () => {
-    cy.get('.content-header > h1').should('contain',namaMenu)
+  //positif case
+  data.tambah.forEach((test) => {
+    it('Tambah syarat yudisium ketika isian ' +test.case, () => {
+      cy.get('#wrap-button > .btn').click()
+      cy.get('#i_namakat').type(test.nama_kategori)
+        .parent()
+        .next()
+        .find('button.btn.btn-success.btn-xs.btn-flat')
+        .click()
+        cy.get('.alert').should('contain', data.alert_simpan)
+    });
+  })
+
+  it('Tambah syarat yudisium ketika isian kosong', function () {
+    cy.get('#wrap-button > .btn').click()
+    cy.get('#i_namakat')
+        .parent()
+        .next()
+        .find('button.btn.btn-success.btn-xs.btn-flat')
+        .click()
+    cy.modal_konfirmasi(this.writting.wajib, "ok")
   });
 
+  it.only('Admin mengubah data syarat yudisium', () => {
+    cy.get('td').contains('12')
+      .next()
+      .find('button.btn.btn-primary.btn-xs.btn-flat')
+      .click()
+    cy.get('#u_namakat').clear().type('12345')
+      .parent()
+      .next()
+      .find('button.btn.btn-success.btn-xs.btn-flat')
+      .click()
+    cy.get('.alert').should('contain', data.alert_ubah)
+  });
+
+  it('Admin menghapus data syarat yudisium', function () {
+    for(let n = 1; n <= 4; n++){
+      cy.get('td').contains('4')
+        .parent()
+        .find('button.btn.btn-danger.btn-xs.btn-flat')
+        .click()
+      cy.modal_konfirmasi(this.writting.hapus, "ya")
+    }
+  });
 });
