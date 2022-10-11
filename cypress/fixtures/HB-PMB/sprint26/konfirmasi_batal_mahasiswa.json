@@ -1,6 +1,7 @@
 {
     "pilihFilter": "ID Pendaftar",
-    "modalBatalMhsAll" : "Apakah anda yakin akan melakukan pembatalan Mahasiswa?",
+    "modalBatalMhsAll" : "Apakah anda yakin akan melakukan pembatalan",
+    "modalBatalMhs" : "Apakah anda yakin akan melakukan pembatalan Mahasiswa",
     "idPendaftar": "123123124",
     "namaPendaftar": "galuh",
     "idPendaftarFilter": "123000004",
@@ -8,6 +9,6 @@
     "idMhs": "123000007",
     "namaMhs": "RIKA",
     "alertBerhasilBatalMhs":"Berhasil Batalkan Mahasiswa",
-    "alertBerhasilBatalMhsAll": "Berhasil 3 dan Gagal 1 menghapus Mahasiswa",
+    "alertBerhasilBatalMhsAll": "Berhasil 0 dan Gagal 1 menghapus Mahasiswa",
     "alertGagal": "Gagal Batalkan Mahasiswa (Penghapusan data mahasiswa gagal, data masih dijadikan referensi )"
 }

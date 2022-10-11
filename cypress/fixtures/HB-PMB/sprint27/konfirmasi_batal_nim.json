@@ -1,0 +1,14 @@
+{
+    "pilihFilter": "ID Pendaftar",
+    "modalBatalNimAll" : "Apakah anda yakin akan melakukan pembatalan NIM",
+    "modalBatalNim" : "Apakah anda yakin akan melakukan pembatalan NIM",
+    "idPendaftar": "123123124",
+    "namaPendaftar": "galuh",
+    "idPendaftarFilter": "123000004",
+    "namaPendaftarFilter": "DELLA",
+    "idMhs": "123000007",
+    "namaMhs": "RIKA",
+    "alertBerhasilBatalNim":"Berhasil Batalkan NIM",
+    "alertBerhasilBatalNimAll": "Berhasil 3 dan Gagal 0 membatalkan NIM Pendaftar",
+    "alertGagal": "Gagal Generate NIM (Pendaftar memiliki tagihan belum lunas)"
+}

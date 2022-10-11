@@ -1,0 +1,14 @@
+{
+    "pilihFilter": "ID Pendaftar",
+    "modalGenerateNimAll" : "Apakah anda yakin akan melakukan generate NIM",
+    "modalGenerateNim" : "Apakah anda yakin akan melakukan generate NIM",
+    "idPendaftar": "123123124",
+    "namaPendaftar": "galuh",
+    "idPendaftarFilter": "123000004",
+    "namaPendaftarFilter": "DELLA",
+    "idMhs": "123000007",
+    "namaMhs": "RIKA",
+    "alertBerhasilGenerateNim":"Berhasil Generate NIM",
+    "alertBerhasilGenerateBatalNimAll": "Berhasil 2 dan Gagal 2 generate NIM Pendaftar",
+    "alertGagal": "Gagal Generate NIM (Pendaftar memiliki tagihan belum lunas)"
+}

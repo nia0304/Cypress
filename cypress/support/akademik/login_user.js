@@ -37,8 +37,8 @@ Cypress.Commands.add("logindosen", () => {
 // Command Modul
 Cypress.Commands.add("moduladminaplikasi", () => {
   cy.get(".admin > .inner").click();
-  cy.get("#admin > .content > .role_box").click();
-  cy.get(".container > .nav > :nth-child(1) > a").click();
+  cy.get("#admin").contains("Super Admin").should('be.visible').click();
+  cy.get('.container > .nav > :nth-child(1) > a').click()
 });
 
 Cypress.Commands.add("modulakademik", () => {
