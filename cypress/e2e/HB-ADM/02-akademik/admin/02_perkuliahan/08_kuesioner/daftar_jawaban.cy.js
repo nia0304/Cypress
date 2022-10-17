@@ -71,7 +71,7 @@ describe('Automation Daftar Jawaban EDOM', ()=>{
         cy.fixture("HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/daftar_jawaban").then((valueTable)=>{
             expect(dataTable).to.deep.equal(valueTable.data_salin)
         })
-    })
+      })
     });
 
   //negatif test
@@ -109,6 +109,16 @@ it('Admin menghapus daftar jawaban', function () {
   cy.get('#periode').select(data.periode).wait(0)
   cy.get('#jenjang').select(data.jenjang).wait(0)
   for(let n = 1; n <= 7; n++){
+    cy.get(':nth-child(2) > :nth-child(4) > .btn-danger').click()
+    cy.modal_konfirmasi(this.writting.hapus, "ya")
+    cy.get('.alert').should('contain', data.alert_hapus)
+  }
+});
+
+it('Admin menghapus daftar salin jawaban', function () {
+  cy.get('#periode').select(data.periode_salin).wait(0)
+  cy.get('#jenjang').select(data.jenjang).wait(0)
+  for(let n = 1; n <= 4; n++){
     cy.get(':nth-child(2) > :nth-child(4) > .btn-danger').click()
     cy.modal_konfirmasi(this.writting.hapus, "ya")
     cy.get('.alert').should('contain', data.alert_hapus)
