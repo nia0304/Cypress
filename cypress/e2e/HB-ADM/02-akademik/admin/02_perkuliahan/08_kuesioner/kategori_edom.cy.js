@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import data from "../../../../../../../fixtures/HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/kategori_edom.json"
+import data from "../../../../../../fixtures/HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/kategori_edom.json"
 
 describe('Automation Kategori Edom', ()=>{
  
@@ -34,7 +34,7 @@ describe('Automation Kategori Edom', ()=>{
     cy.modal_konfirmasi(this.writting.wajib, "ok")
   });
 
-  it.only('Admin mengubah data kategori edom', () => {
+  it('Admin mengubah data kategori edom', () => {
     cy.get('td').contains('12')
       .next()
       .find('button.btn.btn-primary.btn-xs.btn-flat')

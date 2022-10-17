@@ -1,0 +1,75 @@
+{
+    "periode": "2022/2023 Ganjil",
+    "jenjang": "D3 - DIPLOMA 3",
+    "positif": [
+        {
+            "case": "ketika nomor 1 digit",
+            "no": "1",
+            "jawaban": "Baik Sekali",
+            "nilai": "5"
+        },
+        {
+            "case": "ketika nomor 2 digit",
+            "no": "10",
+            "jawaban": "Baik",
+            "nilai": "4"
+        },
+        {
+            "case": "ketika jawaban mengandung angka",
+            "no": "2",
+            "jawaban": "Cukup 5",
+            "nilai": "3"
+        },
+        {
+            "case": "ketika jawaban mengandung karakter",
+            "no": "3",
+            "jawaban": "Kurang?",
+            "nilai": "2"
+        },
+        {
+            "case": "ketika nilai 1 digit",
+            "no": "4",
+            "jawaban": "sangat kurang",
+            "nilai": "1"
+        },
+        {
+            "case": "ketika nilai 2 digit",
+            "no": "5",
+            "jawaban": "sangat kurang",
+            "nilai": "11"
+        },
+        {
+            "case": "ketika nilai 3 digit",
+            "no": "6",
+            "jawaban": "sangat kurang",
+            "nilai": "111"
+        }
+    ],
+    "negatif": [
+        {
+            "case": "ketika nomor kosong",
+            "no": null,
+            "jawaban": "Baik Sekali",
+            "nilai": "5"
+        },
+        {
+            "case": "ketika jawaban kosong",
+            "no": "1",
+            "jawaban": null,
+            "nilai": "5"
+        },
+        {
+            "case": "ketika nilai kosong",
+            "no": "1",
+            "jawaban": "Baik Sekali",
+            "nilai": null
+        }
+    ],
+    "u_no": "7",
+    "u_jawaban": "Baik",
+    "u_nilai": "4",
+    "alert_simpan": "Penambahan data jawaban kuesioner berhasil",
+    "alert_hapus": "Penghapusan data jawaban kuesioner berhasil",
+    "alert_ubah": "Pengubahan data jawaban kuesioner berhasil",
+    "alert_duplikasi": "Penambahan data jawaban kuesioner gagal, ada duplikasi data"
+}
