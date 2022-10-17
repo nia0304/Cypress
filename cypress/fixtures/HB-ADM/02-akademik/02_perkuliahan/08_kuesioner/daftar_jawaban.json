@@ -1,6 +1,9 @@
 {
     "periode": "2022/2023 Ganjil",
     "jenjang": "D3 - DIPLOMA 3",
+    "periode_salin": "2020/2021 Genap",
+    "jenjang_salin": "S1 - STRATA 1",
+    "label_salin": "Salin Data Jawaban Kuesioner",
     "positif": [
         {
             "case": "ketika nomor 1 digit",
@@ -71,5 +74,38 @@
     "alert_simpan": "Penambahan data jawaban kuesioner berhasil",
     "alert_hapus": "Penghapusan data jawaban kuesioner berhasil",
     "alert_ubah": "Pengubahan data jawaban kuesioner berhasil",
-    "alert_duplikasi": "Penambahan data jawaban kuesioner gagal, ada duplikasi data"
+    "alert_duplikasi": "Penambahan data jawaban kuesioner gagal, ada duplikasi data",
+    "alert_salin": "Salin jawaban kuesioner berhasil",
+    "data_salin": [
+        {
+            "No.": "\n                                ",
+            "Jawaban": "\n                                ",
+            "Nilai": "\n                                ",
+            "Aksi": "\n                                                                                                                                                                                                                                    "
+        },
+        {
+            "No.": "1",
+            "Jawaban": "Sangat Baik",
+            "Nilai": "4",
+            "Aksi": "\n                                                                                                                                                                                                                                                            "
+        },
+        {
+            "No.": "2",
+            "Jawaban": "Baik",
+            "Nilai": "3",
+            "Aksi": "\n                                                                                                                                                                                                                                                            "
+        },
+        {
+            "No.": "3",
+            "Jawaban": "Buruk",
+            "Nilai": "2",
+            "Aksi": "\n                                                                                                                                                                                                                                                            "
+        },
+        {
+            "No.": "4",
+            "Jawaban": "Sangat Buruk",
+            "Nilai": "1",
+            "Aksi": "\n                                                                                                                                                                                                                                                            "
+        }
+    ]
 }

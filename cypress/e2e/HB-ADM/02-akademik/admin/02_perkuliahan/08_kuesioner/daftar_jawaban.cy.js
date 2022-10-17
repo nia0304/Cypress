@@ -52,6 +52,28 @@ describe('Automation Daftar Jawaban EDOM', ()=>{
     cy.get('.alert').should('contain', data.alert_ubah)  
     });
 
+    it('Admin salin jawaban edom', () => {
+      cy.get('#periode').select(data.periode).wait(0)
+      cy.get('#jenjang').select(data.jenjang_salin).wait(0)
+      cy.get('button').contains('Salin Data').click()
+      cy.get('.modal-content').should('be.visible').and('contain', data.label_salin)
+      cy.get('#periodeto').select(data.periode_salin)
+      cy.get('#jenjangto').select(data.jenjang)
+      cy.get('button.btn.btn-success').contains('Salin').click()
+      cy.get('.alert').should('contain', data.alert_salin)  
+    });
+
+    it('Admin cek hasil salin jawaban edom', () => {
+      cy.get('#periode').select(data.periode_salin).wait(0)
+      cy.get('#jenjang').select(data.jenjang).wait(0)
+      cy.get(':nth-child(1) > .table').getTable().should((dataTable)=>{
+        //cy.log(dataTable);
+        cy.fixture("HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/daftar_jawaban").then((valueTable)=>{
+            expect(dataTable).to.deep.equal(valueTable.data_salin)
+        })
+    })
+    });
+
   //negatif test
   data.negatif.forEach((test) => {
   it('Admin menambahkan data daftar jawaban ketika ' +test.case, function () {
@@ -83,7 +105,7 @@ it('Admin menambahkan daftar jawban duplikasi', () => {
   cy.get('.alert').should('contain', data.alert_duplikasi)
 })
 
-it.only('Admin menghapus daftar jawaban', function () {
+it('Admin menghapus daftar jawaban', function () {
   cy.get('#periode').select(data.periode).wait(0)
   cy.get('#jenjang').select(data.jenjang).wait(0)
   for(let n = 1; n <= 7; n++){

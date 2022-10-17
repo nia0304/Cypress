@@ -1,20 +1,17 @@
 /// <reference types="cypress"/>
 
-const namaMenu="Daftar Pertanyaan";
-
-describe(namaMenu, ()=>{
+describe('Automation Daftar Pertanyaan EDOM', ()=>{
  
   beforeEach(() => {
-    //login
       cy.loginsuperadmin()
-    //open Akademik module
       cy.modulakademik()
-    //go to target page
-      cy.menudaftarpertanyaan()
+      cy.visit('siakad/ms_pertanyaanangket');
   });
 
-  it('Buka Halaman', () => {
-    cy.get('.content-header > h1').should('contain',namaMenu)
+  it('Admin memilih filter periode, kategori dan tingkat pendidikan', () => {
+    cy.get('#periode').select('2022/2023 Ganjil').wait(0)
+    cy.get('#kategori').select('Materi Pembelajaran').wait(0)
+    cy.get('#jenjang').select('S1 - STRATA 1').wait(0)
   });
 
 });
