@@ -25,5 +25,7 @@ module.exports = defineConfig({
     },
 
     baseUrl: "http://localhost/siacloud/",
+    
+    experimentalStudio: true
   },
 });
