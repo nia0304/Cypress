@@ -35,6 +35,7 @@ import "./akademik/admin/07_setting";
 
 // import untuk modul mbkm
 import "./mbkm/admin/03_data_pelengkap";
+import "./Nia/login";
 
 // import untuk modul pmb
 import "./PMB/login_user";

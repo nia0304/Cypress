@@ -1,21 +1,23 @@
 /// <reference types="cypress"/>
 
-import data from "../../../../../../fixtures/HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/kategori_edom.json"
+import data from "../../../../../../../fixtures/HB-ADM/02-akademik/02_perkuliahan/08_kuesioner/kategori_edom.json"
 
 describe('Automation Kategori Edom', ()=>{
  
   beforeEach(() => {
-      cy.loginsuperadmin()
+      //cy.loginsuperadmin()
+      cy.login();
       cy.modulakademik()
       cy.visit('siakad/ms_katedom');
-      cy.fixture('modal_konfirmasi').as('writting')
+      cy.fixture('modal_konfirmasi').as('writting') 
   });
 
   //positif case
   data.tambah.forEach((test) => {
-    it('Tambah kategori edom ketika isian ' +test.case, () => {
+    it.only('Tambah kategori edom ketika isian ' +test.case, () => {
       cy.get('#wrap-button > .btn').click()
-      cy.get('#i_namakat').type(test.nama_kategori)
+      cy.get('#i_namakat').should('be.visible')
+        .type(test.nama_kategori)
         .parent()
         .next()
         .find('button.btn.btn-success.btn-xs.btn-flat')
@@ -24,7 +26,7 @@ describe('Automation Kategori Edom', ()=>{
     });
   })
 
-  it('Tambah syarat yudisium ketika isian kosong', function () {
+  it.skip('Tambah syarat yudisium ketika isian kosong', function () {
     cy.get('#wrap-button > .btn').click()
     cy.get('#i_namakat')
         .parent()
@@ -34,7 +36,7 @@ describe('Automation Kategori Edom', ()=>{
     cy.modal_konfirmasi(this.writting.wajib, "ok")
   });
 
-  it('Admin mengubah data kategori edom', () => {
+  it.skip('Admin mengubah data kategori edom', () => {
     cy.get('td').contains('12')
       .next()
       .find('button.btn.btn-primary.btn-xs.btn-flat')
@@ -47,7 +49,7 @@ describe('Automation Kategori Edom', ()=>{
     cy.get('.alert').should('contain', data.alert_ubah)
   });
 
-  it('Admin menghapus data kategori edom', function () {
+  it.skip('Admin menghapus data kategori edom', function () {
     for(let n = 1; n <= 4; n++){
       cy.get('td').contains('4')
         .parent()

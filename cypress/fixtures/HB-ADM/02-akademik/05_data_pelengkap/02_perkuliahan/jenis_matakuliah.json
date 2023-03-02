@@ -1,0 +1,17 @@
+{
+    "tambah" : [
+        {
+            "kode_jenismk" : "A1",
+            "nama_jenismk" : "TEST1"
+        },
+
+        {
+            "kode_jenismk" : "A2",
+            "nama_jenismk" : "TEST2"
+        }
+    ],
+    "alert_simpan" : "Penambahan data jenis mata kuliah berhasil",
+    "alert_ubah" : "Pengubahan data jenis mata kuliah berhasil",
+    "alert_hapus" : "Penghapusan data jenis mata kuliah berhasil",
+    "kode":"A1"
+}
