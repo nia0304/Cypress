@@ -63,7 +63,6 @@ describe('Automation Jenis Mata Kuliah', ()=>{
     cy.get(':nth-child(3) > .btn-success > .fa').click();
     cy.get('#modal-konfirmasi').should('be.visible').and('contain', 'Mohon mengisi isian yang bergaris merah').click();
     cy.get('.modal-footer > .btn').click();
-
   });
 
   it('Admin bisa mengubah data',()=>{
