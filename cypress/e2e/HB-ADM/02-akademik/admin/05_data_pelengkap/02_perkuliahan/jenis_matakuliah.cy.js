@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import data from "../../../../../../../fixtures/HB-ADM/02-akademik/05_data_pelengkap/02_perkuliahan/jenis_matakuliah.json"
+import data from "../../../../../../fixtures/HB-ADM/02-akademik/05_data_pelengkap/02_perkuliahan/jenis_matakuliah.json"
 
 describe('Automation Jenis Mata Kuliah', ()=>{
  
