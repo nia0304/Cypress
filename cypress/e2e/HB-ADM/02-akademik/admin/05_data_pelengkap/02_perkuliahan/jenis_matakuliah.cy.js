@@ -24,7 +24,6 @@ describe('Automation Jenis Mata Kuliah', ()=>{
   })*/
 
   it('Admin bisa menambah data',()=>{
-    //positif case
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idjenismk').type('A1');
       cy.get('#i_namajenismk').type('Test1');
@@ -36,9 +35,9 @@ describe('Automation Jenis Mata Kuliah', ()=>{
       cy.get('#i_idjenismk').type('A/');
       cy.get('#i_namajenismk').type('Test-');
       cy.get(':nth-child(3) > .btn-success > .fa').click();
+  });
 
-    //Negatif Case
-    //Kolom kode dan nama kosong
+  it('Admin tidak bisa menambah data',()=>{
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idjenismk').clear();
       cy.get('#i_namajenismk').clear();
@@ -46,7 +45,6 @@ describe('Automation Jenis Mata Kuliah', ()=>{
       cy.get('#modal-konfirmasi').should('be.visible').and('contain', 'Mohon mengisi isian yang bergaris merah').click();
       cy.get('.modal-footer > .btn').click();
 
-    //Kolom nama kosong
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idjenismk').clear();
       cy.get('#i_namajenismk').clear();
@@ -55,7 +53,6 @@ describe('Automation Jenis Mata Kuliah', ()=>{
       cy.get('#modal-konfirmasi').should('be.visible').and('contain', 'Mohon mengisi isian yang bergaris merah').click();
       cy.get('.modal-footer > .btn').click();
 
-    //Kolom kode kosong
     cy.get('#wrap-button > .btn').click();
     cy.get('#i_idjenismk').clear();
     cy.get('#i_namajenismk').clear();
@@ -65,26 +62,43 @@ describe('Automation Jenis Mata Kuliah', ()=>{
     cy.get('.modal-footer > .btn').click();
   });
 
+  it('Admin batal menambah data',()=>{
+    cy.get('#wrap-button > .btn').click();
+    cy.get('#insert-row-ms > :nth-child(3) > .btn-warning').click();
+  });
+
   it('Admin bisa mengubah data',()=>{
       cy.get('td').contains('A1').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
       cy.get('#u_idjenismk').clear().type('A2').parent().next().next().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data jenis mata kuliah berhasil');
   })
 
+  it('Admin batal mengubah data',()=>{
+    cy.get('td').contains('A').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
+    cy.get(':nth-child(4) > :nth-child(3) > .btn-warning').click();
+  });
+
   it('Admin bisa menghapus data',()=>{
     cy.get('td').contains('A/').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?');
     cy.get('.btn.btn-primary').click();
     cy.get('.alert').should('contain','Penghapusan data jenis mata kuliah berhasil');
+  })
 
-    //Negatif case
-    //Hapus jenis mata kuliah yang tereferensi dengan data lain
+  it('Admin tidak bisa menghapus data',()=>{
     cy.get('td').contains('A').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?');
     cy.get('.btn.btn-primary').click();
     cy.get('.alert').should('contain','Penghapusan data jenis mata kuliah gagal, data masih dijadikan referensi pada Mata Kuliah');
     cy.get('.close').click();
-  })
+  });
+
+  it('Admin batal menghapus data',()=>{
+    cy.get('td').contains('P').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
+    cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?');
+    cy.get('.modal-footer > .btn-default').click();
+  });
+ 
   //row function private
   //function public
   /*it('Ubah data',  ()=>{
