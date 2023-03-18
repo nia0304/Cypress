@@ -17,9 +17,18 @@ describe('Automation Bidang Ilmu', ()=>{
       cy.get('#i_idkelompok').type('MPKK');
       cy.get('#i_namakelompok').type('MPKK');
       cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data kelompok mata kuliah berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin tidak bisa menambah data',()=>{
+      cy.get('#wrap-button > .btn').click();
+      cy.get('#i_idkelompok').type('MPKK');
+      cy.get('#i_namakelompok').type('MPKK');
+      cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data kelompok mata kuliah gagal, ada duplikasi data');
+      cy.get('.close').click();
+
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idkelompok').clear();
       cy.get('#i_namakelompok').clear();
@@ -53,6 +62,7 @@ describe('Automation Bidang Ilmu', ()=>{
       cy.get('td').contains('MPKK').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
       cy.get('#u_idkelompok').clear().type('MPK-K').parent().next().next().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data kelompok mata kuliah berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin batal mengubah data',()=>{
@@ -65,6 +75,7 @@ describe('Automation Bidang Ilmu', ()=>{
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
     cy.get('.modal-footer > .btn-primary').click();
     cy.get('.alert').should('contain','Penghapusan data kelompok mata kuliah berhasil');
+    cy.get('.close').click();
   });
 
   it('Admin tidak bisa menghapus data',()=>{

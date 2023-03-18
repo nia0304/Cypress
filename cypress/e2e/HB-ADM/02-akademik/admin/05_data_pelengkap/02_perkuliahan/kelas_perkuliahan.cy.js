@@ -17,9 +17,18 @@ describe('Automation Kelas Perkuliahan', ()=>{
       cy.get('#i_idkelasperkuliahan').type('2A');
       cy.get('#i_namakelas').type('Kelas 2A');
       cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data kelas perkuliahan berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin tidak bisa menambah data',()=>{
+      cy.get('#wrap-button > .btn').click();
+      cy.get('#i_idkelasperkuliahan').type('2A');
+      cy.get('#i_namakelas').type('Kelas 2A');
+      cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data kelas perkuliahan gagal, ada duplikasi data');
+      cy.get('.close').click();
+
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idkelasperkuliahan').clear();
       cy.get('#i_namakelas').clear();
@@ -53,6 +62,7 @@ describe('Automation Kelas Perkuliahan', ()=>{
       cy.get('td').contains('2A').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
       cy.get('#u_idkelasperkuliahan').clear().type('3A').parent().next().next().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data kelas perkuliahan berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin batal mengubah data',()=>{
@@ -65,6 +75,7 @@ describe('Automation Kelas Perkuliahan', ()=>{
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
     cy.get('.modal-footer > .btn-primary').click();
     cy.get('.alert').should('contain','Penghapusan data kelas perkuliahan berhasil');
+    cy.get('.close').click();
   });
 
   it('Admin tidak bisa menghapus data',()=>{
