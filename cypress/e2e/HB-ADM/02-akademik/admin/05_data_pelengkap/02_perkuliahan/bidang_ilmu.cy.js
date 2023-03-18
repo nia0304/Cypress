@@ -17,6 +17,8 @@ describe('Automation Bidang Ilmu', ()=>{
       cy.get('#i_idbidangilmu').type('PRW');
       cy.get('#i_namabidangilmu').type('Pariwisata');
       cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data bidangilmu berhasil');
+      cy.get('.close').click();
 
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idbidangilmu').clear();
@@ -24,9 +26,18 @@ describe('Automation Bidang Ilmu', ()=>{
       cy.get('#i_idbidangilmu').type('KHT');
       cy.get('#i_namabidangilmu').type('Kehutanan');
       cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Pengubahan data bidangilmu berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin tidak bisa menambah data',()=>{
+      cy.get('#wrap-button > .btn').click();
+      cy.get('#i_idbidangilmu').type('PRW');
+      cy.get('#i_namabidangilmu').type('Pariwisata');
+      cy.get(':nth-child(3) > .btn-success > .fa').click();
+      cy.get('.alert').should('contain','Penambahan data bidangilmu gagal, ada duplikasi data');
+      cy.get('.close').click();
+
       cy.get('#wrap-button > .btn').click();
       cy.get('#i_idbidangilmu').clear();
       cy.get('#i_namabidangilmu').clear();
@@ -60,6 +71,7 @@ describe('Automation Bidang Ilmu', ()=>{
       cy.get('td').contains('AKA').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
       cy.get('#u_idbidangilmu').clear().type('AKU').parent().next().next().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data bidangilmu berhasil');
+      cy.get('.close').click();
   });
 
   it('Admin batal mengubah data',()=>{
@@ -72,6 +84,7 @@ describe('Automation Bidang Ilmu', ()=>{
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
     cy.get('.modal-footer > .btn-primary').click();
     cy.get('.alert').should('contain','Penghapusan data bidangilmu berhasil');
+    cy.get('.close').click();
   });
 
   it('Admin tidak bisa menghapus data',()=>{
