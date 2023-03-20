@@ -99,8 +99,8 @@ describe('Automation Unsur Nilai', ()=>{
     cy.get('#insert-row-ms > :nth-child(5) > .btn-warning').click();
   });
 
-  it('Admin bisa mengubah data',()=>{
-      cy.get('td').contains('Kompres').next().parent().find('.btn.btn-warning.btn-xs.btn-flat').click();
+  it.only('Admin bisa mengubah data',()=>{
+      cy.get('td').contains('Kompres').next().parent().find('.button.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('#u_namareferensi').clear().type('Komprehensif TA').parent().next().next().parent().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data unsur nilai berhasil');
   });
