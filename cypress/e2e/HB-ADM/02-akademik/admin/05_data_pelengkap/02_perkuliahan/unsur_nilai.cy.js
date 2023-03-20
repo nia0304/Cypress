@@ -99,7 +99,7 @@ describe('Automation Unsur Nilai', ()=>{
     cy.get('#insert-row-ms > :nth-child(5) > .btn-warning').click();
   });
 
-  it.only('Admin bisa mengubah data',()=>{
+  it('Admin bisa mengubah data',()=>{
       cy.get('td').contains('Kompres').next().parent().find('.button.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('#u_namareferensi').clear().type('Komprehensif TA').parent().next().next().parent().find('.btn.btn-success.btn-xs.btn-flat').click();
       cy.get('.alert').should('contain','Pengubahan data unsur nilai berhasil');
@@ -117,24 +117,24 @@ describe('Automation Unsur Nilai', ()=>{
     cy.get(':nth-child(2) > :nth-child(5) > .btn-warning').click();
   });
 
-  /*it('Admin bisa menghapus data',()=>{
-    cy.get('td').contains('2A').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
+  it.only('Admin bisa menghapus data',()=>{
+    cy.get('td').contains('27').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
     cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
     cy.get('.modal-footer > .btn-primary').click();
-    cy.get('.alert').should('contain','Penghapusan data kelas perkuliahan berhasil');
+    cy.get('.alert').should('contain','Penghapusan data unsur nilai berhasil');
   });
 
   it('Admin tidak bisa menghapus data',()=>{
-    cy.get('td').contains('A').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
-    cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?');
+    cy.get('td').contains('11').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
+    cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
     cy.get('.modal-footer > .btn-primary').click();
-    cy.get('.alert').should('contain','Penghapusan data kelas perkuliahan gagal, data masih dijadikan referensi pada Kelas Perkuliahan');
+    cy.get('.alert').should('contain','Penghapusan data unsur nilai gagal, data masih dijadikan referensi pada Proporsi Nilai Kelas');
     cy.get('.close').click();
   });
 
-  it('Admin batal menghapus data',()=>{
-    cy.get('td').contains('UTS').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
-    cy.get(':nth-child(2) > :nth-child(5) > .btn-warning').click();
-  });*/
-  
+  it.only('Admin batal menghapus data',()=>{
+    cy.get('td').contains('11').next().parent().find('.btn.btn-danger.btn-xs.btn-flat').click();
+    cy.get('#modal-konfirmasi').contains('Apakah anda yakin akan menghapus data ini?')
+    cy.get('.modal-footer > .btn-default').click();
+  });
 });
