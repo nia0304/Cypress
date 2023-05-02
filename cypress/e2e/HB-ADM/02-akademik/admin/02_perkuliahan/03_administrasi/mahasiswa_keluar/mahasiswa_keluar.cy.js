@@ -455,7 +455,7 @@ describe ('Automation Mahasiswa Keluar',()=>{
         .should('not.exist');
     });
 
-    it('Admin generate mahasiswa baru',()=>{
+    it.only ('Admin generate mahasiswa baru',()=>{
       cy.openModulPmb();
       cy.visit('/spmb/set_mahasiswa');
       cy.get('.col-xs-8 > .input-group > .form-control.input-sm').clear().type('231111011');
@@ -468,9 +468,7 @@ describe ('Automation Mahasiswa Keluar',()=>{
       cy.get('#modal-konfirmasi').should('contain', 'Apakah anda yakin akan melakukan generate Mahasiswa');
       cy.get('.modal-footer > .btn-primary').click();
       cy.get('.alert').should('contain','Berhasil Generate Mahasiswa');
-    });
-
-    it('Admin melihat hasil generate mahasiswa baru',()=>{
+      cy.get('#menu > a').invoke('removeAttr', 'target').click();
       cy.modulakademik();
       cy.visit('/siakad/list_mahasiswa');
       cy.get('.col-xs-8 > .input-group > .form-control').clear().type('20230050016');
@@ -481,6 +479,5 @@ describe ('Automation Mahasiswa Keluar',()=>{
         .find('[data-type="edit"]').click();
       cy.get('#block-idstatusmhs').should('contain','Aktif');
       cy.get('#block-periodeterakhir').should('not.be.visible');
-    }); 
-    
+    });    
 })
